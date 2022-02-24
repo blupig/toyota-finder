@@ -9,20 +9,22 @@ def scrapeVINs(vins):
         print(f'scraping {vin}')
         try:
             body = fetchVIN(vin)
-            if len(body) > 100:
+            if len(body) > 1000:
                 print(f'VIN {vin} exists')
 
+                # Read or generate scrapeTime
                 scrapeTime = readScrapeTime(vin)
                 if scrapeTime is None:
                     scrapeTime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
+                # Inject scrapeTime
                 parsed = json.loads(body)
                 parsed['scrapeTime'] = scrapeTime
 
                 saveData(vin, parsed)
+
         except HTTPError:
             pass
-
         except Exception as e:
             print(str(e))
 
