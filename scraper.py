@@ -13,7 +13,6 @@ def scrapeVINs(vins):
             pass
 
         time.sleep(0.5)
-        break
 
 def fetchVIN(vin):
     url = f'https://api.rti.toyota.com/marketplace-inventory/vehicles/{vin}?isVspec=true'
