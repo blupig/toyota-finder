@@ -17,7 +17,7 @@ def startViewer():
     viewer.startServing()
 
 def startScraper():
-    vins = vin_generator.generateVINs(vin_generator.VIN_PREFIX_XSE_PREMIUM, 80000, 90000)
+    vins = vin_generator.generateVINs(vin_generator.VIN_PREFIX_XSE_PREMIUM, 80260, 90000)
     scraper.scrapeVINs(vins)
 
 main()

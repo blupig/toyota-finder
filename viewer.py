@@ -38,6 +38,7 @@ def startServing():
 
 def getAllCars():
     files = listdir('data')
+    files.sort(key=lambda x: x[11:])
 
     result = []
     for fileName in files:
@@ -45,7 +46,7 @@ def getAllCars():
         try:
             with open(filePath, 'r') as f:
                 parsed = json.load(f)
-                parsed['scrapeTime'] = datetime.fromtimestamp(path.getmtime(filePath)).strftime('%Y-%m-%d %H:%M:%S')
+                parsed['scrapeTime'] = datetime.fromtimestamp(path.getctime(filePath)).strftime('%Y-%m-%d %H:%M:%S')
                 result.append(parsed)
         except:
             print(f'failed to read/parse {filePath}')
