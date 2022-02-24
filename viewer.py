@@ -29,19 +29,21 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/html')
         self.end_headers()
 
-        allCars = getAllCars()
-        self.wfile.write(bytes(generateHTML(allCars), "utf8"))
+        self.wfile.write(bytes(generateHTML(), "utf8"))
 
 def startServing():
     with HTTPServer(('', 8000), handler) as server:
         server.serve_forever()
 
-def getAllCars():
+def getAllCars(prefix):
     files = listdir('data')
     files.sort(key=lambda x: x[11:])
 
     result = []
     for fileName in files:
+        if not fileName.startswith(prefix):
+            continue
+
         filePath = f'data/{fileName}'
         try:
             with open(filePath, 'r') as f:
@@ -52,8 +54,20 @@ def getAllCars():
             print(f'failed to read/parse {filePath}')
     return result
 
-def generateHTML(cars):
-    html = f'<html><style>{HTML_CSS}</style><body><table>'
+def generateHTML():
+    html = f'<html><style>{HTML_CSS}</style><body>'
+
+    xsePremium = getAllCars('JTMFB')
+    seWeather = getAllCars('JTMAB')
+
+    html += generateTable(xsePremium)
+    html += generateTable(seWeather)
+
+    html += '</body></html>'
+    return html
+
+def generateTable(cars):
+    table = '<table>'
     for car in cars:
         try:
             carHTML = '<tr>'
@@ -71,7 +85,7 @@ def generateHTML(cars):
         except Exception as e:
             carHTML = str(e)
         finally:
-            html += f'{carHTML}\n'
+            table += f'{carHTML}\n'
 
-    html += '</table></body></html>'
-    return html
+    table += '</table><br><br>'
+    return table

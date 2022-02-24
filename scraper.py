@@ -2,18 +2,17 @@ import urllib.request
 import time
 
 def scrapeVINs(vins):
-    while True:
-        for vin in vins:
-            print(f'scraping {vin}')
-            try:
-                body = fetchVIN(vin)
-                if len(body) > 100:
-                    print(f'VIN {vin} exists')
-                    saveData(vin, body)
-            except:
-                pass
+    for vin in vins:
+        print(f'scraping {vin}')
+        try:
+            body = fetchVIN(vin)
+            if len(body) > 100:
+                print(f'VIN {vin} exists')
+                saveData(vin, body)
+        except:
+            pass
 
-            time.sleep(1)
+        time.sleep(1)
 
 def fetchVIN(vin):
     url = f'https://api.rti.toyota.com/marketplace-inventory/vehicles/{vin}?isVspec=true'
