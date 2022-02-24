@@ -3,6 +3,7 @@ from datetime import datetime
 from os import listdir, path
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from typing import final
+import dealers
 
 HTML_CSS = """
 body {
@@ -78,10 +79,16 @@ def generateTable(cars):
             # Color
             carHTML += f"<td>{car.get('extColor', {}).get('marketingName')}</td>"
 
+            # Dealer
+            dealer = dealers.DEALERS.get(car.get("dealerCd", ""), {})
+            carHTML += f"<td>{dealer.get('name', '')}</td>"
+            carHTML += f"<td>{dealer.get('city', '')}, {dealer.get('state', '')}</td>"
+
             # eta
             carHTML += f"<td>{car.get('eta', {}).get('currToDate')}</td>"
 
-            carHTML += f'<td><a href="https://guest.dealer.toyota.com/v-spec/{car.get("vin", "")}/detail">link</a></td></tr>'
+            carHTML += f'<td><a href="https://guest.dealer.toyota.com/v-spec/{car.get("vin", "")}/detail">car</a></td>'
+            carHTML += f'<td><a href="https://www.toyota.com/dealers/dealer/{car.get("dealerCd", "")}">dealer</a></td></tr>'
         except Exception as e:
             carHTML = str(e)
         finally:
