@@ -1,6 +1,7 @@
+# VIN utils
 
-VIN_PREFIX_SE_WEATHER = 'JTMAB3FV_ND'
-VIN_PREFIX_XSE_PREMIUM = 'JTMFB3FV_ND'
+VIN_PREFIX_SE_WEATHER = 'JTMAB3FVXND'
+VIN_PREFIX_XSE_PREMIUM = 'JTMFB3FVXND'
 
 def generateVINs(prefix, start, end):
     result = []
@@ -14,9 +15,6 @@ def fixCheckDigit(vin):
 
     pos = sum = 0
     for char in vin:
-        if char == '_':
-            continue
-
         value = int(LETTER_KEY[char]) if char in LETTER_KEY else int(char)
         weight = POSITIONAL_WEIGHTS[pos]
         sum += (value * weight)
@@ -28,5 +26,3 @@ def fixCheckDigit(vin):
         check_digit = 'X'
 
     return vin[:8] + str(check_digit) + vin[9:]
-
-[print(v) for v in generateVINs(VIN_PREFIX_XSE_PREMIUM, 80000, 90000)]
