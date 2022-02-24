@@ -28,7 +28,7 @@ def scrapeVINs(vins):
         except Exception as e:
             print(str(e))
 
-        time.sleep(1)
+        time.sleep(0.5)
 
 def fetchVIN(vin):
     url = f'https://api.rti.toyota.com/marketplace-inventory/vehicles/{vin}?isVspec=true'
