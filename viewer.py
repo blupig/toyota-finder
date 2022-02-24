@@ -49,7 +49,6 @@ def getAllCars(prefix):
         try:
             with open(filePath, 'r') as f:
                 parsed = json.load(f)
-                parsed['scrapeTime'] = datetime.fromtimestamp(path.getctime(filePath)).strftime('%Y-%m-%d %H:%M:%S')
                 result.append(parsed)
         except:
             print(f'failed to read/parse {filePath}')
@@ -73,8 +72,7 @@ def generateTable(cars):
         try:
             carHTML = '<tr>'
             for field in HTML_CAR_FIELDS:
-                if field in car:
-                    carHTML += f'<td>{car[field]}</td>'
+                carHTML += f"<td>{car.get(field, '')}</td>"
 
             # Color
             carHTML += f"<td>{car.get('extColor', {}).get('marketingName')}</td>"

@@ -1,5 +1,8 @@
+import json
 import urllib.request
 import time
+from datetime import datetime
+from urllib.error import HTTPError
 
 def scrapeVINs(vins):
     for vin in vins:
@@ -8,9 +11,20 @@ def scrapeVINs(vins):
             body = fetchVIN(vin)
             if len(body) > 100:
                 print(f'VIN {vin} exists')
-                saveData(vin, body)
-        except:
+
+                scrapeTime = readScrapeTime(vin)
+                if scrapeTime is None:
+                    scrapeTime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+                parsed = json.loads(body)
+                parsed['scrapeTime'] = scrapeTime
+
+                saveData(vin, parsed)
+        except HTTPError:
             pass
+
+        except Exception as e:
+            print(str(e))
 
         time.sleep(1)
 
@@ -23,6 +37,14 @@ def fetchVIN(vin):
     resp = urllib.request.urlopen(req)
     return resp.read()
 
-def saveData(vin, content):
-    with open(f'data/{vin}.json', 'wb') as f:
-        f.write(content)
+def readScrapeTime(vin):
+    try:
+        with open(f'data/{vin}.json', 'r') as f:
+            parsed = json.load(f)
+            return parsed.get('scrapeTime', None)
+    except:
+        return None
+
+def saveData(vin, car):
+    with open(f'data/{vin}.json', 'w') as f:
+        json.dump(car, f)
