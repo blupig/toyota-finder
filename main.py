@@ -9,7 +9,6 @@ def main():
 
     ts.start()
     tv.start()
-
     ts.join()
     tv.join()
 
@@ -17,12 +16,23 @@ def startViewer():
     viewer.startServing()
 
 def startScraper():
-    while True:
-        print('scraper started')
-        vins = vin_generator.generateVINs(vin_generator.VIN_PREFIX_XSE_PREMIUM, 80000, 95000)
+    def scrapeSE():
+        print('SE scraper started')
+        vins = vin_generator.generateVINs(vin_generator.VIN_PREFIX_SE_WEATHER, 80000, 87000)
         scraper.scrapeVINs(vins)
 
-        vins = vin_generator.generateVINs(vin_generator.VIN_PREFIX_SE_WEATHER, 80000, 95000)
+    def scrapeXSE():
+        print('XSE scraper started')
+        vins = vin_generator.generateVINs(vin_generator.VIN_PREFIX_XSE_PREMIUM, 84000, 87000)
         scraper.scrapeVINs(vins)
+
+    while True:
+        tSE = threading.Thread(target=scrapeSE)
+        tXSE = threading.Thread(target=scrapeXSE)
+
+        tSE.start()
+        tXSE.start()
+        tSE.join()
+        tXSE.join()
 
 main()
