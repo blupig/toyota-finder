@@ -26,6 +26,11 @@ HTML_CAR_FIELDS = [
 
 class HTTPHandler(BaseHTTPRequestHandler):
     def do_GET(self):
+        if self.path != '/':
+            self.send_response(404)
+            self.end_headers()
+            return
+
         self.send_response(200)
         self.send_header('Content-type','text/html')
         self.end_headers()
