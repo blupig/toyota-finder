@@ -4,6 +4,7 @@ import urllib.request
 import time
 from datetime import datetime
 from urllib.error import HTTPError
+import global_vars
 import notifier
 
 def scrape_vins(vins):
@@ -33,6 +34,8 @@ def scrape_vins(vins):
         except Exception:
             traceback.print_exc()
 
+        global_vars.total_scraped += 1
+        global_vars.last_scraped = vin
         time.sleep(0.5)
 
 def fetch_vin(vin):

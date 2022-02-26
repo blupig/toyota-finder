@@ -5,7 +5,6 @@ import traceback
 def send_email(subject, body):
     """Send email via SMTP"""
 
-
     message = f'Subject: {subject}\n\n{body}'
 
     # Create a secure SSL context

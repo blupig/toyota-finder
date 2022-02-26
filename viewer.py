@@ -1,7 +1,9 @@
 import json
+import time
 from os import listdir
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import dealers
+import global_vars
 
 HTML_CSS = """
 body {
@@ -37,7 +39,7 @@ def start_serving():
 def get_all_cars(prefix):
     """Read all cars from data dir"""
     files = listdir('data')
-    files.sort(key=lambda x: x[11:])
+    files.sort(key=lambda x: -int(x[11:16]))
 
     result = []
     for fileName in files:
@@ -56,6 +58,10 @@ def get_all_cars(prefix):
 def generate_html():
     """generate_table"""
     html = f'<html><style>{HTML_CSS}</style><body>'
+
+    sps = global_vars.total_scraped / (int(time.time()) - global_vars.start_epoch)
+    html += f'Total scraped: {global_vars.total_scraped} ({sps:0.1f}/s)<br>'
+    html += f'Last scraped: {global_vars.last_scraped}<br><br>'
 
     xse_premium = get_all_cars('JTMFB')
     se_weather = get_all_cars('JTMAB')
