@@ -4,35 +4,42 @@ import viewer
 import vin_generator
 
 def main():
-    ts = threading.Thread(target=startScraper)
-    tv = threading.Thread(target=startViewer)
+    """Program entry"""
 
-    ts.start()
-    tv.start()
-    ts.join()
-    tv.join()
+    t_scraper = threading.Thread(target=start_scraper)
+    t_viewer = threading.Thread(target=start_viewer)
 
-def startViewer():
-    viewer.startServing()
+    t_scraper.start()
+    t_viewer.start()
+    t_scraper.join()
+    t_viewer.join()
 
-def startScraper():
-    def scrapeSE():
-        print('SE scraper started')
-        vins = vin_generator.generateVINs(vin_generator.VIN_PREFIX_SE_WEATHER, 80000, 87000)
-        scraper.scrapeVINs(vins)
+def start_viewer():
+    """Start viewer (blocking)"""
+    viewer.start_serving()
 
-    def scrapeXSE():
-        print('XSE scraper started')
-        vins = vin_generator.generateVINs(vin_generator.VIN_PREFIX_XSE_PREMIUM, 84000, 87000)
-        scraper.scrapeVINs(vins)
+def start_scraper():
+    """Start scraper (blocking)"""
 
-    while True:
-        tSE = threading.Thread(target=scrapeSE)
-        tXSE = threading.Thread(target=scrapeXSE)
+    # Scrape these ranges concurrently
+    vin_ranges = [
+        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 80000, 82000),
+        # (vin_generator.VIN_PREFIX_XSE_PREMIUM, 82001, 84000),
+        # (vin_generator.VIN_PREFIX_XSE_PREMIUM, 84001, 86000),
+        # (vin_generator.VIN_PREFIX_XSE_PREMIUM, 86001, 88000),
+        # (vin_generator.VIN_PREFIX_XSE_PREMIUM, 88001, 90000),
+        # (vin_generator.VIN_PREFIX_SE_WEATHER, 80000, 87000),
+    ]
 
-        tSE.start()
-        tXSE.start()
-        tSE.join()
-        tXSE.join()
+    threads = []
+    for j in vin_ranges:
+        print('starting scraper ', j)
+        vins = vin_generator.generate_vins(*j)
+        thread = threading.Thread(target=scraper.scrape_vins, args=(vins,))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
 
 main()

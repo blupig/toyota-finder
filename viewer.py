@@ -1,8 +1,6 @@
 import json
-from datetime import datetime
-from os import listdir, path
+from os import listdir
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from typing import final
 import dealers
 
 HTML_CSS = """
@@ -24,19 +22,20 @@ HTML_CAR_FIELDS = [
     'holdStatus',
 ]
 
-class handler(BaseHTTPRequestHandler):
+class HTTPHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type','text/html')
         self.end_headers()
+        self.wfile.write(bytes(generate_html(), "utf8"))
 
-        self.wfile.write(bytes(generateHTML(), "utf8"))
-
-def startServing():
-    with HTTPServer(('', 8000), handler) as server:
+def start_serving():
+    """docstring"""
+    with HTTPServer(('', 8000), HTTPHandler) as server:
         server.serve_forever()
 
-def getAllCars(prefix):
+def get_all_cars(prefix):
+    """Read all cars from data dir"""
     files = listdir('data')
     files.sort(key=lambda x: x[11:])
 
@@ -47,50 +46,52 @@ def getAllCars(prefix):
 
         filePath = f'data/{fileName}'
         try:
-            with open(filePath, 'r') as f:
+            with open(filePath, 'r', encoding='utf8') as f:
                 parsed = json.load(f)
                 result.append(parsed)
-        except:
+        except Exception:
             print(f'failed to read/parse {filePath}')
     return result
 
-def generateHTML():
+def generate_html():
+    """generate_table"""
     html = f'<html><style>{HTML_CSS}</style><body>'
 
-    xsePremium = getAllCars('JTMFB')
-    seWeather = getAllCars('JTMAB')
+    xse_premium = get_all_cars('JTMFB')
+    se_weather = get_all_cars('JTMAB')
 
-    html += generateTable(xsePremium)
-    html += generateTable(seWeather)
+    html += generate_table(xse_premium)
+    html += generate_table(se_weather)
 
     html += '</body></html>'
     return html
 
-def generateTable(cars):
+def generate_table(cars):
+    """generate_table"""
     table = '<table>'
     for car in cars:
         try:
-            carHTML = '<tr>'
+            car_html = '<tr>'
             for field in HTML_CAR_FIELDS:
-                carHTML += f"<td>{car.get(field, '')}</td>"
+                car_html += f"<td>{car.get(field, '')}</td>"
 
             # Color
-            carHTML += f"<td>{car.get('extColor', {}).get('marketingName')}</td>"
+            car_html += f"<td>{car.get('extColor', {}).get('marketingName')}</td>"
 
             # Dealer
             dealer = dealers.DEALERS.get(car.get("dealerCd", ""), {})
-            carHTML += f"<td>{dealer.get('name', '')}</td>"
-            carHTML += f"<td>{dealer.get('city', '')}, {dealer.get('state', '')}</td>"
+            car_html += f"<td>{dealer.get('name', '')}</td>"
+            car_html += f"<td>{dealer.get('city', '')}, {dealer.get('state', '')}</td>"
 
             # eta
-            carHTML += f"<td>{car.get('eta', {}).get('currToDate')}</td>"
+            car_html += f"<td>{car.get('eta', {}).get('currToDate')}</td>"
 
-            carHTML += f'<td><a href="https://guest.dealer.toyota.com/v-spec/{car.get("vin", "")}/detail">car</a></td>'
-            carHTML += f'<td><a href="https://www.toyota.com/dealers/dealer/{car.get("dealerCd", "")}">dealer</a></td></tr>'
+            car_html += f'<td><a href="https://guest.dealer.toyota.com/v-spec/{car.get("vin", "")}/detail">car</a></td>'
+            car_html += f'<td><a href="https://www.toyota.com/dealers/dealer/{car.get("dealerCd", "")}">dealer</a></td></tr>'
         except Exception as e:
-            carHTML = str(e)
+            car_html = str(e)
         finally:
-            table += f'{carHTML}\n'
+            table += f'{car_html}\n'
 
     table += '</table><br><br>'
     return table
