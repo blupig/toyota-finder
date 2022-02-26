@@ -4,6 +4,7 @@ import urllib.request
 import time
 from datetime import datetime
 from urllib.error import HTTPError
+import notifier
 
 def scrape_vins(vins):
     """Scrape all VINs provided"""
@@ -18,6 +19,8 @@ def scrape_vins(vins):
                 scrape_time = read_scrape_time(vin)
                 if scrape_time is None:
                     scrape_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    # New car found
+                    notifier.send_email(f'toyota-finder: {vin}', f'New VIN found: {vin}')
 
                 # Inject scrape_time
                 parsed = json.loads(body)
