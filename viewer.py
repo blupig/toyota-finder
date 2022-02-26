@@ -39,7 +39,7 @@ def start_serving():
 def get_all_cars(prefix):
     """Read all cars from data dir"""
     files = listdir('data')
-    files.sort(key=lambda x: -int(x[11:16]))
+    files.sort(key=lambda x: -int(x[11:17]))
 
     result = []
     for fileName in files:
