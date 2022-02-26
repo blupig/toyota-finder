@@ -21,21 +21,25 @@ def start_viewer():
 def start_scraper():
     """Start scraper (blocking)"""
 
+    def infinite_scraping(vins):
+        while True:
+            scraper.scrape_vins(vins)
+
     # Scrape these ranges concurrently
     vin_ranges = [
         (vin_generator.VIN_PREFIX_XSE_PREMIUM, 80000, 82000),
-        # (vin_generator.VIN_PREFIX_XSE_PREMIUM, 82001, 84000),
-        # (vin_generator.VIN_PREFIX_XSE_PREMIUM, 84001, 86000),
-        # (vin_generator.VIN_PREFIX_XSE_PREMIUM, 86001, 88000),
-        # (vin_generator.VIN_PREFIX_XSE_PREMIUM, 88001, 90000),
-        # (vin_generator.VIN_PREFIX_SE_WEATHER, 80000, 87000),
+        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 82001, 84000),
+        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 84001, 86000),
+        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 86001, 88000),
+        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 88001, 90000),
+        (vin_generator.VIN_PREFIX_SE_WEATHER, 80000, 87000),
     ]
 
     threads = []
     for j in vin_ranges:
         print('starting scraper ', j)
         vins = vin_generator.generate_vins(*j)
-        thread = threading.Thread(target=scraper.scrape_vins, args=(vins,))
+        thread = threading.Thread(target=infinite_scraping, args=(vins,))
         threads.append(thread)
         thread.start()
 
