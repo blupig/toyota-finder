@@ -21,7 +21,10 @@ def scrape_vins(vins):
                 if scrape_time is None:
                     scrape_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     # New car found
-                    notifier.send_email(f'toyota-finder: {vin}', f'New VIN found: {vin}')
+                    notifier.send_email(
+                        f'toyota-finder: {vin}',
+                        f'New VIN found: https://guest.dealer.toyota.com/v-spec/{vin}/detail',
+                    )
 
                 # Inject scrape_time
                 parsed = json.loads(body)
