@@ -1,6 +1,20 @@
+# pylint: disable=missing-function-docstring
+def get_dealer(dealer_id):
+    return DEALERS.get(dealer_id, {})
+
+def get_name(dealer_id):
+    dealer = get_dealer(dealer_id)
+    return dealer.get('name', '')
+
+def get_city_state(dealer_id):
+    dealer = get_dealer(dealer_id)
+    if 'city' in dealer:
+        return f"{dealer.get('city', '')}, {dealer.get('state', '')}"
+    return ''
+
 # Dealers map
 DEALERS = {
-  "4007": {
+  4007: {
     "name": "Toyota of Berkeley",
     "address": "2400 Shattuck Avenue",
     "city": "Berkeley",
@@ -8,7 +22,7 @@ DEALERS = {
     "zip": "94704",
     "link": "https://www.toyota.com/dealers/dealer/04007",
   },
-  "4013": {
+  4013: {
     "name": "Hamer Toyota",
     "address": "11041 Sepulveda Blvd",
     "city": "Mission Hills",
@@ -16,7 +30,7 @@ DEALERS = {
     "zip": "91345",
     "link": "https://www.toyota.com/dealers/dealer/04013",
   },
-  "4017": {
+  4017: {
     "name": "Jimmy Vasser Toyota",
     "address": "466 Soscol Avenue",
     "city": "Napa",
@@ -24,7 +38,7 @@ DEALERS = {
     "zip": "94559",
     "link": "https://www.toyota.com/dealers/dealer/04017",
   },
-  "4022": {
+  4022: {
     "name": "Hanlees Hilltop Toyota",
     "address": "3233 Auto Plaza",
     "city": "Richmond",
@@ -32,7 +46,7 @@ DEALERS = {
     "zip": "94806",
     "link": "https://www.toyota.com/dealers/dealer/04022",
   },
-  "4033": {
+  4033: {
     "name": "Cabe Toyota Long Beach",
     "address": "2849 Long Beach Blvd.",
     "city": "Long Beach",
@@ -40,7 +54,7 @@ DEALERS = {
     "zip": "90806",
     "link": "https://www.toyota.com/dealers/dealer/04033",
   },
-  "4039": {
+  4039: {
     "name": "Modesto Toyota",
     "address": "4513 McHenry Avenue",
     "city": "Modesto",
@@ -48,7 +62,7 @@ DEALERS = {
     "zip": "95356",
     "link": "https://www.toyota.com/dealers/dealer/04039",
   },
-  "4041": {
+  4041: {
     "name": "Frank Toyota",
     "address": "2400 National City Blvd",
     "city": "National City",
@@ -56,7 +70,7 @@ DEALERS = {
     "zip": "91950",
     "link": "https://www.toyota.com/dealers/dealer/04041",
   },
-  "4042": {
+  4042: {
     "name": "Norwalk Toyota",
     "address": "11404 E Imperial Highway",
     "city": "Norwalk",
@@ -64,7 +78,7 @@ DEALERS = {
     "zip": "90650",
     "link": "https://www.toyota.com/dealers/dealer/04042",
   },
-  "4051": {
+  4051: {
     "name": "Toyota Walnut Creek",
     "address": "2100 North Broadway",
     "city": "Walnut Creek",
@@ -72,7 +86,7 @@ DEALERS = {
     "zip": "94596",
     "link": "https://www.toyota.com/dealers/dealer/04051",
   },
-  "4053": {
+  4053: {
     "name": "Toyota of Clovis",
     "address": "895 West Shaw Avenue",
     "city": "Clovis",
@@ -80,7 +94,7 @@ DEALERS = {
     "zip": "93612",
     "link": "https://www.toyota.com/dealers/dealer/04053",
   },
-  "4056": {
+  4056: {
     "name": "Salinas Toyota",
     "address": "700 Auto Center Circle",
     "city": "Salinas",
@@ -88,7 +102,7 @@ DEALERS = {
     "zip": "93907",
     "link": "https://www.toyota.com/dealers/dealer/04056",
   },
-  "4059": {
+  4059: {
     "name": "Northridge Toyota",
     "address": "19550 Nordhoff Street",
     "city": "Northridge",
@@ -96,7 +110,7 @@ DEALERS = {
     "zip": "91324",
     "link": "https://www.toyota.com/dealers/dealer/04059",
   },
-  "4061": {
+  4061: {
     "name": "Toyota of San Bernardino",
     "address": "765 Showcase Drive North",
     "city": "San Bernardino",
@@ -104,7 +118,7 @@ DEALERS = {
     "zip": "92408",
     "link": "https://www.toyota.com/dealers/dealer/04061",
   },
-  "4070": {
+  4070: {
     "name": "Freeman Toyota",
     "address": "2875 Corby Avenue",
     "city": "Santa Rosa",
@@ -112,7 +126,7 @@ DEALERS = {
     "zip": "95407",
     "link": "https://www.toyota.com/dealers/dealer/04070",
   },
-  "4072": {
+  4072: {
     "name": "Hansel Toyota",
     "address": "1125 Auto Center Drive",
     "city": "Petaluma",
@@ -120,7 +134,7 @@ DEALERS = {
     "zip": "94952",
     "link": "https://www.toyota.com/dealers/dealer/04072",
   },
-  "4075": {
+  4075: {
     "name": "Keyes Toyota",
     "address": "5855 Van Nuys Blvd",
     "city": "Van Nuys",
@@ -128,7 +142,7 @@ DEALERS = {
     "zip": "91401",
     "link": "https://www.toyota.com/dealers/dealer/04075",
   },
-  "4076": {
+  4076: {
     "name": "Toyota of The Desert",
     "address": "68105 Kyle Road",
     "city": "Cathedral City",
@@ -136,7 +150,7 @@ DEALERS = {
     "zip": "92234",
     "link": "https://www.toyota.com/dealers/dealer/04076",
   },
-  "4077": {
+  4077: {
     "name": "Folsom Lake Toyota",
     "address": "12747 Folsom Blvd.",
     "city": "Folsom",
@@ -144,7 +158,7 @@ DEALERS = {
     "zip": "95630",
     "link": "https://www.toyota.com/dealers/dealer/04077",
   },
-  "4079": {
+  4079: {
     "name": "Miller Toyota of Anaheim",
     "address": "1331 N. Euclid Street",
     "city": "Anaheim",
@@ -152,7 +166,7 @@ DEALERS = {
     "zip": "92801",
     "link": "https://www.toyota.com/dealers/dealer/04079",
   },
-  "4080": {
+  4080: {
     "name": "Penske Toyota of Downey",
     "address": "9136 E. Firestone Blvd",
     "city": "Downey",
@@ -160,7 +174,7 @@ DEALERS = {
     "zip": "90241",
     "link": "https://www.toyota.com/dealers/dealer/04080",
   },
-  "4087": {
+  4087: {
     "name": "Toyota of Huntington Beach",
     "address": "18881 Beach Blvd.",
     "city": "Huntington Beach",
@@ -168,7 +182,7 @@ DEALERS = {
     "zip": "92648",
     "link": "https://www.toyota.com/dealers/dealer/04087",
   },
-  "4088": {
+  4088: {
     "name": "San Francisco Toyota",
     "address": "3800 Geary Blvd",
     "city": "San Francisco",
@@ -176,7 +190,7 @@ DEALERS = {
     "zip": "94118",
     "link": "https://www.toyota.com/dealers/dealer/04088",
   },
-  "4094": {
+  4094: {
     "name": "Bob Smith Toyota",
     "address": "3333 Foothill Blvd.",
     "city": "La Crescenta",
@@ -184,7 +198,7 @@ DEALERS = {
     "zip": "91214",
     "link": "https://www.toyota.com/dealers/dealer/04094",
   },
-  "4095": {
+  4095: {
     "name": "Toyota of Poway",
     "address": "13631 Poway Road",
     "city": "Poway",
@@ -192,7 +206,7 @@ DEALERS = {
     "zip": "92064",
     "link": "https://www.toyota.com/dealers/dealer/04095",
   },
-  "4096": {
+  4096: {
     "name": "Toyota of Whittier",
     "address": "14577 East Whittier Blvd.",
     "city": "Whittier",
@@ -200,7 +214,7 @@ DEALERS = {
     "zip": "90605",
     "link": "https://www.toyota.com/dealers/dealer/04096",
   },
-  "4097": {
+  4097: {
     "name": "Larry H. Miller Toyota Lemon Grove",
     "address": "6800 Federal Boulevard",
     "city": "Lemon Grove",
@@ -208,7 +222,7 @@ DEALERS = {
     "zip": "91945",
     "link": "https://www.toyota.com/dealers/dealer/04097",
   },
-  "4098": {
+  4098: {
     "name": "Michael Toyota",
     "address": "50 W. Bullard Avenue",
     "city": "Fresno",
@@ -216,7 +230,7 @@ DEALERS = {
     "zip": "93704",
     "link": "https://www.toyota.com/dealers/dealer/04098",
   },
-  "4102": {
+  4102: {
     "name": "Toyota of Hollywood",
     "address": "6000 Hollywood Blvd.",
     "city": "Los Angeles",
@@ -224,7 +238,7 @@ DEALERS = {
     "zip": "90028",
     "link": "https://www.toyota.com/dealers/dealer/04102",
   },
-  "4104": {
+  4104: {
     "name": "Toyota Sunnyvale",
     "address": "898 W El Camino Real",
     "city": "Sunnyvale",
@@ -232,7 +246,7 @@ DEALERS = {
     "zip": "94087",
     "link": "https://www.toyota.com/dealers/dealer/04104",
   },
-  "4108": {
+  4108: {
     "name": "Elmore Toyota",
     "address": "15300 Beach Boulevard",
     "city": "Westminster",
@@ -240,7 +254,7 @@ DEALERS = {
     "zip": "92683",
     "link": "https://www.toyota.com/dealers/dealer/04108",
   },
-  "4109": {
+  4109: {
     "name": "Toyota of Glendora",
     "address": "1949 Auto Centre Drive",
     "city": "Glendora",
@@ -248,7 +262,7 @@ DEALERS = {
     "zip": "91740",
     "link": "https://www.toyota.com/dealers/dealer/04109",
   },
-  "4119": {
+  4119: {
     "name": "Victory Toyota of San Bruno",
     "address": "750 El Camino Real",
     "city": "San Bruno",
@@ -256,7 +270,7 @@ DEALERS = {
     "zip": "94066",
     "link": "https://www.toyota.com/dealers/dealer/04119",
   },
-  "4122": {
+  4122: {
     "name": "Novato Toyota",
     "address": "115 Vintage Way",
     "city": "Novato",
@@ -264,7 +278,7 @@ DEALERS = {
     "zip": "94945",
     "link": "https://www.toyota.com/dealers/dealer/04122",
   },
-  "4134": {
+  4134: {
     "name": "Rogers & Rogers Toyota",
     "address": "2351 Highway 86",
     "city": "Imperial",
@@ -272,7 +286,7 @@ DEALERS = {
     "zip": "92251",
     "link": "https://www.toyota.com/dealers/dealer/04134",
   },
-  "4135": {
+  4135: {
     "name": "I-10 Toyota",
     "address": "78-980 Varner Road",
     "city": "Indio",
@@ -280,7 +294,7 @@ DEALERS = {
     "zip": "92203",
     "link": "https://www.toyota.com/dealers/dealer/04135",
   },
-  "4136": {
+  4136: {
     "name": "Longo Toyota",
     "address": "3534 North Peck Road",
     "city": "El Monte",
@@ -288,7 +302,7 @@ DEALERS = {
     "zip": "91731",
     "link": "https://www.toyota.com/dealers/dealer/04136",
   },
-  "4137": {
+  4137: {
     "name": "South Coast Toyota",
     "address": "1966 Harbor Blvd.",
     "city": "Costa Mesa",
@@ -296,7 +310,7 @@ DEALERS = {
     "zip": "92627",
     "link": "https://www.toyota.com/dealers/dealer/04137",
   },
-  "4140": {
+  4140: {
     "name": "Madera Toyota",
     "address": "1300 Country Club Drive",
     "city": "Madera",
@@ -304,7 +318,7 @@ DEALERS = {
     "zip": "93638",
     "link": "https://www.toyota.com/dealers/dealer/04140",
   },
-  "4143": {
+  4143: {
     "name": "City Toyota",
     "address": "255 San Pedro Road",
     "city": "Daly City",
@@ -312,7 +326,7 @@ DEALERS = {
     "zip": "94014",
     "link": "https://www.toyota.com/dealers/dealer/04143",
   },
-  "4150": {
+  4150: {
     "name": "Toyota of Santa Barbara",
     "address": "5611 Hollister Avenue",
     "city": "Goleta",
@@ -320,7 +334,7 @@ DEALERS = {
     "zip": "93117",
     "link": "https://www.toyota.com/dealers/dealer/04150",
   },
-  "4151": {
+  4151: {
     "name": "Jim Bagan Toyota",
     "address": "1855 Lake Tahoe Boulevard",
     "city": "South Lake Tahoe",
@@ -328,7 +342,7 @@ DEALERS = {
     "zip": "96150",
     "link": "https://www.toyota.com/dealers/dealer/04151",
   },
-  "4154": {
+  4154: {
     "name": "Toyota of North Hollywood",
     "address": "4606 Lankershim Boulevard",
     "city": "North Hollywood",
@@ -336,7 +350,7 @@ DEALERS = {
     "zip": "91602",
     "link": "https://www.toyota.com/dealers/dealer/04154",
   },
-  "4158": {
+  4158: {
     "name": "Oroville Toyota",
     "address": "1250 Oro Dam Boulevard",
     "city": "Oroville",
@@ -344,7 +358,7 @@ DEALERS = {
     "zip": "95965",
     "link": "https://www.toyota.com/dealers/dealer/04158",
   },
-  "4159": {
+  4159: {
     "name": "South Bay Toyota",
     "address": "18416 S. Western Avenue",
     "city": "Gardena",
@@ -352,7 +366,7 @@ DEALERS = {
     "zip": "90248",
     "link": "https://www.toyota.com/dealers/dealer/04159",
   },
-  "4163": {
+  4163: {
     "name": "Lithia Toyota of Redding",
     "address": "250 E. Cypress Avenue",
     "city": "Redding",
@@ -360,7 +374,7 @@ DEALERS = {
     "zip": "96002",
     "link": "https://www.toyota.com/dealers/dealer/04163",
   },
-  "4167": {
+  4167: {
     "name": "Thousand Oaks Toyota",
     "address": "2401 Thousand Oaks Blvd",
     "city": "Thousand Oaks",
@@ -368,7 +382,7 @@ DEALERS = {
     "zip": "91362",
     "link": "https://www.toyota.com/dealers/dealer/04167",
   },
-  "4169": {
+  4169: {
     "name": "Tracy Toyota",
     "address": "2895 North Naglee Road",
     "city": "Tracy",
@@ -376,7 +390,7 @@ DEALERS = {
     "zip": "95304",
     "link": "https://www.toyota.com/dealers/dealer/04169",
   },
-  "4176": {
+  4176: {
     "name": "Concord Toyota",
     "address": "1090 Concord Avenue",
     "city": "Concord",
@@ -384,7 +398,7 @@ DEALERS = {
     "zip": "94520",
     "link": "https://www.toyota.com/dealers/dealer/04176",
   },
-  "4181": {
+  4181: {
     "name": "Toyota of Selma",
     "address": "3480 Floral Avenue",
     "city": "Selma",
@@ -392,7 +406,7 @@ DEALERS = {
     "zip": "93662",
     "link": "https://www.toyota.com/dealers/dealer/04181",
   },
-  "4185": {
+  4185: {
     "name": "Thompson's Toyota of Placerville",
     "address": "140 Forni Road",
     "city": "Placerville",
@@ -400,7 +414,7 @@ DEALERS = {
     "zip": "95667",
     "link": "https://www.toyota.com/dealers/dealer/04185",
   },
-  "4201": {
+  4201: {
     "name": "Elk Grove Toyota",
     "address": "9640 W. Stockton Blvd.",
     "city": "Elk Grove",
@@ -408,7 +422,7 @@ DEALERS = {
     "zip": "95757",
     "link": "https://www.toyota.com/dealers/dealer/04201",
   },
-  "4211": {
+  4211: {
     "name": "Envision Toyota of West Covina",
     "address": "1800 E Garvey Avenue",
     "city": "West Covina",
@@ -416,7 +430,7 @@ DEALERS = {
     "zip": "91791",
     "link": "https://www.toyota.com/dealers/dealer/04211",
   },
-  "4213": {
+  4213: {
     "name": "Putnam Toyota",
     "address": "50 California Drive",
     "city": "Burlingame",
@@ -424,7 +438,7 @@ DEALERS = {
     "zip": "94010",
     "link": "https://www.toyota.com/dealers/dealer/04213",
   },
-  "4215": {
+  4215: {
     "name": "Visalia Toyota",
     "address": "922 S. Ben Maddox Way",
     "city": "Visalia",
@@ -432,7 +446,7 @@ DEALERS = {
     "zip": "93292",
     "link": "https://www.toyota.com/dealers/dealer/04215",
   },
-  "4218": {
+  4218: {
     "name": "Gosch Toyota",
     "address": "350 Carriage Circle",
     "city": "Hemet",
@@ -440,7 +454,7 @@ DEALERS = {
     "zip": "92545",
     "link": "https://www.toyota.com/dealers/dealer/04218",
   },
-  "4221": {
+  4221: {
     "name": "Santa Cruz Toyota",
     "address": "4200 Auto Plaza Drive",
     "city": "Capitola",
@@ -448,7 +462,7 @@ DEALERS = {
     "zip": "95010",
     "link": "https://www.toyota.com/dealers/dealer/04221",
   },
-  "4222": {
+  4222: {
     "name": "Toyota Carlsbad",
     "address": "5424 Paseo Del Norte",
     "city": "Carlsbad",
@@ -456,7 +470,7 @@ DEALERS = {
     "zip": "92008",
     "link": "https://www.toyota.com/dealers/dealer/04222",
   },
-  "4226": {
+  4226: {
     "name": "Stevens Creek Toyota",
     "address": "4202 Stevens Creek Blvd.",
     "city": "San Jose",
@@ -464,7 +478,7 @@ DEALERS = {
     "zip": "95129",
     "link": "https://www.toyota.com/dealers/dealer/04226",
   },
-  "4228": {
+  4228: {
     "name": "Simi Valley Toyota",
     "address": "2380 First Street",
     "city": "Simi Valley",
@@ -472,7 +486,7 @@ DEALERS = {
     "zip": "93065",
     "link": "https://www.toyota.com/dealers/dealer/04228",
   },
-  "4232": {
+  4232: {
     "name": "Toyota San Luis Obispo",
     "address": "12350 Los Osos Valley Rd.",
     "city": "San Luis Obispo",
@@ -480,7 +494,7 @@ DEALERS = {
     "zip": "93405",
     "link": "https://www.toyota.com/dealers/dealer/04232",
   },
-  "4247": {
+  4247: {
     "name": "Toyota of Orange",
     "address": "1400 N Tustin",
     "city": "Orange",
@@ -488,7 +502,7 @@ DEALERS = {
     "zip": "92867",
     "link": "https://www.toyota.com/dealers/dealer/04247",
   },
-  "4250": {
+  4250: {
     "name": "Carson Toyota",
     "address": "1333 E 223rd St",
     "city": "Carson",
@@ -496,7 +510,7 @@ DEALERS = {
     "zip": "90745",
     "link": "https://www.toyota.com/dealers/dealer/04250",
   },
-  "4253": {
+  4253: {
     "name": "Hanlees Fairfield Toyota",
     "address": "2545 Auto Mall Parkway",
     "city": "Fairfield",
@@ -504,7 +518,7 @@ DEALERS = {
     "zip": "94533",
     "link": "https://www.toyota.com/dealers/dealer/04253",
   },
-  "4254": {
+  4254: {
     "name": "Toyota of Ridgecrest",
     "address": "321 N China Lake Blvd",
     "city": "Ridgecrest",
@@ -512,7 +526,7 @@ DEALERS = {
     "zip": "93555",
     "link": "https://www.toyota.com/dealers/dealer/04254",
   },
-  "4256": {
+  4256: {
     "name": "AutoNation Toyota Hayward",
     "address": "24773 Mission Blvd.",
     "city": "Hayward",
@@ -520,7 +534,7 @@ DEALERS = {
     "zip": "94544",
     "link": "https://www.toyota.com/dealers/dealer/04256",
   },
-  "4260": {
+  4260: {
     "name": "Perry Motors Toyota",
     "address": "310 South Main St",
     "city": "Bishop",
@@ -528,7 +542,7 @@ DEALERS = {
     "zip": "93514",
     "link": "https://www.toyota.com/dealers/dealer/04260",
   },
-  "4262": {
+  4262: {
     "name": "Victory Toyota",
     "address": "5 Heitzinger Plaza",
     "city": "Seaside",
@@ -536,7 +550,7 @@ DEALERS = {
     "zip": "93955",
     "link": "https://www.toyota.com/dealers/dealer/04262",
   },
-  "4263": {
+  4263: {
     "name": "Valley Hi Toyota",
     "address": "14612 Valley Center Drive",
     "city": "Victorville",
@@ -544,7 +558,7 @@ DEALERS = {
     "zip": "92395",
     "link": "https://www.toyota.com/dealers/dealer/04263",
   },
-  "4265": {
+  4265: {
     "name": "Future Toyota of Yuba City",
     "address": "955 Harter Parkway",
     "city": "Yuba City",
@@ -552,7 +566,7 @@ DEALERS = {
     "zip": "95993",
     "link": "https://www.toyota.com/dealers/dealer/04265",
   },
-  "4273": {
+  4273: {
     "name": "Bill Wright Toyota",
     "address": "5100 Gasoline Alley Drive",
     "city": "Bakersfield",
@@ -560,7 +574,7 @@ DEALERS = {
     "zip": "93313",
     "link": "https://www.toyota.com/dealers/dealer/04273",
   },
-  "4277": {
+  4277: {
     "name": "North Bakersfield Toyota",
     "address": "19651 Industry Prkwy Dr.",
     "city": "Bakersfield",
@@ -568,7 +582,7 @@ DEALERS = {
     "zip": "93308",
     "link": "https://www.toyota.com/dealers/dealer/04277",
   },
-  "4278": {
+  4278: {
     "name": "Mossy Toyota",
     "address": "4555 Mission Bay Drive",
     "city": "San Diego",
@@ -576,7 +590,7 @@ DEALERS = {
     "zip": "92109",
     "link": "https://www.toyota.com/dealers/dealer/04278",
   },
-  "4279": {
+  4279: {
     "name": "Capistrano Valley Toyota",
     "address": "33395 Camino Capistrano",
     "city": "San Juan Capistrano",
@@ -584,7 +598,7 @@ DEALERS = {
     "zip": "92675",
     "link": "https://www.toyota.com/dealers/dealer/04279",
   },
-  "4282": {
+  4282: {
     "name": "Toyota of Escondido",
     "address": "231 Lincoln Parkway",
     "city": "Escondido",
@@ -592,7 +606,7 @@ DEALERS = {
     "zip": "92026",
     "link": "https://www.toyota.com/dealers/dealer/04282",
   },
-  "4283": {
+  4283: {
     "name": "Toyota of Pasadena",
     "address": "3600 E. Foothill Blvd.",
     "city": "Pasadena",
@@ -600,7 +614,7 @@ DEALERS = {
     "zip": "91107",
     "link": "https://www.toyota.com/dealers/dealer/04283",
   },
-  "4284": {
+  4284: {
     "name": "Claremont Toyota",
     "address": "601 Auto Center Drive",
     "city": "Claremont",
@@ -608,7 +622,7 @@ DEALERS = {
     "zip": "91711",
     "link": "https://www.toyota.com/dealers/dealer/04284",
   },
-  "4285": {
+  4285: {
     "name": "Envision Toyota of Norwalk",
     "address": "11404 E Imperial Highway",
     "city": "Norwalk",
@@ -616,7 +630,7 @@ DEALERS = {
     "zip": "90650",
     "link": "https://www.toyota.com/dealers/dealer/04285",
   },
-  "4288": {
+  4288: {
     "name": "Chuck Patterson Toyota Dodge",
     "address": "200 East Avenue",
     "city": "Chico",
@@ -624,7 +638,7 @@ DEALERS = {
     "zip": "95926",
     "link": "https://www.toyota.com/dealers/dealer/04288",
   },
-  "4290": {
+  4290: {
     "name": "Toyota of Santa Maria",
     "address": "700 E. Betteravia Road",
     "city": "Santa Maria",
@@ -632,7 +646,7 @@ DEALERS = {
     "zip": "93454",
     "link": "https://www.toyota.com/dealers/dealer/04290",
   },
-  "4292": {
+  4292: {
     "name": "Toyota of Vallejo",
     "address": "201 Auto Mall Parkway",
     "city": "Vallejo",
@@ -640,7 +654,7 @@ DEALERS = {
     "zip": "94591",
     "link": "https://www.toyota.com/dealers/dealer/04292",
   },
-  "4294": {
+  4294: {
     "name": "United Toyota",
     "address": "2351 Highway 86",
     "city": "Imperial",
@@ -648,7 +662,7 @@ DEALERS = {
     "zip": "92251",
     "link": "https://www.toyota.com/dealers/dealer/04294",
   },
-  "4297": {
+  4297: {
     "name": "Keyes Toyota",
     "address": "5855 Van Nuys Blvd",
     "city": "Van Nuys",
@@ -656,7 +670,7 @@ DEALERS = {
     "zip": "91401",
     "link": "https://www.toyota.com/dealers/dealer/04297",
   },
-  "4303": {
+  4303: {
     "name": "Toyota Santa Monica",
     "address": "801 Santa Monica Blvd.",
     "city": "Santa Monica",
@@ -664,7 +678,7 @@ DEALERS = {
     "zip": "90401",
     "link": "https://www.toyota.com/dealers/dealer/04303",
   },
-  "4308": {
+  4308: {
     "name": "Wondries Toyota",
     "address": "1439 West Main Street",
     "city": "Alhambra",
@@ -672,7 +686,7 @@ DEALERS = {
     "zip": "91801",
     "link": "https://www.toyota.com/dealers/dealer/04308",
   },
-  "4309": {
+  4309: {
     "name": "Puente Hills Toyota",
     "address": "17070 Gale Avenue",
     "city": "City Of Industry",
@@ -680,7 +694,7 @@ DEALERS = {
     "zip": "91748",
     "link": "https://www.toyota.com/dealers/dealer/04309",
   },
-  "4315": {
+  4315: {
     "name": "Marina Del Rey Toyota",
     "address": "4636 Lincoln Boulevard",
     "city": "Marina Del Rey",
@@ -688,7 +702,7 @@ DEALERS = {
     "zip": "90292",
     "link": "https://www.toyota.com/dealers/dealer/04315",
   },
-  "4317": {
+  4317: {
     "name": "Downtown Toyota of Oakland",
     "address": "4145 Broadway Street",
     "city": "Oakland",
@@ -696,7 +710,7 @@ DEALERS = {
     "zip": "94611",
     "link": "https://www.toyota.com/dealers/dealer/04317",
   },
-  "4324": {
+  4324: {
     "name": "Toyota Town",
     "address": "2150 East Hammer Lane",
     "city": "Stockton",
@@ -704,7 +718,7 @@ DEALERS = {
     "zip": "95210",
     "link": "https://www.toyota.com/dealers/dealer/04324",
   },
-  "4333": {
+  4333: {
     "name": "Toyota of Redlands",
     "address": "921 New York Street",
     "city": "Redlands",
@@ -712,7 +726,7 @@ DEALERS = {
     "zip": "92373",
     "link": "https://www.toyota.com/dealers/dealer/04333",
   },
-  "4338": {
+  4338: {
     "name": "Fremont Toyota",
     "address": "5851 Cushing Parkway",
     "city": "Fremont",
@@ -720,7 +734,7 @@ DEALERS = {
     "zip": "94538",
     "link": "https://www.toyota.com/dealers/dealer/04338",
   },
-  "4344": {
+  4344: {
     "name": "Ventura Toyota",
     "address": "6360 Auto Center Drive",
     "city": "Ventura",
@@ -728,7 +742,7 @@ DEALERS = {
     "zip": "93003",
     "link": "https://www.toyota.com/dealers/dealer/04344",
   },
-  "4346": {
+  4346: {
     "name": "Piercey Toyota",
     "address": "950 Thompson Street",
     "city": "Milpitas",
@@ -736,7 +750,7 @@ DEALERS = {
     "zip": "95035",
     "link": "https://www.toyota.com/dealers/dealer/04346",
   },
-  "4347": {
+  4347: {
     "name": "Frontier Toyota",
     "address": "23621 Creekside Road",
     "city": "Valencia",
@@ -744,7 +758,7 @@ DEALERS = {
     "zip": "91355",
     "link": "https://www.toyota.com/dealers/dealer/04347",
   },
-  "4353": {
+  4353: {
     "name": "Toyota Chula Vista",
     "address": "650 Main Street",
     "city": "Chula Vista",
@@ -752,7 +766,7 @@ DEALERS = {
     "zip": "91911",
     "link": "https://www.toyota.com/dealers/dealer/04353",
   },
-  "4356": {
+  4356: {
     "name": "Toyota Place",
     "address": "9670 Trask Avenue",
     "city": "Garden Grove",
@@ -760,7 +774,7 @@ DEALERS = {
     "zip": "92844",
     "link": "https://www.toyota.com/dealers/dealer/04356",
   },
-  "4359": {
+  4359: {
     "name": "Moss Bros. Toyota",
     "address": "12630 Motor Way",
     "city": "Moreno Valley",
@@ -768,7 +782,7 @@ DEALERS = {
     "zip": "92555",
     "link": "https://www.toyota.com/dealers/dealer/04359",
   },
-  "4361": {
+  4361: {
     "name": "Gilroy Toyota",
     "address": "6800 Automall Parkway",
     "city": "Gilroy",
@@ -776,7 +790,7 @@ DEALERS = {
     "zip": "95020",
     "link": "https://www.toyota.com/dealers/dealer/04361",
   },
-  "4362": {
+  4362: {
     "name": "Dublin Toyota",
     "address": "4321 Toyota Drive",
     "city": "Dublin",
@@ -784,7 +798,7 @@ DEALERS = {
     "zip": "94568",
     "link": "https://www.toyota.com/dealers/dealer/04362",
   },
-  "4364": {
+  4364: {
     "name": "Maita's Toyota of Sacramento",
     "address": "2500 Auburn Blvd.",
     "city": "Sacramento",
@@ -792,7 +806,7 @@ DEALERS = {
     "zip": "95821",
     "link": "https://www.toyota.com/dealers/dealer/04364",
   },
-  "4374": {
+  4374: {
     "name": "Antioch Toyota",
     "address": "1817 Auto Center Drive",
     "city": "Antioch",
@@ -800,7 +814,7 @@ DEALERS = {
     "zip": "94509",
     "link": "https://www.toyota.com/dealers/dealer/04374",
   },
-  "4386": {
+  4386: {
     "name": "Thurston Toyota",
     "address": "2800 North State Street",
     "city": "Ukiah",
@@ -808,7 +822,7 @@ DEALERS = {
     "zip": "95482",
     "link": "https://www.toyota.com/dealers/dealer/04386",
   },
-  "4388": {
+  4388: {
     "name": "Toyota of Riverside",
     "address": "7870 Indiana Avenue",
     "city": "Riverside",
@@ -816,7 +830,7 @@ DEALERS = {
     "zip": "92504",
     "link": "https://www.toyota.com/dealers/dealer/04388",
   },
-  "4389": {
+  4389: {
     "name": "Hanlees Toyota",
     "address": "4202 Chiles Road",
     "city": "Davis",
@@ -824,7 +838,7 @@ DEALERS = {
     "zip": "95616",
     "link": "https://www.toyota.com/dealers/dealer/04389",
   },
-  "4412": {
+  4412: {
     "name": "Toyota 101",
     "address": "525 E. Bayshore Road",
     "city": "Redwood City",
@@ -832,7 +846,7 @@ DEALERS = {
     "zip": "94063",
     "link": "https://www.toyota.com/dealers/dealer/04412",
   },
-  "4421": {
+  4421: {
     "name": "Roseville Toyota",
     "address": "700 Automall Drive",
     "city": "Roseville",
@@ -840,7 +854,7 @@ DEALERS = {
     "zip": "95661",
     "link": "https://www.toyota.com/dealers/dealer/04421",
   },
-  "4426": {
+  4426: {
     "name": "Capitol Toyota",
     "address": "775 Capitol Exprsway Auto Mall",
     "city": "San Jose",
@@ -848,7 +862,7 @@ DEALERS = {
     "zip": "95136",
     "link": "https://www.toyota.com/dealers/dealer/04426",
   },
-  "4454": {
+  4454: {
     "name": "Magnussen's Toyota of Palo Alto",
     "address": "690 San Antonio Road",
     "city": "Palo Alto",
@@ -856,7 +870,7 @@ DEALERS = {
     "zip": "94306",
     "link": "https://www.toyota.com/dealers/dealer/04454",
   },
-  "4456": {
+  4456: {
     "name": "Toyota of El Cajon",
     "address": "965 Arnele Avenue",
     "city": "El Cajon",
@@ -864,7 +878,7 @@ DEALERS = {
     "zip": "92020",
     "link": "https://www.toyota.com/dealers/dealer/04456",
   },
-  "4487": {
+  4487: {
     "name": "Ammaar's Toyota Vacaville",
     "address": "500 Orange Drive",
     "city": "Vacaville",
@@ -872,7 +886,7 @@ DEALERS = {
     "zip": "95687",
     "link": "https://www.toyota.com/dealers/dealer/04487",
   },
-  "4508": {
+  4508: {
     "name": "Manhattan Beach Toyota",
     "address": "1500 N. Sepulveda Blvd",
     "city": "Manhattan Beach",
@@ -880,7 +894,7 @@ DEALERS = {
     "zip": "90266",
     "link": "https://www.toyota.com/dealers/dealer/04508",
   },
-  "4536": {
+  4536: {
     "name": "Norm Reeves Toyota San Diego",
     "address": "5910 Mission Gorge Road",
     "city": "San Diego",
@@ -888,7 +902,7 @@ DEALERS = {
     "zip": "92120",
     "link": "https://www.toyota.com/dealers/dealer/04536",
   },
-  "4541": {
+  4541: {
     "name": "Merced Toyota",
     "address": "1400 Auto Center Drive",
     "city": "Merced",
@@ -896,7 +910,7 @@ DEALERS = {
     "zip": "95340",
     "link": "https://www.toyota.com/dealers/dealer/04541",
   },
-  "4543": {
+  4543: {
     "name": "Tustin Toyota",
     "address": "36 Auto Center Drive",
     "city": "Tustin",
@@ -904,7 +918,7 @@ DEALERS = {
     "zip": "92782",
     "link": "https://www.toyota.com/dealers/dealer/04543",
   },
-  "4554": {
+  4554: {
     "name": "John Elway's Crown Toyota",
     "address": "1201 Kettering Drive",
     "city": "Ontario",
@@ -912,7 +926,7 @@ DEALERS = {
     "zip": "91761",
     "link": "https://www.toyota.com/dealers/dealer/04554",
   },
-  "4563": {
+  4563: {
     "name": "Toyota Marin",
     "address": "445 Francisco Boulevard East",
     "city": "San Rafael",
@@ -920,7 +934,7 @@ DEALERS = {
     "zip": "94901",
     "link": "https://www.toyota.com/dealers/dealer/04563",
   },
-  "4576": {
+  4576: {
     "name": "Kearny Mesa Toyota",
     "address": "4910 Kearny Mesa Road",
     "city": "San Diego",
@@ -928,7 +942,7 @@ DEALERS = {
     "zip": "92111",
     "link": "https://www.toyota.com/dealers/dealer/04576",
   },
-  "4583": {
+  4583: {
     "name": "Mid City Toyota",
     "address": "4800 N. Highway 101",
     "city": "Eureka",
@@ -936,7 +950,7 @@ DEALERS = {
     "zip": "95501",
     "link": "https://www.toyota.com/dealers/dealer/04583",
   },
-  "4636": {
+  4636: {
     "name": "AutoNation Toyota Cerritos",
     "address": "18700 Studebaker Road",
     "city": "Cerritos",
@@ -944,7 +958,7 @@ DEALERS = {
     "zip": "90703",
     "link": "https://www.toyota.com/dealers/dealer/04636",
   },
-  "4638": {
+  4638: {
     "name": "AutoNation Toyota Irvine",
     "address": "9101 Research Drive",
     "city": "Irvine",
@@ -952,7 +966,7 @@ DEALERS = {
     "zip": "92618",
     "link": "https://www.toyota.com/dealers/dealer/04638",
   },
-  "4640": {
+  4640: {
     "name": "AutoNation Toyota Buena Park",
     "address": "6400 Beach Blvd.",
     "city": "Buena Park",
@@ -960,7 +974,7 @@ DEALERS = {
     "zip": "90621",
     "link": "https://www.toyota.com/dealers/dealer/04640",
   },
-  "4649": {
+  4649: {
     "name": "Toyota of Glendale",
     "address": "1260 South Brand Blvd.",
     "city": "Glendale",
@@ -968,7 +982,7 @@ DEALERS = {
     "zip": "91204",
     "link": "https://www.toyota.com/dealers/dealer/04649",
   },
-  "4676": {
+  4676: {
     "name": "Freeway Toyota of Hanford",
     "address": "1835 Glendale Avenue",
     "city": "Hanford",
@@ -976,7 +990,7 @@ DEALERS = {
     "zip": "93230",
     "link": "https://www.toyota.com/dealers/dealer/04676",
   },
-  "4682": {
+  4682: {
     "name": "Auburn Toyota",
     "address": "800 Nevada Street",
     "city": "Auburn",
@@ -984,7 +998,7 @@ DEALERS = {
     "zip": "95603",
     "link": "https://www.toyota.com/dealers/dealer/04682",
   },
-  "4688": {
+  4688: {
     "name": "One Toyota of Oakland",
     "address": "8181 Oakport Street",
     "city": "Oakland",
@@ -992,7 +1006,7 @@ DEALERS = {
     "zip": "94621",
     "link": "https://www.toyota.com/dealers/dealer/04688",
   },
-  "4713": {
+  4713: {
     "name": "Santa Margarita Toyota",
     "address": "22722 Avenida Empresa",
     "city": "Rancho Santa Margarita",
@@ -1000,7 +1014,7 @@ DEALERS = {
     "zip": "92688",
     "link": "https://www.toyota.com/dealers/dealer/04713",
   },
-  "4726": {
+  4726: {
     "name": "West Coast Toyota of Long Beach",
     "address": "3399 E. Willow Street",
     "city": "Long Beach",
@@ -1008,7 +1022,7 @@ DEALERS = {
     "zip": "90806",
     "link": "https://www.toyota.com/dealers/dealer/04726",
   },
-  "4734": {
+  4734: {
     "name": "Toyota of Lompoc",
     "address": "203 East Ocean Avenue",
     "city": "Lompoc",
@@ -1016,7 +1030,7 @@ DEALERS = {
     "zip": "93436",
     "link": "https://www.toyota.com/dealers/dealer/04734",
   },
-  "4737": {
+  4737: {
     "name": "Toyota of Lancaster",
     "address": "43301 12th Street West",
     "city": "Lancaster",
@@ -1024,7 +1038,7 @@ DEALERS = {
     "zip": "93534",
     "link": "https://www.toyota.com/dealers/dealer/04737",
   },
-  "4739": {
+  4739: {
     "name": "Toyota of Downtown LA",
     "address": "1901 S. Figueroa Street",
     "city": "Los Angeles",
@@ -1032,7 +1046,7 @@ DEALERS = {
     "zip": "90007",
     "link": "https://www.toyota.com/dealers/dealer/04739",
   },
-  "4748": {
+  4748: {
     "name": "DCH Toyota of Torrance",
     "address": "2909 Pacific Coast Hwy",
     "city": "Torrance",
@@ -1040,7 +1054,7 @@ DEALERS = {
     "zip": "90505",
     "link": "https://www.toyota.com/dealers/dealer/04748",
   },
-  "4753": {
+  4753: {
     "name": "Livermore Toyota",
     "address": "6200 Northfront Road",
     "city": "Livermore",
@@ -1048,7 +1062,7 @@ DEALERS = {
     "zip": "94551",
     "link": "https://www.toyota.com/dealers/dealer/04753",
   },
-  "4772": {
+  4772: {
     "name": "Culver City Toyota",
     "address": "9077 Washington Blvd.",
     "city": "Culver City",
@@ -1056,7 +1070,7 @@ DEALERS = {
     "zip": "90232",
     "link": "https://www.toyota.com/dealers/dealer/04772",
   },
-  "4774": {
+  4774: {
     "name": "Lodi Toyota",
     "address": "1020 S. Beckman Road",
     "city": "Lodi",
@@ -1064,7 +1078,7 @@ DEALERS = {
     "zip": "95240",
     "link": "https://www.toyota.com/dealers/dealer/04774",
   },
-  "4786": {
+  4786: {
     "name": "Mojave Toyota of Barstow",
     "address": "631 W Main St",
     "city": "Barstow",
@@ -1072,7 +1086,7 @@ DEALERS = {
     "zip": "92311",
     "link": "https://www.toyota.com/dealers/dealer/04786",
   },
-  "4819": {
+  4819: {
     "name": "Temecula Valley Toyota",
     "address": "26631 Ynez Road",
     "city": "Temecula",
@@ -1080,7 +1094,7 @@ DEALERS = {
     "zip": "92591",
     "link": "https://www.toyota.com/dealers/dealer/04819",
   },
-  "4915": {
+  4915: {
     "name": "Larry H. Miller Toyota Corona",
     "address": "1700 West 6th Street",
     "city": "Corona",
@@ -1088,7 +1102,7 @@ DEALERS = {
     "zip": "92882",
     "link": "https://www.toyota.com/dealers/dealer/04915",
   },
-  "4990": {
+  4990: {
     "name": "DCH Toyota of Oxnard",
     "address": "1631 Auto Center Drive",
     "city": "Oxnard",
@@ -1096,7 +1110,7 @@ DEALERS = {
     "zip": "93030",
     "link": "https://www.toyota.com/dealers/dealer/04990",
   },
-  "5011": {
+  5011: {
     "name": "Groove Toyota",
     "address": "5460 South Broadway",
     "city": "Englewood",
@@ -1104,7 +1118,7 @@ DEALERS = {
     "zip": "80113",
     "link": "https://www.toyota.com/dealers/dealer/05011",
   },
-  "5026": {
+  5026: {
     "name": "Stevinson Toyota East",
     "address": "444 South Havana Street",
     "city": "Aurora",
@@ -1112,7 +1126,7 @@ DEALERS = {
     "zip": "80012",
     "link": "https://www.toyota.com/dealers/dealer/05026",
   },
-  "5030": {
+  5030: {
     "name": "Pedersen Toyota, Ltd.",
     "address": "4455 South College Avenue",
     "city": "Ft Collins",
@@ -1120,7 +1134,7 @@ DEALERS = {
     "zip": "80525",
     "link": "https://www.toyota.com/dealers/dealer/05030",
   },
-  "5034": {
+  5034: {
     "name": "Stevinson Toyota West",
     "address": "780 Denver W Colorado Mills Bl",
     "city": "Lakewood",
@@ -1128,7 +1142,7 @@ DEALERS = {
     "zip": "80401",
     "link": "https://www.toyota.com/dealers/dealer/05034",
   },
-  "5043": {
+  5043: {
     "name": "Stapp Interstate Toyota, Inc.",
     "address": "8019 Raspberry Way",
     "city": "Frederick",
@@ -1136,7 +1150,7 @@ DEALERS = {
     "zip": "80504",
     "link": "https://www.toyota.com/dealers/dealer/05043",
   },
-  "5046": {
+  5046: {
     "name": "Bighorn Toyota",
     "address": "130 Center Drive",
     "city": "Glenwood Springs",
@@ -1144,7 +1158,7 @@ DEALERS = {
     "zip": "81601",
     "link": "https://www.toyota.com/dealers/dealer/05046",
   },
-  "5049": {
+  5049: {
     "name": "Turner Toyota, Inc.",
     "address": "2262 East Main Street",
     "city": "Montrose",
@@ -1152,7 +1166,7 @@ DEALERS = {
     "zip": "81401",
     "link": "https://www.toyota.com/dealers/dealer/05049",
   },
-  "5051": {
+  5051: {
     "name": "Pueblo Toyota",
     "address": "2220 US Highway 50 West",
     "city": "Pueblo",
@@ -1160,7 +1174,7 @@ DEALERS = {
     "zip": "81008",
     "link": "https://www.toyota.com/dealers/dealer/05051",
   },
-  "5054": {
+  5054: {
     "name": "Larry H. Miller Toyota Boulder",
     "address": "2465 48th Court",
     "city": "Boulder",
@@ -1168,7 +1182,7 @@ DEALERS = {
     "zip": "80301",
     "link": "https://www.toyota.com/dealers/dealer/05054",
   },
-  "5055": {
+  5055: {
     "name": "Western Slope Toyota",
     "address": "2264 Highway 6 and 50",
     "city": "Grand Junction",
@@ -1176,7 +1190,7 @@ DEALERS = {
     "zip": "81505",
     "link": "https://www.toyota.com/dealers/dealer/05055",
   },
-  "5057": {
+  5057: {
     "name": "Hellman Toyota, Inc.",
     "address": "750 E. Highway 92",
     "city": "Delta",
@@ -1184,7 +1198,7 @@ DEALERS = {
     "zip": "81416",
     "link": "https://www.toyota.com/dealers/dealer/05057",
   },
-  "5059": {
+  5059: {
     "name": "Larry H. Miller Liberty Toyota Scion Colorado Springs",
     "address": "5115 New Car Drive",
     "city": "Colorado Springs",
@@ -1192,7 +1206,7 @@ DEALERS = {
     "zip": "80923",
     "link": "https://www.toyota.com/dealers/dealer/05059",
   },
-  "5063": {
+  5063: {
     "name": "AutoNation Toyota Arapahoe",
     "address": "10531 East Arapahoe Road",
     "city": "Centennial",
@@ -1200,7 +1214,7 @@ DEALERS = {
     "zip": "80112",
     "link": "https://www.toyota.com/dealers/dealer/05063",
   },
-  "5064": {
+  5064: {
     "name": "Ehrlich Toyota",
     "address": "4732 West 26th Street",
     "city": "Greeley",
@@ -1208,7 +1222,7 @@ DEALERS = {
     "zip": "80634",
     "link": "https://www.toyota.com/dealers/dealer/05064",
   },
-  "5066": {
+  5066: {
     "name": "Larry H. Miller Toyota Colorado Springs",
     "address": "15 East Motor Way",
     "city": "Colorado Springs",
@@ -1216,7 +1230,7 @@ DEALERS = {
     "zip": "80905",
     "link": "https://www.toyota.com/dealers/dealer/05066",
   },
-  "5067": {
+  5067: {
     "name": "Mountain States Toyota",
     "address": "201 West 70th Avenue",
     "city": "Denver",
@@ -1224,7 +1238,7 @@ DEALERS = {
     "zip": "80221",
     "link": "https://www.toyota.com/dealers/dealer/05067",
   },
-  "5068": {
+  5068: {
     "name": "Ehrlich Toyota East",
     "address": "1209 Main Street",
     "city": "Fort Morgan",
@@ -1232,7 +1246,7 @@ DEALERS = {
     "zip": "80701",
     "link": "https://www.toyota.com/dealers/dealer/05068",
   },
-  "5069": {
+  5069: {
     "name": "Phil Long Toyota",
     "address": "105 E. Cedar Street",
     "city": "Trinidad",
@@ -1240,7 +1254,7 @@ DEALERS = {
     "zip": "81082",
     "link": "https://www.toyota.com/dealers/dealer/05069",
   },
-  "5070": {
+  5070: {
     "name": "Durango Toyota",
     "address": "1200 Carbon Junction",
     "city": "Durango",
@@ -1248,7 +1262,7 @@ DEALERS = {
     "zip": "81301",
     "link": "https://www.toyota.com/dealers/dealer/05070",
   },
-  "6002": {
+  6002: {
     "name": "A-1 Toyota",
     "address": "50 Amity Road",
     "city": "New Haven",
@@ -1256,7 +1270,7 @@ DEALERS = {
     "zip": "6515",
     "link": "https://www.toyota.com/dealers/dealer/06002",
   },
-  "6015": {
+  6015: {
     "name": "Girard Toyota-BMW",
     "address": "543 Colman Street",
     "city": "New London",
@@ -1264,7 +1278,7 @@ DEALERS = {
     "zip": "6320",
     "link": "https://www.toyota.com/dealers/dealer/06015",
   },
-  "6022": {
+  6022: {
     "name": "Stephen Toyota",
     "address": "1069 Farmington Ave",
     "city": "Bristol",
@@ -1272,7 +1286,7 @@ DEALERS = {
     "zip": "6010",
     "link": "https://www.toyota.com/dealers/dealer/06022",
   },
-  "6025": {
+  6025: {
     "name": "Lynch Toyota",
     "address": "179 Tolland Turnpike",
     "city": "Manchester",
@@ -1280,7 +1294,7 @@ DEALERS = {
     "zip": "6040",
     "link": "https://www.toyota.com/dealers/dealer/06025",
   },
-  "6026": {
+  6026: {
     "name": "Gale Toyota, Inc.",
     "address": "50 Palomba Drive",
     "city": "Enfield",
@@ -1288,7 +1302,7 @@ DEALERS = {
     "zip": "6082",
     "link": "https://www.toyota.com/dealers/dealer/06026",
   },
-  "6029": {
+  6029: {
     "name": "Toyota of Greenwich",
     "address": "75 E. Putnam Ave Box 402",
     "city": "Cos Cob",
@@ -1296,7 +1310,7 @@ DEALERS = {
     "zip": "6807",
     "link": "https://www.toyota.com/dealers/dealer/06029",
   },
-  "6032": {
+  6032: {
     "name": "Greentree Toyota",
     "address": "87 Federal Road",
     "city": "Danbury",
@@ -1304,7 +1318,7 @@ DEALERS = {
     "zip": "6810",
     "link": "https://www.toyota.com/dealers/dealer/06032",
   },
-  "6036": {
+  6036: {
     "name": "Middletown Toyota",
     "address": "634 Newfield Street",
     "city": "Middletown",
@@ -1312,7 +1326,7 @@ DEALERS = {
     "zip": "6457",
     "link": "https://www.toyota.com/dealers/dealer/06036",
   },
-  "6037": {
+  6037: {
     "name": "Charles Toyota",
     "address": "500 West Thames Street",
     "city": "Norwich",
@@ -1320,7 +1334,7 @@ DEALERS = {
     "zip": "6360",
     "link": "https://www.toyota.com/dealers/dealer/06037",
   },
-  "6040": {
+  6040: {
     "name": "Colonial Toyota",
     "address": "470 Boston Post Road",
     "city": "Milford",
@@ -1328,7 +1342,7 @@ DEALERS = {
     "zip": "6460",
     "link": "https://www.toyota.com/dealers/dealer/06040",
   },
-  "6042": {
+  6042: {
     "name": "Hoffman Toyota",
     "address": "36 Albany Turnpike Rt 44",
     "city": "West Simsbury",
@@ -1336,7 +1350,7 @@ DEALERS = {
     "zip": "6092",
     "link": "https://www.toyota.com/dealers/dealer/06042",
   },
-  "6043": {
+  6043: {
     "name": "Westbrook Toyota",
     "address": "80 Flat Rock Place",
     "city": "Westbrook",
@@ -1344,7 +1358,7 @@ DEALERS = {
     "zip": "6498",
     "link": "https://www.toyota.com/dealers/dealer/06043",
   },
-  "6045": {
+  6045: {
     "name": "Torrington Toyota",
     "address": "1472 East Main Street",
     "city": "Torrington",
@@ -1352,7 +1366,7 @@ DEALERS = {
     "zip": "6790",
     "link": "https://www.toyota.com/dealers/dealer/06045",
   },
-  "6046": {
+  6046: {
     "name": "Dowling Toyota of Litchfield",
     "address": "451 Bantam Road",
     "city": "Litchfield",
@@ -1360,7 +1374,7 @@ DEALERS = {
     "zip": "6759",
     "link": "https://www.toyota.com/dealers/dealer/06046",
   },
-  "6047": {
+  6047: {
     "name": "WOW Toyota of Wallingford",
     "address": "859-861 No. Colony Road",
     "city": "Wallingford",
@@ -1368,7 +1382,7 @@ DEALERS = {
     "zip": "6492",
     "link": "https://www.toyota.com/dealers/dealer/06047",
   },
-  "6049": {
+  6049: {
     "name": "Toyota of Colchester",
     "address": "100 Old Hartford Road",
     "city": "Colchester",
@@ -1376,7 +1390,7 @@ DEALERS = {
     "zip": "6415",
     "link": "https://www.toyota.com/dealers/dealer/06049",
   },
-  "6050": {
+  6050: {
     "name": "Hartford Toyota",
     "address": "135 West Service Road",
     "city": "Hartford",
@@ -1384,7 +1398,7 @@ DEALERS = {
     "zip": "6120",
     "link": "https://www.toyota.com/dealers/dealer/06050",
   },
-  "6051": {
+  6051: {
     "name": "New Country Toyota of Westport",
     "address": "777 Post Road East",
     "city": "Westport",
@@ -1392,7 +1406,7 @@ DEALERS = {
     "zip": "6880",
     "link": "https://www.toyota.com/dealers/dealer/06051",
   },
-  "6052": {
+  6052: {
     "name": "Toyota of Stamford",
     "address": "909 East Main Street",
     "city": "Stamford",
@@ -1400,7 +1414,7 @@ DEALERS = {
     "zip": "6902",
     "link": "https://www.toyota.com/dealers/dealer/06052",
   },
-  "6053": {
+  6053: {
     "name": "Curry Toyota",
     "address": "832 Straits Turnpike",
     "city": "Watertown",
@@ -1408,7 +1422,7 @@ DEALERS = {
     "zip": "6795",
     "link": "https://www.toyota.com/dealers/dealer/06053",
   },
-  "7008": {
+  7008: {
     "name": "Price Toyota",
     "address": "168 N. Dupont Highway",
     "city": "New Castle",
@@ -1416,7 +1430,7 @@ DEALERS = {
     "zip": "19720",
     "link": "https://www.toyota.com/dealers/dealer/07008",
   },
-  "7012": {
+  7012: {
     "name": "Hertrich Toyota",
     "address": "1367 Bay Road",
     "city": "Milford",
@@ -1424,7 +1438,7 @@ DEALERS = {
     "zip": "19963",
     "link": "https://www.toyota.com/dealers/dealer/07012",
   },
-  "12013": {
+  12013: {
     "name": "Toyota On Western",
     "address": "6941 South Western Ave",
     "city": "Chicago",
@@ -1432,7 +1446,7 @@ DEALERS = {
     "zip": "60636",
     "link": "https://www.toyota.com/dealers/dealer/12013",
   },
-  "12015": {
+  12015: {
     "name": "Continental Toyota",
     "address": "6701 S. La Grange Road",
     "city": "Hodgkins",
@@ -1440,7 +1454,7 @@ DEALERS = {
     "zip": "60525",
     "link": "https://www.toyota.com/dealers/dealer/12015",
   },
-  "12034": {
+  12034: {
     "name": "Elmhurst Toyota",
     "address": "440 West Lake Street",
     "city": "Elmhurst",
@@ -1448,7 +1462,7 @@ DEALERS = {
     "zip": "60126",
     "link": "https://www.toyota.com/dealers/dealer/12034",
   },
-  "12042": {
+  12042: {
     "name": "Hiland Toyota",
     "address": "5500 45th Avenue Drive",
     "city": "Moline",
@@ -1456,7 +1470,7 @@ DEALERS = {
     "zip": "61265",
     "link": "https://www.toyota.com/dealers/dealer/12042",
   },
-  "12071": {
+  12071: {
     "name": "Newbold Toyota",
     "address": "1282 Central Park Drive",
     "city": "O'Fallon",
@@ -1464,7 +1478,7 @@ DEALERS = {
     "zip": "62269",
     "link": "https://www.toyota.com/dealers/dealer/12071",
   },
-  "12074": {
+  12074: {
     "name": "Lombard Toyota",
     "address": "725 West Roosevelt Road",
     "city": "Lombard",
@@ -1472,7 +1486,7 @@ DEALERS = {
     "zip": "60148",
     "link": "https://www.toyota.com/dealers/dealer/12074",
   },
-  "12082": {
+  12082: {
     "name": "Orland Toyota",
     "address": "8485 West 159th St",
     "city": "Tinley Park",
@@ -1480,7 +1494,7 @@ DEALERS = {
     "zip": "60487",
     "link": "https://www.toyota.com/dealers/dealer/12082",
   },
-  "12086": {
+  12086: {
     "name": "Schaumburg Toyota",
     "address": "875 West Golf Road",
     "city": "Schaumburg",
@@ -1488,7 +1502,7 @@ DEALERS = {
     "zip": "60194",
     "link": "https://www.toyota.com/dealers/dealer/12086",
   },
-  "12088": {
+  12088: {
     "name": "K.C. Summers Toyota",
     "address": "117 South 19th Street",
     "city": "Mattoon",
@@ -1496,7 +1510,7 @@ DEALERS = {
     "zip": "61938",
     "link": "https://www.toyota.com/dealers/dealer/12088",
   },
-  "12090": {
+  12090: {
     "name": "Toyota of Naperville",
     "address": "1488 West Ogden Avenue",
     "city": "Naperville",
@@ -1504,7 +1518,7 @@ DEALERS = {
     "zip": "60540",
     "link": "https://www.toyota.com/dealers/dealer/12090",
   },
-  "12100": {
+  12100: {
     "name": "Oak Lawn Toyota",
     "address": "4320 West 95th Street",
     "city": "Oak Lawn",
@@ -1512,7 +1526,7 @@ DEALERS = {
     "zip": "60453",
     "link": "https://www.toyota.com/dealers/dealer/12100",
   },
-  "12102": {
+  12102: {
     "name": "Arlington Toyota",
     "address": "2095 N. Rand Road",
     "city": "Palatine",
@@ -1520,7 +1534,7 @@ DEALERS = {
     "zip": "60074",
     "link": "https://www.toyota.com/dealers/dealer/12102",
   },
-  "12103": {
+  12103: {
     "name": "Green Toyota",
     "address": "3901 Wabash Avenue",
     "city": "Springfield",
@@ -1528,7 +1542,7 @@ DEALERS = {
     "zip": "62711",
     "link": "https://www.toyota.com/dealers/dealer/12103",
   },
-  "12111": {
+  12111: {
     "name": "Crown Toyota",
     "address": "255 W. Pershing Road",
     "city": "Decatur",
@@ -1536,7 +1550,7 @@ DEALERS = {
     "zip": "62526",
     "link": "https://www.toyota.com/dealers/dealer/12111",
   },
-  "12114": {
+  12114: {
     "name": "David Bruce Toyota",
     "address": "555 Latham Drive",
     "city": "Bourbonnais",
@@ -1544,7 +1558,7 @@ DEALERS = {
     "zip": "60914",
     "link": "https://www.toyota.com/dealers/dealer/12114",
   },
-  "12118": {
+  12118: {
     "name": "Anderson Toyota",
     "address": "4100 N. Perryville Road",
     "city": "Loves Park",
@@ -1552,7 +1566,7 @@ DEALERS = {
     "zip": "61111",
     "link": "https://www.toyota.com/dealers/dealer/12118",
   },
-  "12125": {
+  12125: {
     "name": "Fort's Toyota of Pekin",
     "address": "120 Radio City Drive",
     "city": "North Pekin",
@@ -1560,7 +1574,7 @@ DEALERS = {
     "zip": "61554",
     "link": "https://www.toyota.com/dealers/dealer/12125",
   },
-  "12126": {
+  12126: {
     "name": "Dan Hecht Chevrolet/Toyota",
     "address": "2400 South Banker Street",
     "city": "Effingham",
@@ -1568,7 +1582,7 @@ DEALERS = {
     "zip": "62401",
     "link": "https://www.toyota.com/dealers/dealer/12126",
   },
-  "12133": {
+  12133: {
     "name": "Romeoville Toyota",
     "address": "684 S. Weber Road",
     "city": "Romeoville",
@@ -1576,7 +1590,7 @@ DEALERS = {
     "zip": "60446",
     "link": "https://www.toyota.com/dealers/dealer/12133",
   },
-  "12134": {
+  12134: {
     "name": "Oakbrook Toyota in Westmont",
     "address": "550 East Ogden Avenue",
     "city": "Westmont",
@@ -1584,7 +1598,7 @@ DEALERS = {
     "zip": "60559",
     "link": "https://www.toyota.com/dealers/dealer/12134",
   },
-  "12135": {
+  12135: {
     "name": "Pauly Toyota",
     "address": "1035 S. Route 31",
     "city": "Crystal Lake",
@@ -1592,7 +1606,7 @@ DEALERS = {
     "zip": "60014",
     "link": "https://www.toyota.com/dealers/dealer/12135",
   },
-  "12136": {
+  12136: {
     "name": "Ken Nelson Toyota",
     "address": "1050 N. Galena Avenue",
     "city": "Dixon",
@@ -1600,7 +1614,7 @@ DEALERS = {
     "zip": "61021",
     "link": "https://www.toyota.com/dealers/dealer/12136",
   },
-  "12137": {
+  12137: {
     "name": "Classic Toyota",
     "address": "515 N. Green Bay Road",
     "city": "Waukegan",
@@ -1608,7 +1622,7 @@ DEALERS = {
     "zip": "60085",
     "link": "https://www.toyota.com/dealers/dealer/12137",
   },
-  "12138": {
+  12138: {
     "name": "St. Charles Toyota",
     "address": "2651 E. Main Street",
     "city": "St. Charles",
@@ -1616,7 +1630,7 @@ DEALERS = {
     "zip": "60174",
     "link": "https://www.toyota.com/dealers/dealer/12138",
   },
-  "12141": {
+  12141: {
     "name": "Elgin Toyota",
     "address": "1600 W. Lake Street",
     "city": "Streamwood",
@@ -1624,7 +1638,7 @@ DEALERS = {
     "zip": "60107",
     "link": "https://www.toyota.com/dealers/dealer/12141",
   },
-  "12144": {
+  12144: {
     "name": "AutoNation Toyota Libertyville",
     "address": "1180 South Milwaukee Ave.",
     "city": "Libertyville",
@@ -1632,7 +1646,7 @@ DEALERS = {
     "zip": "60048",
     "link": "https://www.toyota.com/dealers/dealer/12144",
   },
-  "12150": {
+  12150: {
     "name": "Chicago Northside Toyota",
     "address": "6042 N. Western Avenue",
     "city": "Chicago",
@@ -1640,7 +1654,7 @@ DEALERS = {
     "zip": "60659",
     "link": "https://www.toyota.com/dealers/dealer/12150",
   },
-  "12153": {
+  12153: {
     "name": "Marion Toyota",
     "address": "3300 W. Deyoung St.",
     "city": "Marion",
@@ -1648,7 +1662,7 @@ DEALERS = {
     "zip": "62959",
     "link": "https://www.toyota.com/dealers/dealer/12153",
   },
-  "12155": {
+  12155: {
     "name": "Napleton's Toyota of Urbana",
     "address": "1101 Napleton Way",
     "city": "Urbana",
@@ -1656,7 +1670,7 @@ DEALERS = {
     "zip": "61802",
     "link": "https://www.toyota.com/dealers/dealer/12155",
   },
-  "12156": {
+  12156: {
     "name": "Sam Leman Toyota Bloomington",
     "address": "1615 Morrissey Drive",
     "city": "Bloomington",
@@ -1664,7 +1678,7 @@ DEALERS = {
     "zip": "61704",
     "link": "https://www.toyota.com/dealers/dealer/12156",
   },
-  "12159": {
+  12159: {
     "name": "Advantage Toyota of River Oaks",
     "address": "1970 River Oaks Drive",
     "city": "Calumet City",
@@ -1672,7 +1686,7 @@ DEALERS = {
     "zip": "60409",
     "link": "https://www.toyota.com/dealers/dealer/12159",
   },
-  "12160": {
+  12160: {
     "name": "Toyota of Lincolnwood",
     "address": "7225 N. Cicero Avenue",
     "city": "Lincolnwood",
@@ -1680,7 +1694,7 @@ DEALERS = {
     "zip": "60712",
     "link": "https://www.toyota.com/dealers/dealer/12160",
   },
-  "12161": {
+  12161: {
     "name": "Toyota of Lincoln Park",
     "address": "1561 North Fremont Street",
     "city": "Chicago",
@@ -1688,7 +1702,7 @@ DEALERS = {
     "zip": "60642",
     "link": "https://www.toyota.com/dealers/dealer/12161",
   },
-  "12163": {
+  12163: {
     "name": "O'Brien Toyota of Peoria",
     "address": "7401 North Allen Road",
     "city": "Peoria",
@@ -1696,7 +1710,7 @@ DEALERS = {
     "zip": "61614",
     "link": "https://www.toyota.com/dealers/dealer/12163",
   },
-  "12164": {
+  12164: {
     "name": "Gerald Toyota of Matteson",
     "address": "5540 Auto Court",
     "city": "Matteson",
@@ -1704,7 +1718,7 @@ DEALERS = {
     "zip": "60443",
     "link": "https://www.toyota.com/dealers/dealer/12164",
   },
-  "12166": {
+  12166: {
     "name": "Victory Toyota of Midtown",
     "address": "2700 North Cicero Avenue",
     "city": "Chicago",
@@ -1712,7 +1726,7 @@ DEALERS = {
     "zip": "60639",
     "link": "https://www.toyota.com/dealers/dealer/12166",
   },
-  "12167": {
+  12167: {
     "name": "Toyota on Edens",
     "address": "1530 Frontage Road",
     "city": "Northbrook",
@@ -1720,7 +1734,7 @@ DEALERS = {
     "zip": "60062",
     "link": "https://www.toyota.com/dealers/dealer/12167",
   },
-  "12168": {
+  12168: {
     "name": "Kunes Toyota of Galesburg",
     "address": "2763 N. Seminary Street",
     "city": "Galesburg",
@@ -1728,7 +1742,7 @@ DEALERS = {
     "zip": "61401",
     "link": "https://www.toyota.com/dealers/dealer/12168",
   },
-  "13022": {
+  13022: {
     "name": "Craig Toyota",
     "address": "258 Clifty Drive",
     "city": "Madison",
@@ -1736,7 +1750,7 @@ DEALERS = {
     "zip": "47250",
     "link": "https://www.toyota.com/dealers/dealer/13022",
   },
-  "13027": {
+  13027: {
     "name": "Bob Rohrman Toyota",
     "address": "3900 State Road 26 East",
     "city": "Lafayette",
@@ -1744,7 +1758,7 @@ DEALERS = {
     "zip": "47905",
     "link": "https://www.toyota.com/dealers/dealer/13027",
   },
-  "13033": {
+  13033: {
     "name": "Tom Wood Toyota",
     "address": "6408 Crane Drive",
     "city": "Whitestown",
@@ -1752,7 +1766,7 @@ DEALERS = {
     "zip": "46075",
     "link": "https://www.toyota.com/dealers/dealer/13033",
   },
-  "13035": {
+  13035: {
     "name": "Evans Toyota",
     "address": "515 West Coliseum Blvd",
     "city": "Fort Wayne",
@@ -1760,7 +1774,7 @@ DEALERS = {
     "zip": "46808",
     "link": "https://www.toyota.com/dealers/dealer/13035",
   },
-  "13042": {
+  13042: {
     "name": "Kokomo Toyota",
     "address": "3813 S. LaFountain Street",
     "city": "Kokomo",
@@ -1768,7 +1782,7 @@ DEALERS = {
     "zip": "46902",
     "link": "https://www.toyota.com/dealers/dealer/13042",
   },
-  "13044": {
+  13044: {
     "name": "Heart City Toyota",
     "address": "711 N. Nappanee Street",
     "city": "Elkhart",
@@ -1776,7 +1790,7 @@ DEALERS = {
     "zip": "46514",
     "link": "https://www.toyota.com/dealers/dealer/13044",
   },
-  "13045": {
+  13045: {
     "name": "Royal South Toyota",
     "address": "3115 S. Walnut Street",
     "city": "Bloomington",
@@ -1784,7 +1798,7 @@ DEALERS = {
     "zip": "47401",
     "link": "https://www.toyota.com/dealers/dealer/13045",
   },
-  "13046": {
+  13046: {
     "name": "Gates Toyota",
     "address": "640 W. Ireland Road",
     "city": "South Bend",
@@ -1792,7 +1806,7 @@ DEALERS = {
     "zip": "46614",
     "link": "https://www.toyota.com/dealers/dealer/13046",
   },
-  "13047": {
+  13047: {
     "name": "Jeff Wyler Toyota of Clarksville",
     "address": "808 E. Lewis & Clark Parkway",
     "city": "Clarksville",
@@ -1800,7 +1814,7 @@ DEALERS = {
     "zip": "47129",
     "link": "https://www.toyota.com/dealers/dealer/13047",
   },
-  "13049": {
+  13049: {
     "name": "Beck Toyota",
     "address": "8055 U.S. 31 South",
     "city": "Indianapolis",
@@ -1808,7 +1822,7 @@ DEALERS = {
     "zip": "46227",
     "link": "https://www.toyota.com/dealers/dealer/13049",
   },
-  "13053": {
+  13053: {
     "name": "Fort Wayne Toyota",
     "address": "5900 Illinois Road",
     "city": "Fort Wayne",
@@ -1816,7 +1830,7 @@ DEALERS = {
     "zip": "46804",
     "link": "https://www.toyota.com/dealers/dealer/13053",
   },
-  "13054": {
+  13054: {
     "name": "Uebelhor Toyota",
     "address": "788 W. 12th Avenue",
     "city": "Jasper",
@@ -1824,7 +1838,7 @@ DEALERS = {
     "zip": "47546",
     "link": "https://www.toyota.com/dealers/dealer/13054",
   },
-  "13057": {
+  13057: {
     "name": "O'Brien Toyota",
     "address": "2550 N. Shadeland Avenue",
     "city": "Indianapolis",
@@ -1832,7 +1846,7 @@ DEALERS = {
     "zip": "46219",
     "link": "https://www.toyota.com/dealers/dealer/13057",
   },
-  "13058": {
+  13058: {
     "name": "Ed Martin Toyota",
     "address": "9230 E. 141 Street",
     "city": "Noblesville",
@@ -1840,7 +1854,7 @@ DEALERS = {
     "zip": "46060",
     "link": "https://www.toyota.com/dealers/dealer/13058",
   },
-  "13060": {
+  13060: {
     "name": "Team Toyota",
     "address": "400 Indianapolis Blvd.",
     "city": "Schererville",
@@ -1848,7 +1862,7 @@ DEALERS = {
     "zip": "46375",
     "link": "https://www.toyota.com/dealers/dealer/13060",
   },
-  "13066": {
+  13066: {
     "name": "Carver Toyota of Columbus",
     "address": "10255 N. U.S. Highway 31",
     "city": "Taylorsville",
@@ -1856,7 +1870,7 @@ DEALERS = {
     "zip": "47280",
     "link": "https://www.toyota.com/dealers/dealer/13066",
   },
-  "13067": {
+  13067: {
     "name": "Kenny Kent Toyota",
     "address": "5600 East Division Street",
     "city": "Evansville",
@@ -1864,7 +1878,7 @@ DEALERS = {
     "zip": "47715",
     "link": "https://www.toyota.com/dealers/dealer/13067",
   },
-  "13068": {
+  13068: {
     "name": "Toyota of Merrillville",
     "address": "4450 E. Lincoln Highway",
     "city": "Merrillville",
@@ -1872,7 +1886,7 @@ DEALERS = {
     "zip": "46410",
     "link": "https://www.toyota.com/dealers/dealer/13068",
   },
-  "13069": {
+  13069: {
     "name": "Toyota of Terre Haute",
     "address": "7030 South U.S. Hwy 41",
     "city": "Terre Haute",
@@ -1880,7 +1894,7 @@ DEALERS = {
     "zip": "47802",
     "link": "https://www.toyota.com/dealers/dealer/13069",
   },
-  "13070": {
+  13070: {
     "name": "Andy Mohr Toyota",
     "address": "8941 E. U.S. Hwy. 36",
     "city": "Avon",
@@ -1888,7 +1902,7 @@ DEALERS = {
     "zip": "46123",
     "link": "https://www.toyota.com/dealers/dealer/13070",
   },
-  "13071": {
+  13071: {
     "name": "Toyota of Muncie",
     "address": "3311 N. Nebo Road",
     "city": "Muncie",
@@ -1896,7 +1910,7 @@ DEALERS = {
     "zip": "47304",
     "link": "https://www.toyota.com/dealers/dealer/13071",
   },
-  "13073": {
+  13073: {
     "name": "Toyota of Warsaw",
     "address": "448 W. 250 North",
     "city": "Warsaw",
@@ -1904,7 +1918,7 @@ DEALERS = {
     "zip": "46582",
     "link": "https://www.toyota.com/dealers/dealer/13073",
   },
-  "13075": {
+  13075: {
     "name": "Jordan Toyota",
     "address": "920 E. Jefferson Blvd.",
     "city": "Mishawaka",
@@ -1912,7 +1926,7 @@ DEALERS = {
     "zip": "46545",
     "link": "https://www.toyota.com/dealers/dealer/13075",
   },
-  "13076": {
+  13076: {
     "name": "Cronin Toyota of  Richmond",
     "address": "5601 National Road East",
     "city": "Richmond",
@@ -1920,7 +1934,7 @@ DEALERS = {
     "zip": "47374",
     "link": "https://www.toyota.com/dealers/dealer/13076",
   },
-  "13077": {
+  13077: {
     "name": "Bill Estes Toyota",
     "address": "3232 Harper Road",
     "city": "Indianapolis",
@@ -1928,7 +1942,7 @@ DEALERS = {
     "zip": "46240",
     "link": "https://www.toyota.com/dealers/dealer/13077",
   },
-  "14003": {
+  14003: {
     "name": "Toyota of Iowa City",
     "address": "1445 Highway 1 West",
     "city": "Iowa City",
@@ -1936,7 +1950,7 @@ DEALERS = {
     "zip": "52246",
     "link": "https://www.toyota.com/dealers/dealer/14003",
   },
-  "14011": {
+  14011: {
     "name": "Anderson-Weber Toyota",
     "address": "3450 Center Grove Drive",
     "city": "Dubuque",
@@ -1944,7 +1958,7 @@ DEALERS = {
     "zip": "52003",
     "link": "https://www.toyota.com/dealers/dealer/14011",
   },
-  "14015": {
+  14015: {
     "name": "Cedar Rapids Toyota, Inc.",
     "address": "1190 Boyson Road",
     "city": "Hiawatha",
@@ -1952,7 +1966,7 @@ DEALERS = {
     "zip": "52233",
     "link": "https://www.toyota.com/dealers/dealer/14015",
   },
-  "14017": {
+  14017: {
     "name": "Hosmer Toyota",
     "address": "3851 Fourth Street SW",
     "city": "Mason City",
@@ -1960,7 +1974,7 @@ DEALERS = {
     "zip": "50401",
     "link": "https://www.toyota.com/dealers/dealer/14017",
   },
-  "14036": {
+  14036: {
     "name": "Deery Brothers Toyota",
     "address": "200 South Gear Avenue",
     "city": "West Burlington",
@@ -1968,7 +1982,7 @@ DEALERS = {
     "zip": "52655",
     "link": "https://www.toyota.com/dealers/dealer/14036",
   },
-  "14041": {
+  14041: {
     "name": "Dan Deery Toyota",
     "address": "7404 University Avenue",
     "city": "Cedar Falls",
@@ -1976,7 +1990,7 @@ DEALERS = {
     "zip": "50613",
     "link": "https://www.toyota.com/dealers/dealer/14041",
   },
-  "14044": {
+  14044: {
     "name": "Toyota of Des Moines",
     "address": "1650 SE 37th Street",
     "city": "Grimes",
@@ -1984,7 +1998,7 @@ DEALERS = {
     "zip": "50111",
     "link": "https://www.toyota.com/dealers/dealer/14044",
   },
-  "14045": {
+  14045: {
     "name": "Clemons Toyota",
     "address": "2839 North Court Street",
     "city": "Ottumwa",
@@ -1992,7 +2006,7 @@ DEALERS = {
     "zip": "52501",
     "link": "https://www.toyota.com/dealers/dealer/14045",
   },
-  "14046": {
+  14046: {
     "name": "Wilson Toyota",
     "address": "2212 South Duff",
     "city": "Ames",
@@ -2000,7 +2014,7 @@ DEALERS = {
     "zip": "50010",
     "link": "https://www.toyota.com/dealers/dealer/14046",
   },
-  "14048": {
+  14048: {
     "name": "Fort Dodge Ford, Lincoln, Toyota",
     "address": "2723 5th Avenue South",
     "city": "Fort Dodge",
@@ -2008,7 +2022,7 @@ DEALERS = {
     "zip": "50501",
     "link": "https://www.toyota.com/dealers/dealer/14048",
   },
-  "14049": {
+  14049: {
     "name": "Okoboji Toyota",
     "address": "2720 17th Street",
     "city": "Spirit Lake",
@@ -2016,7 +2030,7 @@ DEALERS = {
     "zip": "51360",
     "link": "https://www.toyota.com/dealers/dealer/14049",
   },
-  "14050": {
+  14050: {
     "name": "Toyota of Muscatine",
     "address": "3000 Highway 38 North",
     "city": "Muscatine",
@@ -2024,7 +2038,7 @@ DEALERS = {
     "zip": "52761",
     "link": "https://www.toyota.com/dealers/dealer/14050",
   },
-  "14051": {
+  14051: {
     "name": "Rick Collins Toyota",
     "address": "3131 Singing Hills Blvd.",
     "city": "Sioux City",
@@ -2032,7 +2046,7 @@ DEALERS = {
     "zip": "51106",
     "link": "https://www.toyota.com/dealers/dealer/14051",
   },
-  "14052": {
+  14052: {
     "name": "Smart Toyota of Quad Cities",
     "address": "1501 E. 53rd Street",
     "city": "Davenport",
@@ -2040,7 +2054,7 @@ DEALERS = {
     "zip": "52807",
     "link": "https://www.toyota.com/dealers/dealer/14052",
   },
-  "14053": {
+  14053: {
     "name": "Motor Inn Toyota of Carroll",
     "address": "1526 Le Clark Road",
     "city": "Carroll",
@@ -2048,7 +2062,7 @@ DEALERS = {
     "zip": "51401",
     "link": "https://www.toyota.com/dealers/dealer/14053",
   },
-  "14054": {
+  14054: {
     "name": "Billion Toyota of Clinton",
     "address": "2435 Lincolnway",
     "city": "Clinton",
@@ -2056,7 +2070,7 @@ DEALERS = {
     "zip": "52732",
     "link": "https://www.toyota.com/dealers/dealer/14054",
   },
-  "15010": {
+  15010: {
     "name": "Lewis Toyota of Topeka",
     "address": "2951 S.W. Fairlawn Road",
     "city": "Topeka",
@@ -2064,7 +2078,7 @@ DEALERS = {
     "zip": "66614",
     "link": "https://www.toyota.com/dealers/dealer/15010",
   },
-  "15012": {
+  15012: {
     "name": "Eddy's Toyota of Wichita",
     "address": "7333 East Kellogg",
     "city": "Wichita",
@@ -2072,7 +2086,7 @@ DEALERS = {
     "zip": "67207",
     "link": "https://www.toyota.com/dealers/dealer/15012",
   },
-  "15021": {
+  15021: {
     "name": "Lewis Toyota of Dodge City",
     "address": "907 S 2nd Street",
     "city": "Dodge City",
@@ -2080,7 +2094,7 @@ DEALERS = {
     "zip": "67801",
     "link": "https://www.toyota.com/dealers/dealer/15021",
   },
-  "15034": {
+  15034: {
     "name": "Quality Toyota of Independence",
     "address": "2101 West Main Street",
     "city": "Independence",
@@ -2088,7 +2102,7 @@ DEALERS = {
     "zip": "67301",
     "link": "https://www.toyota.com/dealers/dealer/15034",
   },
-  "15046": {
+  15046: {
     "name": "Lewis Toyota of Hays",
     "address": "4440 Vine Street",
     "city": "Hays",
@@ -2096,7 +2110,7 @@ DEALERS = {
     "zip": "67601",
     "link": "https://www.toyota.com/dealers/dealer/15046",
   },
-  "15047": {
+  15047: {
     "name": "Hendrick Toyota Merriam",
     "address": "9505 W. 67th Street",
     "city": "Merriam",
@@ -2104,7 +2118,7 @@ DEALERS = {
     "zip": "66203",
     "link": "https://www.toyota.com/dealers/dealer/15047",
   },
-  "15050": {
+  15050: {
     "name": "Olathe Toyota",
     "address": "685 N. Rawhide",
     "city": "Olathe",
@@ -2112,7 +2126,7 @@ DEALERS = {
     "zip": "66061",
     "link": "https://www.toyota.com/dealers/dealer/15050",
   },
-  "15051": {
+  15051: {
     "name": "Crown Toyota",
     "address": "3430 S. Iowa Street",
     "city": "Lawrence",
@@ -2120,7 +2134,7 @@ DEALERS = {
     "zip": "66046",
     "link": "https://www.toyota.com/dealers/dealer/15051",
   },
-  "15052": {
+  15052: {
     "name": "Conklin Toyota Salina",
     "address": "2700 South 9th Street",
     "city": "Salina",
@@ -2128,7 +2142,7 @@ DEALERS = {
     "zip": "67401",
     "link": "https://www.toyota.com/dealers/dealer/15052",
   },
-  "15053": {
+  15053: {
     "name": "Little Apple Toyota",
     "address": "2828 Amherst Avenue",
     "city": "Manhattan",
@@ -2136,7 +2150,7 @@ DEALERS = {
     "zip": "66502",
     "link": "https://www.toyota.com/dealers/dealer/15053",
   },
-  "15054": {
+  15054: {
     "name": "Midwest Toyota",
     "address": "1100 E. 30th Avenue",
     "city": "Hutchinson",
@@ -2144,7 +2158,7 @@ DEALERS = {
     "zip": "67502",
     "link": "https://www.toyota.com/dealers/dealer/15054",
   },
-  "15056": {
+  15056: {
     "name": "Legends Toyota",
     "address": "10100 Parallel Parkway",
     "city": "Kansas City",
@@ -2152,7 +2166,7 @@ DEALERS = {
     "zip": "66109",
     "link": "https://www.toyota.com/dealers/dealer/15056",
   },
-  "15057": {
+  15057: {
     "name": "Clint Bowyer Toyota",
     "address": "2815 West Highway 50",
     "city": "Emporia",
@@ -2160,7 +2174,7 @@ DEALERS = {
     "zip": "66801",
     "link": "https://www.toyota.com/dealers/dealer/15057",
   },
-  "15059": {
+  15059: {
     "name": "Lewis Toyota of Garden City",
     "address": "1221 Lareu Road",
     "city": "Garden City",
@@ -2168,7 +2182,7 @@ DEALERS = {
     "zip": "67846",
     "link": "https://www.toyota.com/dealers/dealer/15059",
   },
-  "15060": {
+  15060: {
     "name": "Briggs Toyota of Fort Scott",
     "address": "1819 South Main Street",
     "city": "Ft Scott",
@@ -2176,7 +2190,7 @@ DEALERS = {
     "zip": "66701",
     "link": "https://www.toyota.com/dealers/dealer/15060",
   },
-  "16004": {
+  16004: {
     "name": "Swope Toyota",
     "address": "1085 North Dixie Highway",
     "city": "Elizabethtown",
@@ -2184,7 +2198,7 @@ DEALERS = {
     "zip": "42701",
     "link": "https://www.toyota.com/dealers/dealer/16004",
   },
-  "16005": {
+  16005: {
     "name": "Green's Toyota of Lexington",
     "address": "630 New Circle Road, N.E.",
     "city": "Lexington",
@@ -2192,7 +2206,7 @@ DEALERS = {
     "zip": "40505",
     "link": "https://www.toyota.com/dealers/dealer/16005",
   },
-  "16006": {
+  16006: {
     "name": "Toyota of Louisville",
     "address": "6514 Dixie Highway",
     "city": "Louisville",
@@ -2200,7 +2214,7 @@ DEALERS = {
     "zip": "40258",
     "link": "https://www.toyota.com/dealers/dealer/16006",
   },
-  "16042": {
+  16042: {
     "name": "Toyota of Bowling Green",
     "address": "2398 Scottsville Road",
     "city": "Bowling Green",
@@ -2208,7 +2222,7 @@ DEALERS = {
     "zip": "42104",
     "link": "https://www.toyota.com/dealers/dealer/16042",
   },
-  "16044": {
+  16044: {
     "name": "Toyota of Hopkinsville",
     "address": "4395 Ft. Campbell Blvd",
     "city": "Hopkinsville",
@@ -2216,7 +2230,7 @@ DEALERS = {
     "zip": "42240",
     "link": "https://www.toyota.com/dealers/dealer/16044",
   },
-  "16046": {
+  16046: {
     "name": "Toyota of Murray",
     "address": "1301 South 12th Street",
     "city": "Murray",
@@ -2224,7 +2238,7 @@ DEALERS = {
     "zip": "42071",
     "link": "https://www.toyota.com/dealers/dealer/16046",
   },
-  "16048": {
+  16048: {
     "name": "Toyota of Somerset",
     "address": "4195 South Highway 27",
     "city": "Somerset",
@@ -2232,7 +2246,7 @@ DEALERS = {
     "zip": "42503",
     "link": "https://www.toyota.com/dealers/dealer/16048",
   },
-  "16049": {
+  16049: {
     "name": "Toyota South",
     "address": "961 Four Mile Road",
     "city": "Richmond",
@@ -2240,7 +2254,7 @@ DEALERS = {
     "zip": "40475",
     "link": "https://www.toyota.com/dealers/dealer/16049",
   },
-  "16050": {
+  16050: {
     "name": "Kerry Toyota",
     "address": "6050 Hopeful Church Road",
     "city": "Florence",
@@ -2248,7 +2262,7 @@ DEALERS = {
     "zip": "41042",
     "link": "https://www.toyota.com/dealers/dealer/16050",
   },
-  "16051": {
+  16051: {
     "name": "Oxmoor Toyota",
     "address": "8003 Shelbyville Road",
     "city": "Louisville",
@@ -2256,7 +2270,7 @@ DEALERS = {
     "zip": "40222",
     "link": "https://www.toyota.com/dealers/dealer/16051",
   },
-  "16052": {
+  16052: {
     "name": "Marshall Dry Ridge Toyota",
     "address": "9 Taft Highway",
     "city": "Dry Ridge",
@@ -2264,7 +2278,7 @@ DEALERS = {
     "zip": "41035",
     "link": "https://www.toyota.com/dealers/dealer/16052",
   },
-  "16055": {
+  16055: {
     "name": "Walters Toyota",
     "address": "30 Walters Lane",
     "city": "Pikeville",
@@ -2272,7 +2286,7 @@ DEALERS = {
     "zip": "41501",
     "link": "https://www.toyota.com/dealers/dealer/16055",
   },
-  "16056": {
+  16056: {
     "name": "Toyota on Nicholasville",
     "address": "2100 Lexington Road",
     "city": "Nicholasville",
@@ -2280,7 +2294,7 @@ DEALERS = {
     "zip": "40356",
     "link": "https://www.toyota.com/dealers/dealer/16056",
   },
-  "16059": {
+  16059: {
     "name": "Don Moore Toyota",
     "address": "4216 Frederica Street",
     "city": "Owensboro",
@@ -2288,7 +2302,7 @@ DEALERS = {
     "zip": "42301",
     "link": "https://www.toyota.com/dealers/dealer/16059",
   },
-  "16061": {
+  16061: {
     "name": "Frankfort Toyota",
     "address": "1001 Leestown Road",
     "city": "Frankfort",
@@ -2296,7 +2310,7 @@ DEALERS = {
     "zip": "40601",
     "link": "https://www.toyota.com/dealers/dealer/16061",
   },
-  "16062": {
+  16062: {
     "name": "Mann Toyota",
     "address": "1811 U.S. Highway 23 North",
     "city": "Prestonsburg",
@@ -2304,7 +2318,7 @@ DEALERS = {
     "zip": "41653",
     "link": "https://www.toyota.com/dealers/dealer/16062",
   },
-  "16063": {
+  16063: {
     "name": "Watermark Toyota",
     "address": "1055 Crossing Place",
     "city": "Madisonville",
@@ -2312,7 +2326,7 @@ DEALERS = {
     "zip": "42431",
     "link": "https://www.toyota.com/dealers/dealer/16063",
   },
-  "16064": {
+  16064: {
     "name": "Coad Toyota Paducah",
     "address": "3941 Mike Smith Drive",
     "city": "Paducah",
@@ -2320,7 +2334,7 @@ DEALERS = {
     "zip": "42001",
     "link": "https://www.toyota.com/dealers/dealer/16064",
   },
-  "16065": {
+  16065: {
     "name": "Toyota of Ashland",
     "address": "3503 Winchester Avenue",
     "city": "Ashland",
@@ -2328,7 +2342,7 @@ DEALERS = {
     "zip": "41101",
     "link": "https://www.toyota.com/dealers/dealer/16065",
   },
-  "16066": {
+  16066: {
     "name": "Don Franklin Corbin Toyota",
     "address": "311 E. Cumberland Gap Pky",
     "city": "Corbin",
@@ -2336,7 +2350,7 @@ DEALERS = {
     "zip": "40701",
     "link": "https://www.toyota.com/dealers/dealer/16066",
   },
-  "17014": {
+  17014: {
     "name": "Price LeBlanc Toyota",
     "address": "13250 Airline Highway",
     "city": "Baton Rouge",
@@ -2344,7 +2358,7 @@ DEALERS = {
     "zip": "70817",
     "link": "https://www.toyota.com/dealers/dealer/17014",
   },
-  "17061": {
+  17061: {
     "name": "Toyota of Slidell",
     "address": "300 E. Howze Beach Road",
     "city": "Slidell",
@@ -2352,7 +2366,7 @@ DEALERS = {
     "zip": "70461",
     "link": "https://www.toyota.com/dealers/dealer/17061",
   },
-  "17062": {
+  17062: {
     "name": "Bohn Toyota",
     "address": "3800 Lapalco Blvd.",
     "city": "Harvey",
@@ -2360,7 +2374,7 @@ DEALERS = {
     "zip": "70058",
     "link": "https://www.toyota.com/dealers/dealer/17062",
   },
-  "17068": {
+  17068: {
     "name": "All Star Toyota of Baton Rouge",
     "address": "9150 Airline Highway",
     "city": "Baton Rouge",
@@ -2368,7 +2382,7 @@ DEALERS = {
     "zip": "70815",
     "link": "https://www.toyota.com/dealers/dealer/17068",
   },
-  "18010": {
+  18010: {
     "name": "Down East Toyota",
     "address": "652 Wilson Street",
     "city": "Brewer",
@@ -2376,7 +2390,7 @@ DEALERS = {
     "zip": "4412",
     "link": "https://www.toyota.com/dealers/dealer/18010",
   },
-  "18023": {
+  18023: {
     "name": "Shepard Toyota",
     "address": "181 New County Road Route 1",
     "city": "Rockland",
@@ -2384,7 +2398,7 @@ DEALERS = {
     "zip": "4841",
     "link": "https://www.toyota.com/dealers/dealer/18023",
   },
-  "18031": {
+  18031: {
     "name": "York Toyota",
     "address": "315 North Street",
     "city": "Houlton",
@@ -2392,7 +2406,7 @@ DEALERS = {
     "zip": "4730",
     "link": "https://www.toyota.com/dealers/dealer/18031",
   },
-  "18032": {
+  18032: {
     "name": "Central Maine Toyota",
     "address": "15 Airport Road",
     "city": "Waterville",
@@ -2400,7 +2414,7 @@ DEALERS = {
     "zip": "4901",
     "link": "https://www.toyota.com/dealers/dealer/18032",
   },
-  "18033": {
+  18033: {
     "name": "Charlie's Toyota",
     "address": "451 Western Avenue",
     "city": "Augusta",
@@ -2408,7 +2422,7 @@ DEALERS = {
     "zip": "4330",
     "link": "https://www.toyota.com/dealers/dealer/18033",
   },
-  "18034": {
+  18034: {
     "name": "Emerson Toyota",
     "address": "990 Center Street",
     "city": "Auburn",
@@ -2416,7 +2430,7 @@ DEALERS = {
     "zip": "4210",
     "link": "https://www.toyota.com/dealers/dealer/18034",
   },
-  "18035": {
+  18035: {
     "name": "Lee Toyota",
     "address": "115 Main Street",
     "city": "Topsham",
@@ -2424,7 +2438,7 @@ DEALERS = {
     "zip": "4086",
     "link": "https://www.toyota.com/dealers/dealer/18035",
   },
-  "18036": {
+  18036: {
     "name": "Prime Toyota",
     "address": "783 Portland Road",
     "city": "Saco",
@@ -2432,7 +2446,7 @@ DEALERS = {
     "zip": "4072",
     "link": "https://www.toyota.com/dealers/dealer/18036",
   },
-  "18037": {
+  18037: {
     "name": "Berlin City Toyota of Portland",
     "address": "191 Riverside Street",
     "city": "Portland",
@@ -2440,7 +2454,7 @@ DEALERS = {
     "zip": "4103",
     "link": "https://www.toyota.com/dealers/dealer/18037",
   },
-  "19005": {
+  19005: {
     "name": "Jones Toyota",
     "address": "1510 Belair Road",
     "city": "Bel Air",
@@ -2448,7 +2462,7 @@ DEALERS = {
     "zip": "21014",
     "link": "https://www.toyota.com/dealers/dealer/19005",
   },
-  "19021": {
+  19021: {
     "name": "Bill Kidd's Timonium Toyota",
     "address": "10401 York Road",
     "city": "Cockeysville",
@@ -2456,7 +2470,7 @@ DEALERS = {
     "zip": "21030",
     "link": "https://www.toyota.com/dealers/dealer/19021",
   },
-  "19026": {
+  19026: {
     "name": "Koons Toyota",
     "address": "1107 West Street",
     "city": "Annapolis",
@@ -2464,7 +2478,7 @@ DEALERS = {
     "zip": "21401",
     "link": "https://www.toyota.com/dealers/dealer/19026",
   },
-  "19028": {
+  19028: {
     "name": "Younger Toyota",
     "address": "1945 Dual Highway",
     "city": "Hagerstown",
@@ -2472,7 +2486,7 @@ DEALERS = {
     "zip": "21740",
     "link": "https://www.toyota.com/dealers/dealer/19028",
   },
-  "19037": {
+  19037: {
     "name": "Jerry's Toyota",
     "address": "8001 Belair Road",
     "city": "Baltimore",
@@ -2480,7 +2494,7 @@ DEALERS = {
     "zip": "21236",
     "link": "https://www.toyota.com/dealers/dealer/19037",
   },
-  "19042": {
+  19042: {
     "name": "Brown's Toyota of Glen Burnie",
     "address": "7167 Ritchie Highway",
     "city": "Glen Burnie",
@@ -2488,7 +2502,7 @@ DEALERS = {
     "zip": "21061",
     "link": "https://www.toyota.com/dealers/dealer/19042",
   },
-  "19043": {
+  19043: {
     "name": "DARCARS Toyota",
     "address": "12210 Cherry Hill Road",
     "city": "Silver Spring",
@@ -2496,7 +2510,7 @@ DEALERS = {
     "zip": "20904",
     "link": "https://www.toyota.com/dealers/dealer/19043",
   },
-  "19044": {
+  19044: {
     "name": "Antwerpen's Toyota",
     "address": "12420 Auto Drive",
     "city": "Clarksville",
@@ -2504,7 +2518,7 @@ DEALERS = {
     "zip": "21029",
     "link": "https://www.toyota.com/dealers/dealer/19044",
   },
-  "19045": {
+  19045: {
     "name": "Jim Coleman Toyota",
     "address": "10400 Auto Park Avenue",
     "city": "Bethesda",
@@ -2512,7 +2526,7 @@ DEALERS = {
     "zip": "20817",
     "link": "https://www.toyota.com/dealers/dealer/19045",
   },
-  "19047": {
+  19047: {
     "name": "Koons Westminster Toyota",
     "address": "375 Baltimore Blvd.",
     "city": "Westminster",
@@ -2520,7 +2534,7 @@ DEALERS = {
     "zip": "21157",
     "link": "https://www.toyota.com/dealers/dealer/19047",
   },
-  "19050": {
+  19050: {
     "name": "Thompson Toyota",
     "address": "1101 Business Center Way",
     "city": "Edgewood",
@@ -2528,7 +2542,7 @@ DEALERS = {
     "zip": "21040",
     "link": "https://www.toyota.com/dealers/dealer/19050",
   },
-  "19052": {
+  19052: {
     "name": "Fitzgeralds Toyota Gaithersburg",
     "address": "907 N. Frederick Avenue",
     "city": "Gaithersburg",
@@ -2536,7 +2550,7 @@ DEALERS = {
     "zip": "20879",
     "link": "https://www.toyota.com/dealers/dealer/19052",
   },
-  "19056": {
+  19056: {
     "name": "Bayside Toyota",
     "address": "105 Auto Drive",
     "city": "Prince Frederick",
@@ -2544,7 +2558,7 @@ DEALERS = {
     "zip": "20678",
     "link": "https://www.toyota.com/dealers/dealer/19056",
   },
-  "19057": {
+  19057: {
     "name": "355 Toyota",
     "address": "15625 Frederick Road",
     "city": "Rockville",
@@ -2552,7 +2566,7 @@ DEALERS = {
     "zip": "20855",
     "link": "https://www.toyota.com/dealers/dealer/19057",
   },
-  "19059": {
+  19059: {
     "name": "Toyota of Southern Maryland",
     "address": "22500 Three Notch Road",
     "city": "Lexington Park",
@@ -2560,7 +2574,7 @@ DEALERS = {
     "zip": "20653",
     "link": "https://www.toyota.com/dealers/dealer/19059",
   },
-  "19061": {
+  19061: {
     "name": "Pohanka Toyota of Salisbury",
     "address": "2010 N. Salisbury Blvd.",
     "city": "Salisbury",
@@ -2568,7 +2582,7 @@ DEALERS = {
     "zip": "21801",
     "link": "https://www.toyota.com/dealers/dealer/19061",
   },
-  "19062": {
+  19062: {
     "name": "Toyota of Bowie",
     "address": "16700 Governor Bridge Rd.",
     "city": "Bowie",
@@ -2576,7 +2590,7 @@ DEALERS = {
     "zip": "20716",
     "link": "https://www.toyota.com/dealers/dealer/19062",
   },
-  "19063": {
+  19063: {
     "name": "DARCARS Toyota of Frederick",
     "address": "5293 Buckeystown Pike",
     "city": "Frederick",
@@ -2584,7 +2598,7 @@ DEALERS = {
     "zip": "21704",
     "link": "https://www.toyota.com/dealers/dealer/19063",
   },
-  "19068": {
+  19068: {
     "name": "Koons Easton Toyota",
     "address": "6730 Ocean Gateway",
     "city": "Easton",
@@ -2592,7 +2606,7 @@ DEALERS = {
     "zip": "21601",
     "link": "https://www.toyota.com/dealers/dealer/19068",
   },
-  "19069": {
+  19069: {
     "name": "DARCARS Toyota of Baltimore",
     "address": "6007 Eastern Avenue",
     "city": "Baltimore",
@@ -2600,7 +2614,7 @@ DEALERS = {
     "zip": "21224",
     "link": "https://www.toyota.com/dealers/dealer/19069",
   },
-  "19070": {
+  19070: {
     "name": "Passport Toyota",
     "address": "5001 Auth Way",
     "city": "Suitland",
@@ -2608,7 +2622,7 @@ DEALERS = {
     "zip": "20746",
     "link": "https://www.toyota.com/dealers/dealer/19070",
   },
-  "19071": {
+  19071: {
     "name": "Heritage Toyota Catonsville",
     "address": "6324 Baltimore Ntl Pike",
     "city": "Baltimore",
@@ -2616,7 +2630,7 @@ DEALERS = {
     "zip": "21228",
     "link": "https://www.toyota.com/dealers/dealer/19071",
   },
-  "19072": {
+  19072: {
     "name": "Heritage Toyota Owings Mills",
     "address": "9801 Reisterstown Road",
     "city": "Owings Mills",
@@ -2624,7 +2638,7 @@ DEALERS = {
     "zip": "21117",
     "link": "https://www.toyota.com/dealers/dealer/19072",
   },
-  "19074": {
+  19074: {
     "name": "Waldorf Toyota",
     "address": "2600 Crain Highway",
     "city": "Waldorf",
@@ -2632,7 +2646,7 @@ DEALERS = {
     "zip": "20601",
     "link": "https://www.toyota.com/dealers/dealer/19074",
   },
-  "19075": {
+  19075: {
     "name": "Hertrich Toyota of Pocomoke",
     "address": "1337 Ocean Highway",
     "city": "Pocomoke City",
@@ -2640,7 +2654,7 @@ DEALERS = {
     "zip": "21851",
     "link": "https://www.toyota.com/dealers/dealer/19075",
   },
-  "19076": {
+  19076: {
     "name": "Sheehy Toyota of Laurel",
     "address": "8801 Freestate Drive",
     "city": "Laurel",
@@ -2648,7 +2662,7 @@ DEALERS = {
     "zip": "20723",
     "link": "https://www.toyota.com/dealers/dealer/19076",
   },
-  "20006": {
+  20006: {
     "name": "Jaffarian Volvo Toyota",
     "address": "600 River St",
     "city": "Haverhill",
@@ -2656,7 +2670,7 @@ DEALERS = {
     "zip": "1832",
     "link": "https://www.toyota.com/dealers/dealer/20006",
   },
-  "20009": {
+  20009: {
     "name": "K-M Toyota",
     "address": "51 West Main Street",
     "city": "North Adams",
@@ -2664,7 +2678,7 @@ DEALERS = {
     "zip": "1247",
     "link": "https://www.toyota.com/dealers/dealer/20009",
   },
-  "20016": {
+  20016: {
     "name": "Balise Toyota",
     "address": "1399 Riverdale Street",
     "city": "West Springfield",
@@ -2672,7 +2686,7 @@ DEALERS = {
     "zip": "1089",
     "link": "https://www.toyota.com/dealers/dealer/20016",
   },
-  "20019": {
+  20019: {
     "name": "Toyota of Watertown",
     "address": "149 Arsenal St",
     "city": "Watertown",
@@ -2680,7 +2694,7 @@ DEALERS = {
     "zip": "2472",
     "link": "https://www.toyota.com/dealers/dealer/20019",
   },
-  "20049": {
+  20049: {
     "name": "Haddad Toyota",
     "address": "130 Pittsfield - Lenox Rd.",
     "city": "Pittsfield",
@@ -2688,7 +2702,7 @@ DEALERS = {
     "zip": "1201",
     "link": "https://www.toyota.com/dealers/dealer/20049",
   },
-  "20051": {
+  20051: {
     "name": "Copeland Toyota",
     "address": "970 West Chestnut Street",
     "city": "Brockton",
@@ -2696,7 +2710,7 @@ DEALERS = {
     "zip": "2301",
     "link": "https://www.toyota.com/dealers/dealer/20051",
   },
-  "20058": {
+  20058: {
     "name": "Westboro Toyota, Inc.",
     "address": "271 Turnpike Road",
     "city": "Westborough",
@@ -2704,7 +2718,7 @@ DEALERS = {
     "zip": "1581",
     "link": "https://www.toyota.com/dealers/dealer/20058",
   },
-  "20063": {
+  20063: {
     "name": "McGee Toyota",
     "address": "860-880 Washington St",
     "city": "Hanover",
@@ -2712,7 +2726,7 @@ DEALERS = {
     "zip": "2339",
     "link": "https://www.toyota.com/dealers/dealer/20063",
   },
-  "20087": {
+  20087: {
     "name": "Woburn Toyota",
     "address": "394 Washington Street",
     "city": "Woburn",
@@ -2720,7 +2734,7 @@ DEALERS = {
     "zip": "1801",
     "link": "https://www.toyota.com/dealers/dealer/20087",
   },
-  "20093": {
+  20093: {
     "name": "Atlantic Toyota",
     "address": "671 Lynnway",
     "city": "Lynn",
@@ -2728,7 +2742,7 @@ DEALERS = {
     "zip": "1905",
     "link": "https://www.toyota.com/dealers/dealer/20093",
   },
-  "20096": {
+  20096: {
     "name": "Falmouth Toyota",
     "address": "290 Mac Arthur Blvd.",
     "city": "Bourne",
@@ -2736,7 +2750,7 @@ DEALERS = {
     "zip": "2532",
     "link": "https://www.toyota.com/dealers/dealer/20096",
   },
-  "20101": {
+  20101: {
     "name": "Harr Toyota",
     "address": "100 Gold Star Boulevard",
     "city": "Worcester",
@@ -2744,7 +2758,7 @@ DEALERS = {
     "zip": "1606",
     "link": "https://www.toyota.com/dealers/dealer/20101",
   },
-  "20102": {
+  20102: {
     "name": "Lexington Toyota",
     "address": "409 Massachusetts Avenue",
     "city": "Lexington",
@@ -2752,7 +2766,7 @@ DEALERS = {
     "zip": "2420",
     "link": "https://www.toyota.com/dealers/dealer/20102",
   },
-  "20109": {
+  20109: {
     "name": "Bernardi Toyota",
     "address": "1626 Worcester Road",
     "city": "Framingham",
@@ -2760,7 +2774,7 @@ DEALERS = {
     "zip": "1702",
     "link": "https://www.toyota.com/dealers/dealer/20109",
   },
-  "20111": {
+  20111: {
     "name": "Sullivan Brothers Toyota",
     "address": "5 Gallen Road",
     "city": "Kingston",
@@ -2768,7 +2782,7 @@ DEALERS = {
     "zip": "2364",
     "link": "https://www.toyota.com/dealers/dealer/20111",
   },
-  "20113": {
+  20113: {
     "name": "Toyota of Wellesley",
     "address": "234 Worcester Street",
     "city": "Wellesley",
@@ -2776,7 +2790,7 @@ DEALERS = {
     "zip": "2481",
     "link": "https://www.toyota.com/dealers/dealer/20113",
   },
-  "20116": {
+  20116: {
     "name": "Expressway Toyota",
     "address": "700 Morrissey Blvd.",
     "city": "Dorchester",
@@ -2784,7 +2798,7 @@ DEALERS = {
     "zip": "2122",
     "link": "https://www.toyota.com/dealers/dealer/20116",
   },
-  "20117": {
+  20117: {
     "name": "Herb Chambers Toyota of Auburn",
     "address": "809 Washington Street",
     "city": "Auburn",
@@ -2792,7 +2806,7 @@ DEALERS = {
     "zip": "1501",
     "link": "https://www.toyota.com/dealers/dealer/20117",
   },
-  "20122": {
+  20122: {
     "name": "Tufankjian Toyota of Braintree",
     "address": "210 Union Street",
     "city": "Braintree",
@@ -2800,7 +2814,7 @@ DEALERS = {
     "zip": "2184",
     "link": "https://www.toyota.com/dealers/dealer/20122",
   },
-  "20123": {
+  20123: {
     "name": "Lia Toyota",
     "address": "2145 Boston Road",
     "city": "Wilbraham",
@@ -2808,7 +2822,7 @@ DEALERS = {
     "zip": "1095",
     "link": "https://www.toyota.com/dealers/dealer/20123",
   },
-  "20125": {
+  20125: {
     "name": "Route 44 Toyota",
     "address": "1154 New State Highway",
     "city": "Raynham",
@@ -2816,7 +2830,7 @@ DEALERS = {
     "zip": "2767",
     "link": "https://www.toyota.com/dealers/dealer/20125",
   },
-  "20126": {
+  20126: {
     "name": "Herb Chambers Toyota of Boston",
     "address": "32 Brighton Avenue",
     "city": "Boston",
@@ -2824,7 +2838,7 @@ DEALERS = {
     "zip": "2134",
     "link": "https://www.toyota.com/dealers/dealer/20126",
   },
-  "20127": {
+  20127: {
     "name": "Ira Toyota",
     "address": "99B Andover Street",
     "city": "Danvers",
@@ -2832,7 +2846,7 @@ DEALERS = {
     "zip": "1923",
     "link": "https://www.toyota.com/dealers/dealer/20127",
   },
-  "20128": {
+  20128: {
     "name": "Toyota of Dartmouth",
     "address": "100 Old Faunce Corner Road",
     "city": "North Dartmouth",
@@ -2840,7 +2854,7 @@ DEALERS = {
     "zip": "2747",
     "link": "https://www.toyota.com/dealers/dealer/20128",
   },
-  "20129": {
+  20129: {
     "name": "Ira Toyota II",
     "address": "468 Main Street",
     "city": "Tewksbury",
@@ -2848,7 +2862,7 @@ DEALERS = {
     "zip": "1876",
     "link": "https://www.toyota.com/dealers/dealer/20129",
   },
-  "20133": {
+  20133: {
     "name": "Lia Toyota of Northampton",
     "address": "280 King Street",
     "city": "Northampton",
@@ -2856,7 +2870,7 @@ DEALERS = {
     "zip": "1060",
     "link": "https://www.toyota.com/dealers/dealer/20133",
   },
-  "20134": {
+  20134: {
     "name": "Toyota of Greenfield",
     "address": "One Main Street",
     "city": "Greenfield",
@@ -2864,7 +2878,7 @@ DEALERS = {
     "zip": "1301",
     "link": "https://www.toyota.com/dealers/dealer/20134",
   },
-  "20135": {
+  20135: {
     "name": "Prime Toyota - Boston",
     "address": "1605 VFW Parkway",
     "city": "Boston",
@@ -2872,7 +2886,7 @@ DEALERS = {
     "zip": "2132",
     "link": "https://www.toyota.com/dealers/dealer/20135",
   },
-  "20137": {
+  20137: {
     "name": "Hyannis Toyota",
     "address": "1020 Iyannough Road",
     "city": "Hyannis",
@@ -2880,7 +2894,7 @@ DEALERS = {
     "zip": "2601",
     "link": "https://www.toyota.com/dealers/dealer/20137",
   },
-  "20138": {
+  20138: {
     "name": "Orleans Toyota",
     "address": "16 O'Connor Road",
     "city": "Orleans",
@@ -2888,7 +2902,7 @@ DEALERS = {
     "zip": "2653",
     "link": "https://www.toyota.com/dealers/dealer/20138",
   },
-  "20139": {
+  20139: {
     "name": "Prime Toyota Route 2",
     "address": "700 Old Union Turnpike",
     "city": "Lancaster",
@@ -2896,7 +2910,7 @@ DEALERS = {
     "zip": "1523",
     "link": "https://www.toyota.com/dealers/dealer/20139",
   },
-  "20140": {
+  20140: {
     "name": "Bristol Toyota, Inc.",
     "address": "2283 Grand Army Highway",
     "city": "Swansea",
@@ -2904,7 +2918,7 @@ DEALERS = {
     "zip": "2777",
     "link": "https://www.toyota.com/dealers/dealer/20140",
   },
-  "20141": {
+  20141: {
     "name": "Boch Toyota",
     "address": "277 Providence Highway",
     "city": "Norwood",
@@ -2912,7 +2926,7 @@ DEALERS = {
     "zip": "2062",
     "link": "https://www.toyota.com/dealers/dealer/20141",
   },
-  "20142": {
+  20142: {
     "name": "McGee Toyota of Dudley",
     "address": "191 West Main Street",
     "city": "Dudley",
@@ -2920,7 +2934,7 @@ DEALERS = {
     "zip": "1571",
     "link": "https://www.toyota.com/dealers/dealer/20142",
   },
-  "20144": {
+  20144: {
     "name": "Boch Toyota South",
     "address": "620 South Washington St.",
     "city": "North Attleboro",
@@ -2928,7 +2942,7 @@ DEALERS = {
     "zip": "2760",
     "link": "https://www.toyota.com/dealers/dealer/20144",
   },
-  "20145": {
+  20145: {
     "name": "Imperial Toyota",
     "address": "300 Fortune Blvd.",
     "city": "Milford",
@@ -2936,7 +2950,7 @@ DEALERS = {
     "zip": "1757",
     "link": "https://www.toyota.com/dealers/dealer/20145",
   },
-  "20146": {
+  20146: {
     "name": "Acton Toyota of Littleton",
     "address": "221 Great Road",
     "city": "Littleton",
@@ -2944,7 +2958,7 @@ DEALERS = {
     "zip": "1460",
     "link": "https://www.toyota.com/dealers/dealer/20146",
   },
-  "20147": {
+  20147: {
     "name": "Ira Toyota of Hyannis",
     "address": "1020 Iyannough Road",
     "city": "Hyannis",
@@ -2952,7 +2966,7 @@ DEALERS = {
     "zip": "2601",
     "link": "https://www.toyota.com/dealers/dealer/20147",
   },
-  "20148": {
+  20148: {
     "name": "Ira Toyota of Orleans",
     "address": "16 O'Connor Road",
     "city": "Orleans",
@@ -2960,7 +2974,7 @@ DEALERS = {
     "zip": "2653",
     "link": "https://www.toyota.com/dealers/dealer/20148",
   },
-  "20149": {
+  20149: {
     "name": "Parkway Toyota of Boston",
     "address": "1605 VFW Parkway",
     "city": "Boston",
@@ -2968,7 +2982,7 @@ DEALERS = {
     "zip": "2132",
     "link": "https://www.toyota.com/dealers/dealer/20149",
   },
-  "21032": {
+  21032: {
     "name": "Bergeron Toyota",
     "address": "1600 N. Stephenson Ave.",
     "city": "Iron Mountain",
@@ -2976,7 +2990,7 @@ DEALERS = {
     "zip": "49801",
     "link": "https://www.toyota.com/dealers/dealer/21032",
   },
-  "21039": {
+  21039: {
     "name": "Page Toyota",
     "address": "21262 Telegraph Road",
     "city": "Southfield",
@@ -2984,7 +2998,7 @@ DEALERS = {
     "zip": "48033",
     "link": "https://www.toyota.com/dealers/dealer/21039",
   },
-  "21043": {
+  21043: {
     "name": "Dunning Toyota Ann Arbor",
     "address": "3745 Jackson Road",
     "city": "Ann Arbor",
@@ -2992,7 +3006,7 @@ DEALERS = {
     "zip": "48103",
     "link": "https://www.toyota.com/dealers/dealer/21043",
   },
-  "21061": {
+  21061: {
     "name": "LaFontaine Toyota",
     "address": "2027 S. Telegraph Road",
     "city": "Dearborn",
@@ -3000,7 +3014,7 @@ DEALERS = {
     "zip": "48124",
     "link": "https://www.toyota.com/dealers/dealer/21061",
   },
-  "21065": {
+  21065: {
     "name": "Toyota of Grand Rapids",
     "address": "2555 28th Street, S.E.",
     "city": "Grand Rapids",
@@ -3008,7 +3022,7 @@ DEALERS = {
     "zip": "49512",
     "link": "https://www.toyota.com/dealers/dealer/21065",
   },
-  "21067": {
+  21067: {
     "name": "Spartan Toyota",
     "address": "5701 S. Pennsylvania Ave",
     "city": "Lansing",
@@ -3016,7 +3030,7 @@ DEALERS = {
     "zip": "48911",
     "link": "https://www.toyota.com/dealers/dealer/21067",
   },
-  "21068": {
+  21068: {
     "name": "Sunshine Toyota",
     "address": "1355 West Dickman Road",
     "city": "Battle Creek",
@@ -3024,7 +3038,7 @@ DEALERS = {
     "zip": "49037",
     "link": "https://www.toyota.com/dealers/dealer/21068",
   },
-  "21072": {
+  21072: {
     "name": "Metro Toyota",
     "address": "5850 Stadium Drive",
     "city": "Kalamazoo",
@@ -3032,7 +3046,7 @@ DEALERS = {
     "zip": "49009",
     "link": "https://www.toyota.com/dealers/dealer/21072",
   },
-  "21074": {
+  21074: {
     "name": "Serra Toyota of Traverse City",
     "address": "1302 S. Garfield Avenue",
     "city": "Traverse City",
@@ -3040,7 +3054,7 @@ DEALERS = {
     "zip": "49686",
     "link": "https://www.toyota.com/dealers/dealer/21074",
   },
-  "21095": {
+  21095: {
     "name": "Kool Toyota",
     "address": "3780 Plainfield Avenue",
     "city": "Grand Rapids",
@@ -3048,7 +3062,7 @@ DEALERS = {
     "zip": "49525",
     "link": "https://www.toyota.com/dealers/dealer/21095",
   },
-  "21096": {
+  21096: {
     "name": "Riverside Toyota",
     "address": "3330 US Highway 41 West",
     "city": "Marquette",
@@ -3056,7 +3070,7 @@ DEALERS = {
     "zip": "49855",
     "link": "https://www.toyota.com/dealers/dealer/21096",
   },
-  "21100": {
+  21100: {
     "name": "Riverside Toyota of Escanaba",
     "address": "2600 Ludington Street",
     "city": "Escanaba",
@@ -3064,7 +3078,7 @@ DEALERS = {
     "zip": "49829",
     "link": "https://www.toyota.com/dealers/dealer/21100",
   },
-  "21101": {
+  21101: {
     "name": "Crown Toyota",
     "address": "11260 Chicago Drive",
     "city": "Holland",
@@ -3072,7 +3086,7 @@ DEALERS = {
     "zip": "49423",
     "link": "https://www.toyota.com/dealers/dealer/21101",
   },
-  "21104": {
+  21104: {
     "name": "Toyota of Muskegon",
     "address": "1860 E. Sternberg Road",
     "city": "Muskegon",
@@ -3080,7 +3094,7 @@ DEALERS = {
     "zip": "49444",
     "link": "https://www.toyota.com/dealers/dealer/21104",
   },
-  "21107": {
+  21107: {
     "name": "Labadie Toyota",
     "address": "909 N. Euclid Avenue",
     "city": "Bay City",
@@ -3088,7 +3102,7 @@ DEALERS = {
     "zip": "48706",
     "link": "https://www.toyota.com/dealers/dealer/21107",
   },
-  "21108": {
+  21108: {
     "name": "Fernelius Toyota",
     "address": "11283 Straits Highway",
     "city": "Cheboygan",
@@ -3096,7 +3110,7 @@ DEALERS = {
     "zip": "49721",
     "link": "https://www.toyota.com/dealers/dealer/21108",
   },
-  "21110": {
+  21110: {
     "name": "Victory Toyota",
     "address": "46352 Michigan Avenue",
     "city": "Canton",
@@ -3104,7 +3118,7 @@ DEALERS = {
     "zip": "48188",
     "link": "https://www.toyota.com/dealers/dealer/21110",
   },
-  "21112": {
+  21112: {
     "name": "Fox Toyota",
     "address": "773 South Rochester Road",
     "city": "Rochester Hills",
@@ -3112,7 +3126,7 @@ DEALERS = {
     "zip": "48307",
     "link": "https://www.toyota.com/dealers/dealer/21112",
   },
-  "21113": {
+  21113: {
     "name": "Wolverine Toyota",
     "address": "16490 Tecumseh Street",
     "city": "Dundee",
@@ -3120,7 +3134,7 @@ DEALERS = {
     "zip": "48131",
     "link": "https://www.toyota.com/dealers/dealer/21113",
   },
-  "21115": {
+  21115: {
     "name": "Fox Toyota of Cadillac",
     "address": "1490 N Mitchell Street",
     "city": "Cadillac",
@@ -3128,7 +3142,7 @@ DEALERS = {
     "zip": "49601",
     "link": "https://www.toyota.com/dealers/dealer/21115",
   },
-  "21116": {
+  21116: {
     "name": "Szott M-59 Toyota",
     "address": "4178 Highland Road",
     "city": "Waterford",
@@ -3136,7 +3150,7 @@ DEALERS = {
     "zip": "48328",
     "link": "https://www.toyota.com/dealers/dealer/21116",
   },
-  "21117": {
+  21117: {
     "name": "Matick Toyota",
     "address": "23405 Hall Road",
     "city": "Macomb",
@@ -3144,7 +3158,7 @@ DEALERS = {
     "zip": "48042",
     "link": "https://www.toyota.com/dealers/dealer/21117",
   },
-  "21119": {
+  21119: {
     "name": "Serra Toyota of Saginaw",
     "address": "4320 Bay Road",
     "city": "Saginaw",
@@ -3152,7 +3166,7 @@ DEALERS = {
     "zip": "48603",
     "link": "https://www.toyota.com/dealers/dealer/21119",
   },
-  "21120": {
+  21120: {
     "name": "Signature Toyota",
     "address": "680 East Napier",
     "city": "Benton Harbor",
@@ -3160,7 +3174,7 @@ DEALERS = {
     "zip": "49022",
     "link": "https://www.toyota.com/dealers/dealer/21120",
   },
-  "21121": {
+  21121: {
     "name": "Golling Toyota of Warren",
     "address": "27100 Van Dyke Avenue",
     "city": "Warren",
@@ -3168,7 +3182,7 @@ DEALERS = {
     "zip": "48093",
     "link": "https://www.toyota.com/dealers/dealer/21121",
   },
-  "21122": {
+  21122: {
     "name": "Suburban Toyota of Troy",
     "address": "2100 W. Maple Road",
     "city": "Troy",
@@ -3176,7 +3190,7 @@ DEALERS = {
     "zip": "48084",
     "link": "https://www.toyota.com/dealers/dealer/21122",
   },
-  "21123": {
+  21123: {
     "name": "Suburban Toyota of Farmington Hills",
     "address": "25000 Haggerty Road",
     "city": "Farmington Hills",
@@ -3184,7 +3198,7 @@ DEALERS = {
     "zip": "48335",
     "link": "https://www.toyota.com/dealers/dealer/21123",
   },
-  "21124": {
+  21124: {
     "name": "Toyota of Ann Arbor",
     "address": "3745 Jackson Road",
     "city": "Ann Arbor",
@@ -3192,7 +3206,7 @@ DEALERS = {
     "zip": "48103",
     "link": "https://www.toyota.com/dealers/dealer/21124",
   },
-  "22021": {
+  22021: {
     "name": "St. Cloud Toyota",
     "address": "418 2nd Street South",
     "city": "Waite Park",
@@ -3200,7 +3214,7 @@ DEALERS = {
     "zip": "56387",
     "link": "https://www.toyota.com/dealers/dealer/22021",
   },
-  "22030": {
+  22030: {
     "name": "Rudy Luther Toyota",
     "address": "8805 Wayzata Blvd",
     "city": "Golden Valley",
@@ -3208,7 +3222,7 @@ DEALERS = {
     "zip": "55426",
     "link": "https://www.toyota.com/dealers/dealer/22030",
   },
-  "22034": {
+  22034: {
     "name": "Kolar Toyota",
     "address": "4781 Miller Trunk Hwy.",
     "city": "Duluth",
@@ -3216,7 +3230,7 @@ DEALERS = {
     "zip": "55811",
     "link": "https://www.toyota.com/dealers/dealer/22034",
   },
-  "22035": {
+  22035: {
     "name": "Maplewood Toyota",
     "address": "2873 Maplewood Dr.",
     "city": "Maplewood",
@@ -3224,7 +3238,7 @@ DEALERS = {
     "zip": "55109",
     "link": "https://www.toyota.com/dealers/dealer/22035",
   },
-  "22038": {
+  22038: {
     "name": "Luther Brookdale Toyota",
     "address": "6700 Brooklyn Boulevard",
     "city": "Brooklyn Center",
@@ -3232,7 +3246,7 @@ DEALERS = {
     "zip": "55429",
     "link": "https://www.toyota.com/dealers/dealer/22038",
   },
-  "22041": {
+  22041: {
     "name": "Burnsville Toyota",
     "address": "14730 Buck Hill Road",
     "city": "Burnsville",
@@ -3240,7 +3254,7 @@ DEALERS = {
     "zip": "55306",
     "link": "https://www.toyota.com/dealers/dealer/22041",
   },
-  "22044": {
+  22044: {
     "name": "Mills Toyota",
     "address": "3700 Highway 71 South",
     "city": "Willmar",
@@ -3248,7 +3262,7 @@ DEALERS = {
     "zip": "56201",
     "link": "https://www.toyota.com/dealers/dealer/22044",
   },
-  "22045": {
+  22045: {
     "name": "Quality Toyota",
     "address": "1125 W. Lincoln Avenue",
     "city": "Fergus Falls",
@@ -3256,7 +3270,7 @@ DEALERS = {
     "zip": "56537",
     "link": "https://www.toyota.com/dealers/dealer/22045",
   },
-  "22046": {
+  22046: {
     "name": "Carlson Toyota",
     "address": "12880 Riverdale Dr. NW",
     "city": "Coon Rapids",
@@ -3264,7 +3278,7 @@ DEALERS = {
     "zip": "55448",
     "link": "https://www.toyota.com/dealers/dealer/22046",
   },
-  "22047": {
+  22047: {
     "name": "Rochester Toyota",
     "address": "4365 Canal Place, S.E.",
     "city": "Rochester",
@@ -3272,7 +3286,7 @@ DEALERS = {
     "zip": "55904",
     "link": "https://www.toyota.com/dealers/dealer/22047",
   },
-  "22048": {
+  22048: {
     "name": "Walser Bloomington Toyota",
     "address": "4401 American Blvd. West",
     "city": "Bloomington",
@@ -3280,7 +3294,7 @@ DEALERS = {
     "zip": "55437",
     "link": "https://www.toyota.com/dealers/dealer/22048",
   },
-  "22051": {
+  22051: {
     "name": "Iron Trail Toyota",
     "address": "1301 S. 17th Street",
     "city": "Virginia",
@@ -3288,7 +3302,7 @@ DEALERS = {
     "zip": "55792",
     "link": "https://www.toyota.com/dealers/dealer/22051",
   },
-  "22053": {
+  22053: {
     "name": "Inver Grove Toyota",
     "address": "1037 50th Street",
     "city": "Inver Grove Heights",
@@ -3296,7 +3310,7 @@ DEALERS = {
     "zip": "55077",
     "link": "https://www.toyota.com/dealers/dealer/22053",
   },
-  "22054": {
+  22054: {
     "name": "Dahl Toyota",
     "address": "1077 W. Service Drive",
     "city": "Winona",
@@ -3304,7 +3318,7 @@ DEALERS = {
     "zip": "55987",
     "link": "https://www.toyota.com/dealers/dealer/22054",
   },
-  "22055": {
+  22055: {
     "name": "Lake Country Toyota",
     "address": "7036 Lake Forest Road",
     "city": "Baxter",
@@ -3312,7 +3326,7 @@ DEALERS = {
     "zip": "56401",
     "link": "https://www.toyota.com/dealers/dealer/22055",
   },
-  "22056": {
+  22056: {
     "name": "Toyota of Mankato",
     "address": "1234 Raintree Road",
     "city": "Mankato",
@@ -3320,7 +3334,7 @@ DEALERS = {
     "zip": "56001",
     "link": "https://www.toyota.com/dealers/dealer/22056",
   },
-  "23050": {
+  23050: {
     "name": "Estabrook Toyota",
     "address": "6521 Highway 63",
     "city": "Moss Point",
@@ -3328,7 +3342,7 @@ DEALERS = {
     "zip": "39563",
     "link": "https://www.toyota.com/dealers/dealer/23050",
   },
-  "23052": {
+  23052: {
     "name": "J. Allen Toyota",
     "address": "11397 Helen Richards Road",
     "city": "Gulfport",
@@ -3336,7 +3350,7 @@ DEALERS = {
     "zip": "39503",
     "link": "https://www.toyota.com/dealers/dealer/23052",
   },
-  "23054": {
+  23054: {
     "name": "Oxford Toyota",
     "address": "435A Highway 6 West",
     "city": "Oxford",
@@ -3344,7 +3358,7 @@ DEALERS = {
     "zip": "38655",
     "link": "https://www.toyota.com/dealers/dealer/23054",
   },
-  "23057": {
+  23057: {
     "name": "Kirk Toyota",
     "address": "237 Southwest Frontage Road",
     "city": "Grenada",
@@ -3352,7 +3366,7 @@ DEALERS = {
     "zip": "38901",
     "link": "https://www.toyota.com/dealers/dealer/23057",
   },
-  "23069": {
+  23069: {
     "name": "Carlock Toyota of Tupelo",
     "address": "882 Cross Creek Drive",
     "city": "Saltillo",
@@ -3360,7 +3374,7 @@ DEALERS = {
     "zip": "38866",
     "link": "https://www.toyota.com/dealers/dealer/23069",
   },
-  "23081": {
+  23081: {
     "name": "Gray-Daniels Toyota",
     "address": "104 Gray Daniels Blvd",
     "city": "Brandon",
@@ -3368,7 +3382,7 @@ DEALERS = {
     "zip": "39042",
     "link": "https://www.toyota.com/dealers/dealer/23081",
   },
-  "24022": {
+  24022: {
     "name": "Seeger Toyota",
     "address": "12833 Olive Street Road",
     "city": "Creve Coeur",
@@ -3376,7 +3390,7 @@ DEALERS = {
     "zip": "63141",
     "link": "https://www.toyota.com/dealers/dealer/24022",
   },
-  "24026": {
+  24026: {
     "name": "Adams Toyota Lee's Summit",
     "address": "501 N.E. Colbern Road",
     "city": "Lee's Summit",
@@ -3384,7 +3398,7 @@ DEALERS = {
     "zip": "64086",
     "link": "https://www.toyota.com/dealers/dealer/24026",
   },
-  "24036": {
+  24036: {
     "name": "Tom Pappas Toyota",
     "address": "10011 Spencer Road",
     "city": "St Peters",
@@ -3392,7 +3406,7 @@ DEALERS = {
     "zip": "63376",
     "link": "https://www.toyota.com/dealers/dealer/24036",
   },
-  "24045": {
+  24045: {
     "name": "Lou Fusz Toyota",
     "address": "10725 Manchester Road",
     "city": "Kirkwood",
@@ -3400,7 +3414,7 @@ DEALERS = {
     "zip": "63122",
     "link": "https://www.toyota.com/dealers/dealer/24045",
   },
-  "24052": {
+  24052: {
     "name": "Straatmann Toyota",
     "address": "215 George Hildner Drive",
     "city": "Washington",
@@ -3408,7 +3422,7 @@ DEALERS = {
     "zip": "63090",
     "link": "https://www.toyota.com/dealers/dealer/24052",
   },
-  "24053": {
+  24053: {
     "name": "Seeger Toyota of St. Robert",
     "address": "169 St. Robert Blvd.",
     "city": "St. Robert",
@@ -3416,7 +3430,7 @@ DEALERS = {
     "zip": "65584",
     "link": "https://www.toyota.com/dealers/dealer/24053",
   },
-  "24059": {
+  24059: {
     "name": "Baldwin Toyota",
     "address": "801 S. Westwood Blvd.",
     "city": "Poplar Bluff",
@@ -3424,7 +3438,7 @@ DEALERS = {
     "zip": "63901",
     "link": "https://www.toyota.com/dealers/dealer/24059",
   },
-  "24060": {
+  24060: {
     "name": "Riley Toyota",
     "address": "2105 Christy Drive",
     "city": "Jefferson City",
@@ -3432,7 +3446,7 @@ DEALERS = {
     "zip": "65101",
     "link": "https://www.toyota.com/dealers/dealer/24060",
   },
-  "24061": {
+  24061: {
     "name": "Molle Toyota, Inc.",
     "address": "601 West 103rd Street",
     "city": "Kansas City",
@@ -3440,7 +3454,7 @@ DEALERS = {
     "zip": "64114",
     "link": "https://www.toyota.com/dealers/dealer/24061",
   },
-  "24063": {
+  24063: {
     "name": "Jerry Ackerman Toyota",
     "address": "2020 Hampton Avenue",
     "city": "St. Louis",
@@ -3448,7 +3462,7 @@ DEALERS = {
     "zip": "63139",
     "link": "https://www.toyota.com/dealers/dealer/24063",
   },
-  "24067": {
+  24067: {
     "name": "Twin City Toyota",
     "address": "301 Autumn Ridge Drive",
     "city": "Herculaneum",
@@ -3456,7 +3470,7 @@ DEALERS = {
     "zip": "63048",
     "link": "https://www.toyota.com/dealers/dealer/24067",
   },
-  "24068": {
+  24068: {
     "name": "Toyota of West Plains",
     "address": "1802 Porter Wagoner Blvd.",
     "city": "West Plains",
@@ -3464,7 +3478,7 @@ DEALERS = {
     "zip": "65775",
     "link": "https://www.toyota.com/dealers/dealer/24068",
   },
-  "24071": {
+  24071: {
     "name": "Reliable Toyota",
     "address": "3521 East Sunshine",
     "city": "Springfield",
@@ -3472,7 +3486,7 @@ DEALERS = {
     "zip": "65809",
     "link": "https://www.toyota.com/dealers/dealer/24071",
   },
-  "24073": {
+  24073: {
     "name": "John Weiss' Toyota of South County",
     "address": "11771 Tesson Ferry Road",
     "city": "St. Louis",
@@ -3480,7 +3494,7 @@ DEALERS = {
     "zip": "63128",
     "link": "https://www.toyota.com/dealers/dealer/24073",
   },
-  "24074": {
+  24074: {
     "name": "Jay Wolfe Toyota",
     "address": "9650 NW Prairie View Road",
     "city": "Kansas City",
@@ -3488,7 +3502,7 @@ DEALERS = {
     "zip": "64153",
     "link": "https://www.toyota.com/dealers/dealer/24074",
   },
-  "24076": {
+  24076: {
     "name": "Frank Fletcher Toyota",
     "address": "2209 S. Rangeline Road",
     "city": "Joplin",
@@ -3496,7 +3510,7 @@ DEALERS = {
     "zip": "64804",
     "link": "https://www.toyota.com/dealers/dealer/24076",
   },
-  "24077": {
+  24077: {
     "name": "Jay Wolfe Toyota of West County",
     "address": "14700 Manchester Road",
     "city": "Ballwin",
@@ -3504,7 +3518,7 @@ DEALERS = {
     "zip": "63011",
     "link": "https://www.toyota.com/dealers/dealer/24077",
   },
-  "24078": {
+  24078: {
     "name": "Coad Toyota",
     "address": "357 Siemers Drive",
     "city": "Cape Girardeau",
@@ -3512,7 +3526,7 @@ DEALERS = {
     "zip": "63701",
     "link": "https://www.toyota.com/dealers/dealer/24078",
   },
-  "24079": {
+  24079: {
     "name": "Rolling Hills Toyota",
     "address": "1617 Cross Street",
     "city": "St. Joseph",
@@ -3520,7 +3534,7 @@ DEALERS = {
     "zip": "64506",
     "link": "https://www.toyota.com/dealers/dealer/24079",
   },
-  "24080": {
+  24080: {
     "name": "McCarthy Toyota of Sedalia",
     "address": "3110 W Broadway",
     "city": "Sedalia",
@@ -3528,7 +3542,7 @@ DEALERS = {
     "zip": "65301",
     "link": "https://www.toyota.com/dealers/dealer/24080",
   },
-  "24083": {
+  24083: {
     "name": "Kirksville Toyota",
     "address": "3607 N. Baltimore Street",
     "city": "Kirksville",
@@ -3536,7 +3550,7 @@ DEALERS = {
     "zip": "63501",
     "link": "https://www.toyota.com/dealers/dealer/24083",
   },
-  "24084": {
+  24084: {
     "name": "Joe Machens Toyota",
     "address": "1180 Vandiver Drive",
     "city": "Columbia",
@@ -3544,7 +3558,7 @@ DEALERS = {
     "zip": "65202",
     "link": "https://www.toyota.com/dealers/dealer/24084",
   },
-  "24085": {
+  24085: {
     "name": "Bommarito Toyota",
     "address": "9095 Dunn Road",
     "city": "Hazelwood",
@@ -3552,7 +3566,7 @@ DEALERS = {
     "zip": "63042",
     "link": "https://www.toyota.com/dealers/dealer/24085",
   },
-  "26015": {
+  26015: {
     "name": "Cornhusker Toyota",
     "address": "3510 Kaufman",
     "city": "Grand Island",
@@ -3560,7 +3574,7 @@ DEALERS = {
     "zip": "68803",
     "link": "https://www.toyota.com/dealers/dealer/26015",
   },
-  "26016": {
+  26016: {
     "name": "Ernst Toyota",
     "address": "815 East 23rd Street",
     "city": "Columbus",
@@ -3568,7 +3582,7 @@ DEALERS = {
     "zip": "68601",
     "link": "https://www.toyota.com/dealers/dealer/26016",
   },
-  "26021": {
+  26021: {
     "name": "Baxter Toyota of La Vista",
     "address": "7204 S. 124th Circle",
     "city": "La Vista",
@@ -3576,7 +3590,7 @@ DEALERS = {
     "zip": "68128",
     "link": "https://www.toyota.com/dealers/dealer/26021",
   },
-  "26023": {
+  26023: {
     "name": "Premier Toyota",
     "address": "2600 S Willow & I-80",
     "city": "North Platte",
@@ -3584,7 +3598,7 @@ DEALERS = {
     "zip": "69103",
     "link": "https://www.toyota.com/dealers/dealer/26023",
   },
-  "26024": {
+  26024: {
     "name": "Baxter Toyota of Lincoln",
     "address": "8600 South 33rd Street",
     "city": "Lincoln",
@@ -3592,7 +3606,7 @@ DEALERS = {
     "zip": "68516",
     "link": "https://www.toyota.com/dealers/dealer/26024",
   },
-  "26027": {
+  26027: {
     "name": "Wagner Toyota",
     "address": "211 West 2nd Street",
     "city": "McCook",
@@ -3600,7 +3614,7 @@ DEALERS = {
     "zip": "69001",
     "link": "https://www.toyota.com/dealers/dealer/26027",
   },
-  "26029": {
+  26029: {
     "name": "Team Toyota",
     "address": "2014 E. 20th Place",
     "city": "Scottsbluff",
@@ -3608,7 +3622,7 @@ DEALERS = {
     "zip": "69361",
     "link": "https://www.toyota.com/dealers/dealer/26029",
   },
-  "26030": {
+  26030: {
     "name": "Village Pointe Toyota",
     "address": "18201 Cuming Street",
     "city": "Omaha",
@@ -3616,7 +3630,7 @@ DEALERS = {
     "zip": "68022",
     "link": "https://www.toyota.com/dealers/dealer/26030",
   },
-  "26031": {
+  26031: {
     "name": "Corwin Toyota of Bellevue",
     "address": "7851 S. 19th Circle",
     "city": "Bellevue",
@@ -3624,7 +3638,7 @@ DEALERS = {
     "zip": "68147",
     "link": "https://www.toyota.com/dealers/dealer/26031",
   },
-  "27013": {
+  27013: {
     "name": "Dolan Toyota",
     "address": "2100 Kietzke Lane",
     "city": "Reno",
@@ -3632,7 +3646,7 @@ DEALERS = {
     "zip": "89502",
     "link": "https://www.toyota.com/dealers/dealer/27013",
   },
-  "27015": {
+  27015: {
     "name": "Carson City Toyota",
     "address": "2590 South Carson Street",
     "city": "Carson City",
@@ -3640,7 +3654,7 @@ DEALERS = {
     "zip": "89701",
     "link": "https://www.toyota.com/dealers/dealer/27015",
   },
-  "27020": {
+  27020: {
     "name": "Findlay Toyota",
     "address": "7733 Eastgate Road",
     "city": "Henderson",
@@ -3648,7 +3662,7 @@ DEALERS = {
     "zip": "89011",
     "link": "https://www.toyota.com/dealers/dealer/27020",
   },
-  "27021": {
+  27021: {
     "name": "AutoNation Toyota Las Vegas",
     "address": "6300 West Sahara Avenue",
     "city": "Las Vegas",
@@ -3656,7 +3670,7 @@ DEALERS = {
     "zip": "89146",
     "link": "https://www.toyota.com/dealers/dealer/27021",
   },
-  "27022": {
+  27022: {
     "name": "Centennial Toyota",
     "address": "6551 Centennial Cnter Blv",
     "city": "Las Vegas",
@@ -3664,7 +3678,7 @@ DEALERS = {
     "zip": "89149",
     "link": "https://www.toyota.com/dealers/dealer/27022",
   },
-  "27024": {
+  27024: {
     "name": "David Wilson's Toyota and Scion of Las Vegas",
     "address": "3255 East Sahara Avenue",
     "city": "Las Vegas",
@@ -3672,7 +3686,7 @@ DEALERS = {
     "zip": "89104",
     "link": "https://www.toyota.com/dealers/dealer/27024",
   },
-  "28012": {
+  28012: {
     "name": "Grappone Toyota",
     "address": "594 Route 3-A",
     "city": "Bow",
@@ -3680,7 +3694,7 @@ DEALERS = {
     "zip": "3304",
     "link": "https://www.toyota.com/dealers/dealer/28012",
   },
-  "28020": {
+  28020: {
     "name": "Rochester Toyota",
     "address": "48 Farmington Rd-Route 11 West",
     "city": "Rochester",
@@ -3688,7 +3702,7 @@ DEALERS = {
     "zip": "3867",
     "link": "https://www.toyota.com/dealers/dealer/28020",
   },
-  "28021": {
+  28021: {
     "name": "Bill Dube Toyota",
     "address": "40 Dover Point Road",
     "city": "Dover",
@@ -3696,7 +3710,7 @@ DEALERS = {
     "zip": "3820",
     "link": "https://www.toyota.com/dealers/dealer/28021",
   },
-  "28024": {
+  28024: {
     "name": "Irwin Toyota",
     "address": "59 Bisson Avenue",
     "city": "Laconia",
@@ -3704,7 +3718,7 @@ DEALERS = {
     "zip": "3246",
     "link": "https://www.toyota.com/dealers/dealer/28024",
   },
-  "28028": {
+  28028: {
     "name": "Rockingham Toyota",
     "address": "412 S. Broadway",
     "city": "Salem",
@@ -3712,7 +3726,7 @@ DEALERS = {
     "zip": "3079",
     "link": "https://www.toyota.com/dealers/dealer/28028",
   },
-  "28029": {
+  28029: {
     "name": "Toyota of Keene",
     "address": "591 Monadnock Hwy. Rt 12",
     "city": "East Swanzey",
@@ -3720,7 +3734,7 @@ DEALERS = {
     "zip": "3446",
     "link": "https://www.toyota.com/dealers/dealer/28029",
   },
-  "28035": {
+  28035: {
     "name": "Toyota of Portsmouth",
     "address": "150 Greenleaf Avenue",
     "city": "Portsmouth",
@@ -3728,7 +3742,7 @@ DEALERS = {
     "zip": "3801",
     "link": "https://www.toyota.com/dealers/dealer/28035",
   },
-  "28036": {
+  28036: {
     "name": "Ira Toyota of Manchester",
     "address": "33 Autocenter Road",
     "city": "Manchester",
@@ -3736,7 +3750,7 @@ DEALERS = {
     "zip": "3103",
     "link": "https://www.toyota.com/dealers/dealer/28036",
   },
-  "28037": {
+  28037: {
     "name": "Berlin City Toyota",
     "address": "485 Main Street",
     "city": "Gorham",
@@ -3744,7 +3758,7 @@ DEALERS = {
     "zip": "3581",
     "link": "https://www.toyota.com/dealers/dealer/28037",
   },
-  "28038": {
+  28038: {
     "name": "Toyota of Nashua",
     "address": "10 Marmon Drive",
     "city": "Nashua",
@@ -3752,7 +3766,7 @@ DEALERS = {
     "zip": "3060",
     "link": "https://www.toyota.com/dealers/dealer/28038",
   },
-  "28039": {
+  28039: {
     "name": "McGee Toyota of Claremont",
     "address": "168 Charlestown Road",
     "city": "Claremont",
@@ -3760,7 +3774,7 @@ DEALERS = {
     "zip": "3743",
     "link": "https://www.toyota.com/dealers/dealer/28039",
   },
-  "28040": {
+  28040: {
     "name": "McGee Toyota of Epping",
     "address": "58 Calef Highway",
     "city": "Epping",
@@ -3768,7 +3782,7 @@ DEALERS = {
     "zip": "3042",
     "link": "https://www.toyota.com/dealers/dealer/28040",
   },
-  "29008": {
+  29008: {
     "name": "Parkway Toyota",
     "address": "50 Sylvan Avenue",
     "city": "Englewood Cliffs",
@@ -3776,7 +3790,7 @@ DEALERS = {
     "zip": "7632",
     "link": "https://www.toyota.com/dealers/dealer/29008",
   },
-  "29025": {
+  29025: {
     "name": "Toyota of Hackensack",
     "address": "278 River Street",
     "city": "Hackensack",
@@ -3784,7 +3798,7 @@ DEALERS = {
     "zip": "7601",
     "link": "https://www.toyota.com/dealers/dealer/29025",
   },
-  "29031": {
+  29031: {
     "name": "Galaxy Toyota",
     "address": "750 Route 36",
     "city": "Eatontown",
@@ -3792,7 +3806,7 @@ DEALERS = {
     "zip": "7724",
     "link": "https://www.toyota.com/dealers/dealer/29031",
   },
-  "29037": {
+  29037: {
     "name": "Glen Motors, Inc.",
     "address": "23-07 Maple Avenue",
     "city": "Fair Lawn",
@@ -3800,7 +3814,7 @@ DEALERS = {
     "zip": "7410",
     "link": "https://www.toyota.com/dealers/dealer/29037",
   },
-  "29058": {
+  29058: {
     "name": "Towne Toyota",
     "address": "1499 Route 46",
     "city": "Ledgewood",
@@ -3808,7 +3822,7 @@ DEALERS = {
     "zip": "7852",
     "link": "https://www.toyota.com/dealers/dealer/29058",
   },
-  "29059": {
+  29059: {
     "name": "Toyota of Morristown",
     "address": "169 Ridgedale Ave",
     "city": "Morristown",
@@ -3816,7 +3830,7 @@ DEALERS = {
     "zip": "7960",
     "link": "https://www.toyota.com/dealers/dealer/29059",
   },
-  "29062": {
+  29062: {
     "name": "Toyota of Runnemede",
     "address": "99 South Black Horse Pike",
     "city": "Runnemede",
@@ -3824,7 +3838,7 @@ DEALERS = {
     "zip": "8078",
     "link": "https://www.toyota.com/dealers/dealer/29062",
   },
-  "29069": {
+  29069: {
     "name": "Shore Toyota",
     "address": "4236 Black Horse Pike",
     "city": "Mays Landing",
@@ -3832,7 +3846,7 @@ DEALERS = {
     "zip": "8330",
     "link": "https://www.toyota.com/dealers/dealer/29069",
   },
-  "29071": {
+  29071: {
     "name": "Liberty Toyota",
     "address": "4397 South Route 130",
     "city": "Burlington",
@@ -3840,7 +3854,7 @@ DEALERS = {
     "zip": "8016",
     "link": "https://www.toyota.com/dealers/dealer/29071",
   },
-  "29073": {
+  29073: {
     "name": "Team Toyota of Princeton",
     "address": "2871 Route 1",
     "city": "Lawrenceville",
@@ -3848,7 +3862,7 @@ DEALERS = {
     "zip": "8648",
     "link": "https://www.toyota.com/dealers/dealer/29073",
   },
-  "29075": {
+  29075: {
     "name": "Sansone Toyota",
     "address": "100 Route 1 North",
     "city": "Avenel",
@@ -3856,7 +3870,7 @@ DEALERS = {
     "zip": "7001",
     "link": "https://www.toyota.com/dealers/dealer/29075",
   },
-  "29078": {
+  29078: {
     "name": "Toyota Universe",
     "address": "1485 Route 46 East",
     "city": "Little Falls",
@@ -3864,7 +3878,7 @@ DEALERS = {
     "zip": "7424",
     "link": "https://www.toyota.com/dealers/dealer/29078",
   },
-  "29081": {
+  29081: {
     "name": "Crestmont Toyota",
     "address": "730 State Route 23",
     "city": "Pompton Plains",
@@ -3872,7 +3886,7 @@ DEALERS = {
     "zip": "7444",
     "link": "https://www.toyota.com/dealers/dealer/29081",
   },
-  "29083": {
+  29083: {
     "name": "Route 22 Toyota",
     "address": "109 Route 22 West",
     "city": "Hillside",
@@ -3880,7 +3894,7 @@ DEALERS = {
     "zip": "7205",
     "link": "https://www.toyota.com/dealers/dealer/29083",
   },
-  "29086": {
+  29086: {
     "name": "Toyota of Vineland",
     "address": "650 North Delsea Drive",
     "city": "Vineland",
@@ -3888,7 +3902,7 @@ DEALERS = {
     "zip": "8360",
     "link": "https://www.toyota.com/dealers/dealer/29086",
   },
-  "29087": {
+  29087: {
     "name": "Crystal Toyota",
     "address": "220 Route 22 West",
     "city": "Green Brook",
@@ -3896,7 +3910,7 @@ DEALERS = {
     "zip": "8812",
     "link": "https://www.toyota.com/dealers/dealer/29087",
   },
-  "29090": {
+  29090: {
     "name": "Hudson Toyota",
     "address": "599 Route 440",
     "city": "Jersey City",
@@ -3904,7 +3918,7 @@ DEALERS = {
     "zip": "7304",
     "link": "https://www.toyota.com/dealers/dealer/29090",
   },
-  "29092": {
+  29092: {
     "name": "Gateway Toyota",
     "address": "395 Rt 37E & Batchelor St",
     "city": "Toms River",
@@ -3912,7 +3926,7 @@ DEALERS = {
     "zip": "8753",
     "link": "https://www.toyota.com/dealers/dealer/29092",
   },
-  "29095": {
+  29095: {
     "name": "Toyota World of Lakewood",
     "address": "1118 Route 88",
     "city": "Lakewood",
@@ -3920,7 +3934,7 @@ DEALERS = {
     "zip": "8701",
     "link": "https://www.toyota.com/dealers/dealer/29095",
   },
-  "29099": {
+  29099: {
     "name": "Toyota of Turnersville",
     "address": "3400 Route 42",
     "city": "Turnersville",
@@ -3928,7 +3942,7 @@ DEALERS = {
     "zip": "8012",
     "link": "https://www.toyota.com/dealers/dealer/29099",
   },
-  "29100": {
+  29100: {
     "name": "Toyota World of Newton",
     "address": "66 Route 206 North",
     "city": "Newton",
@@ -3936,7 +3950,7 @@ DEALERS = {
     "zip": "7860",
     "link": "https://www.toyota.com/dealers/dealer/29100",
   },
-  "29101": {
+  29101: {
     "name": "Dayton Toyota",
     "address": "2291 Route 130",
     "city": "Dayton",
@@ -3944,7 +3958,7 @@ DEALERS = {
     "zip": "8810",
     "link": "https://www.toyota.com/dealers/dealer/29101",
   },
-  "29102": {
+  29102: {
     "name": "Holman Toyota",
     "address": "1301 Route 73",
     "city": "Mount Laurel",
@@ -3952,7 +3966,7 @@ DEALERS = {
     "zip": "8054",
     "link": "https://www.toyota.com/dealers/dealer/29102",
   },
-  "29103": {
+  29103: {
     "name": "East Coast Toyota",
     "address": "85 State Highway 17",
     "city": "Wood Ridge",
@@ -3960,7 +3974,7 @@ DEALERS = {
     "zip": "7075",
     "link": "https://www.toyota.com/dealers/dealer/29103",
   },
-  "29104": {
+  29104: {
     "name": "Fred Beans Toyota of Flemington",
     "address": "174 Route 202 North",
     "city": "Flemington",
@@ -3968,7 +3982,7 @@ DEALERS = {
     "zip": "8822",
     "link": "https://www.toyota.com/dealers/dealer/29104",
   },
-  "29105": {
+  29105: {
     "name": "DCH Freehold Toyota",
     "address": "4268 Route 9 South",
     "city": "Freehold",
@@ -3976,7 +3990,7 @@ DEALERS = {
     "zip": "7728",
     "link": "https://www.toyota.com/dealers/dealer/29105",
   },
-  "29106": {
+  29106: {
     "name": "DCH Brunswick Toyota",
     "address": "1504 US Route 1",
     "city": "North Brunswick",
@@ -3984,7 +3998,7 @@ DEALERS = {
     "zip": "8902",
     "link": "https://www.toyota.com/dealers/dealer/29106",
   },
-  "29107": {
+  29107: {
     "name": "Paul Miller Toyota of West Caldwell",
     "address": "1137-1183 Bloomfield Avenue",
     "city": "West Caldwell",
@@ -3992,7 +4006,7 @@ DEALERS = {
     "zip": "7006",
     "link": "https://www.toyota.com/dealers/dealer/29107",
   },
-  "29108": {
+  29108: {
     "name": "Autoland Toyota",
     "address": "170 Route 22 East",
     "city": "Springfield",
@@ -4000,7 +4014,7 @@ DEALERS = {
     "zip": "7081",
     "link": "https://www.toyota.com/dealers/dealer/29108",
   },
-  "29113": {
+  29113: {
     "name": "Prestige Toyota of Ramsey",
     "address": "1096 Route 17 North",
     "city": "Ramsey",
@@ -4008,7 +4022,7 @@ DEALERS = {
     "zip": "7446",
     "link": "https://www.toyota.com/dealers/dealer/29113",
   },
-  "29114": {
+  29114: {
     "name": "Toyota World of Clinton",
     "address": "2017 Route 31",
     "city": "Clinton",
@@ -4016,7 +4030,7 @@ DEALERS = {
     "zip": "8809",
     "link": "https://www.toyota.com/dealers/dealer/29114",
   },
-  "30034": {
+  30034: {
     "name": "Larry H. Miller American Toyota Albuquerque",
     "address": "5995 Alameda Blvd. N.E.",
     "city": "Albuquerque",
@@ -4024,7 +4038,7 @@ DEALERS = {
     "zip": "87113",
     "link": "https://www.toyota.com/dealers/dealer/30034",
   },
-  "30036": {
+  30036: {
     "name": "Amigo Toyota",
     "address": "2000 S. 2nd Street",
     "city": "Gallup",
@@ -4032,7 +4046,7 @@ DEALERS = {
     "zip": "87301",
     "link": "https://www.toyota.com/dealers/dealer/30036",
   },
-  "30039": {
+  30039: {
     "name": "Larry H. Miller Toyota Albuquerque",
     "address": "10401 Copper Avenue, N.E.",
     "city": "Albuquerque",
@@ -4040,7 +4054,7 @@ DEALERS = {
     "zip": "87123",
     "link": "https://www.toyota.com/dealers/dealer/30039",
   },
-  "30044": {
+  30044: {
     "name": "Toyota of Santa Fe",
     "address": "1601 St. Michaels Drive",
     "city": "Santa Fe",
@@ -4048,7 +4062,7 @@ DEALERS = {
     "zip": "87505",
     "link": "https://www.toyota.com/dealers/dealer/30044",
   },
-  "31011": {
+  31011: {
     "name": "Johnstons Toyota",
     "address": "5021 Route 17M",
     "city": "New Hampton",
@@ -4056,7 +4070,7 @@ DEALERS = {
     "zip": "10958",
     "link": "https://www.toyota.com/dealers/dealer/31011",
   },
-  "31019": {
+  31019: {
     "name": "Waite Toyota",
     "address": "18406 US Route 11",
     "city": "Watertown",
@@ -4064,7 +4078,7 @@ DEALERS = {
     "zip": "13601",
     "link": "https://www.toyota.com/dealers/dealer/31019",
   },
-  "31024": {
+  31024: {
     "name": "Kinderhook Toyota",
     "address": "1908 State Route 9H",
     "city": "Hudson",
@@ -4072,7 +4086,7 @@ DEALERS = {
     "zip": "12534",
     "link": "https://www.toyota.com/dealers/dealer/31024",
   },
-  "31039": {
+  31039: {
     "name": "Queensboro Toyota",
     "address": "62-10 Northern Boulevard",
     "city": "Woodside",
@@ -4080,7 +4094,7 @@ DEALERS = {
     "zip": "11377",
     "link": "https://www.toyota.com/dealers/dealer/31039",
   },
-  "31068": {
+  31068: {
     "name": "Northtown Toyota",
     "address": "1135 Millersport Highway",
     "city": "Amherst",
@@ -4088,7 +4102,7 @@ DEALERS = {
     "zip": "14226",
     "link": "https://www.toyota.com/dealers/dealer/31068",
   },
-  "31069": {
+  31069: {
     "name": "Hoselton Toyota",
     "address": "50 Marsh Road",
     "city": "East Rochester",
@@ -4096,7 +4110,7 @@ DEALERS = {
     "zip": "14445",
     "link": "https://www.toyota.com/dealers/dealer/31069",
   },
-  "31071": {
+  31071: {
     "name": "Dorschel Toyota",
     "address": "3399 West Henrietta Road",
     "city": "Rochester",
@@ -4104,7 +4118,7 @@ DEALERS = {
     "zip": "14623",
     "link": "https://www.toyota.com/dealers/dealer/31071",
   },
-  "31076": {
+  31076: {
     "name": "Penn Toyota",
     "address": "2400 Northern Blvd.",
     "city": "Greenvale",
@@ -4112,7 +4126,7 @@ DEALERS = {
     "zip": "11548",
     "link": "https://www.toyota.com/dealers/dealer/31076",
   },
-  "31088": {
+  31088: {
     "name": "Burdick Toyota",
     "address": "5947 East Circle Drive",
     "city": "Cicero",
@@ -4120,7 +4134,7 @@ DEALERS = {
     "zip": "13039",
     "link": "https://www.toyota.com/dealers/dealer/31088",
   },
-  "31097": {
+  31097: {
     "name": "Bay Ridge Toyota",
     "address": "6401 6th Avenue",
     "city": "Brooklyn",
@@ -4128,7 +4142,7 @@ DEALERS = {
     "zip": "11220",
     "link": "https://www.toyota.com/dealers/dealer/31097",
   },
-  "31101": {
+  31101: {
     "name": "T J Toyota",
     "address": "6706 State Highway 56",
     "city": "Potsdam",
@@ -4136,7 +4150,7 @@ DEALERS = {
     "zip": "13676",
     "link": "https://www.toyota.com/dealers/dealer/31101",
   },
-  "31105": {
+  31105: {
     "name": "Smithtown Toyota",
     "address": "360 East Jericho Turnpike",
     "city": "Smithtown",
@@ -4144,7 +4158,7 @@ DEALERS = {
     "zip": "11787",
     "link": "https://www.toyota.com/dealers/dealer/31105",
   },
-  "31112": {
+  31112: {
     "name": "Prestige Toyota",
     "address": "756 E. Chester St By-Pass",
     "city": "Kingston",
@@ -4152,7 +4166,7 @@ DEALERS = {
     "zip": "12401",
     "link": "https://www.toyota.com/dealers/dealer/31112",
   },
-  "31113": {
+  31113: {
     "name": "Gault Toyota",
     "address": "2205 North Street",
     "city": "Endicott",
@@ -4160,7 +4174,7 @@ DEALERS = {
     "zip": "13760",
     "link": "https://www.toyota.com/dealers/dealer/31113",
   },
-  "31115": {
+  31115: {
     "name": "Romano Toyota",
     "address": "6400 Basile Rowe",
     "city": "East Syracuse",
@@ -4168,7 +4182,7 @@ DEALERS = {
     "zip": "13057",
     "link": "https://www.toyota.com/dealers/dealer/31115",
   },
-  "31116": {
+  31116: {
     "name": "New Country Toyota of Saratoga Springs",
     "address": "3002 Route 50",
     "city": "Saratoga Springs",
@@ -4176,7 +4190,7 @@ DEALERS = {
     "zip": "12866",
     "link": "https://www.toyota.com/dealers/dealer/31116",
   },
-  "31119": {
+  31119: {
     "name": "Lia Toyota of Colonie",
     "address": "2116 Central Ave. Rte. 5",
     "city": "Schenectady",
@@ -4184,7 +4198,7 @@ DEALERS = {
     "zip": "12304",
     "link": "https://www.toyota.com/dealers/dealer/31119",
   },
-  "31121": {
+  31121: {
     "name": "Fordham Toyota",
     "address": "236-240 W. Fordham Road",
     "city": "Bronx",
@@ -4192,7 +4206,7 @@ DEALERS = {
     "zip": "10468",
     "link": "https://www.toyota.com/dealers/dealer/31121",
   },
-  "31124": {
+  31124: {
     "name": "Empire Toyota",
     "address": "6281 State Highway 23",
     "city": "Oneonta",
@@ -4200,7 +4214,7 @@ DEALERS = {
     "zip": "13820",
     "link": "https://www.toyota.com/dealers/dealer/31124",
   },
-  "31131": {
+  31131: {
     "name": "Jack Sherman Toyota",
     "address": "387-393 Court Street",
     "city": "Binghamton",
@@ -4208,7 +4222,7 @@ DEALERS = {
     "zip": "13904",
     "link": "https://www.toyota.com/dealers/dealer/31131",
   },
-  "31132": {
+  31132: {
     "name": "New Country Toyota of Clifton Park",
     "address": "202 Route 146",
     "city": "Mechanicville",
@@ -4216,7 +4230,7 @@ DEALERS = {
     "zip": "12118",
     "link": "https://www.toyota.com/dealers/dealer/31132",
   },
-  "31135": {
+  31135: {
     "name": "New Rochelle Toyota",
     "address": "47 Cedar Street",
     "city": "New Rochelle",
@@ -4224,7 +4238,7 @@ DEALERS = {
     "zip": "10801",
     "link": "https://www.toyota.com/dealers/dealer/31135",
   },
-  "31136": {
+  31136: {
     "name": "Vanderstyne Toyota",
     "address": "4374 Ridge Road West",
     "city": "Rochester",
@@ -4232,7 +4246,7 @@ DEALERS = {
     "zip": "14626",
     "link": "https://www.toyota.com/dealers/dealer/31136",
   },
-  "31138": {
+  31138: {
     "name": "Westchester Toyota",
     "address": "2167 Central Park Avenue",
     "city": "Yonkers",
@@ -4240,7 +4254,7 @@ DEALERS = {
     "zip": "10710",
     "link": "https://www.toyota.com/dealers/dealer/31138",
   },
-  "31139": {
+  31139: {
     "name": "Riverhead Toyota",
     "address": "1655 Old Country Road",
     "city": "Riverhead",
@@ -4248,7 +4262,7 @@ DEALERS = {
     "zip": "11901",
     "link": "https://www.toyota.com/dealers/dealer/31139",
   },
-  "31141": {
+  31141: {
     "name": "Luv Toyota",
     "address": "215 East Fairmount Avenue",
     "city": "Lakewood",
@@ -4256,7 +4270,7 @@ DEALERS = {
     "zip": "14750",
     "link": "https://www.toyota.com/dealers/dealer/31141",
   },
-  "31142": {
+  31142: {
     "name": "Steet Toyota",
     "address": "4991 Commercial Drive",
     "city": "Yorkville",
@@ -4264,7 +4278,7 @@ DEALERS = {
     "zip": "13495",
     "link": "https://www.toyota.com/dealers/dealer/31142",
   },
-  "31144": {
+  31144: {
     "name": "Star Toyota of Bayside",
     "address": "205-11 Northern Blvd.",
     "city": "Bayside",
@@ -4272,7 +4286,7 @@ DEALERS = {
     "zip": "11361",
     "link": "https://www.toyota.com/dealers/dealer/31144",
   },
-  "31145": {
+  31145: {
     "name": "Fox Toyota - Subaru",
     "address": "188 Grant Avenue",
     "city": "Auburn",
@@ -4280,7 +4294,7 @@ DEALERS = {
     "zip": "13021",
     "link": "https://www.toyota.com/dealers/dealer/31145",
   },
-  "31148": {
+  31148: {
     "name": "Nye Toyota",
     "address": "1441 Genesee Street",
     "city": "Oneida",
@@ -4288,7 +4302,7 @@ DEALERS = {
     "zip": "13421",
     "link": "https://www.toyota.com/dealers/dealer/31148",
   },
-  "31153": {
+  31153: {
     "name": "Lebrun Toyota",
     "address": "2435 Route 332",
     "city": "Canandaigua",
@@ -4296,7 +4310,7 @@ DEALERS = {
     "zip": "14424",
     "link": "https://www.toyota.com/dealers/dealer/31153",
   },
-  "31154": {
+  31154: {
     "name": "Millennium Toyota",
     "address": "257 North Franklin Street",
     "city": "Hempstead",
@@ -4304,7 +4318,7 @@ DEALERS = {
     "zip": "11550",
     "link": "https://www.toyota.com/dealers/dealer/31154",
   },
-  "31156": {
+  31156: {
     "name": "Plaza Toyota",
     "address": "2721 Nostrand Avenue",
     "city": "Brooklyn",
@@ -4312,7 +4326,7 @@ DEALERS = {
     "zip": "11210",
     "link": "https://www.toyota.com/dealers/dealer/31156",
   },
-  "31160": {
+  31160: {
     "name": "West Herr Toyota of Orchard Park",
     "address": "4141 Southwestern Blvd.",
     "city": "Orchard Park",
@@ -4320,7 +4334,7 @@ DEALERS = {
     "zip": "14127",
     "link": "https://www.toyota.com/dealers/dealer/31160",
   },
-  "31161": {
+  31161: {
     "name": "City World Toyota",
     "address": "3333 Boston Road",
     "city": "Bronx",
@@ -4328,7 +4342,7 @@ DEALERS = {
     "zip": "10469",
     "link": "https://www.toyota.com/dealers/dealer/31161",
   },
-  "31162": {
+  31162: {
     "name": "Toyota of Manhattan",
     "address": "645 11th Avenue",
     "city": "New York",
@@ -4336,7 +4350,7 @@ DEALERS = {
     "zip": "10036",
     "link": "https://www.toyota.com/dealers/dealer/31162",
   },
-  "31165": {
+  31165: {
     "name": "Basil Toyota",
     "address": "6157 South Transit Road",
     "city": "Lockport",
@@ -4344,7 +4358,7 @@ DEALERS = {
     "zip": "14094",
     "link": "https://www.toyota.com/dealers/dealer/31165",
   },
-  "31166": {
+  31166: {
     "name": "Atlantic Toyota",
     "address": "207 Sunrise Highway",
     "city": "West Islip",
@@ -4352,7 +4366,7 @@ DEALERS = {
     "zip": "11795",
     "link": "https://www.toyota.com/dealers/dealer/31166",
   },
-  "31167": {
+  31167: {
     "name": "Toyota of Batavia",
     "address": "3899 West Main Street Road",
     "city": "Batavia",
@@ -4360,7 +4374,7 @@ DEALERS = {
     "zip": "14020",
     "link": "https://www.toyota.com/dealers/dealer/31167",
   },
-  "31168": {
+  31168: {
     "name": "Fuccillo Toyota",
     "address": "1974 Alvin Road",
     "city": "Grand Island",
@@ -4368,7 +4382,7 @@ DEALERS = {
     "zip": "14072",
     "link": "https://www.toyota.com/dealers/dealer/31168",
   },
-  "31171": {
+  31171: {
     "name": "Newburgh Toyota",
     "address": "218 Route 17K",
     "city": "Newburgh",
@@ -4376,7 +4390,7 @@ DEALERS = {
     "zip": "12550",
     "link": "https://www.toyota.com/dealers/dealer/31171",
   },
-  "31172": {
+  31172: {
     "name": "Curry Toyota",
     "address": "3026 E. Main Street",
     "city": "Cortlandt Manor",
@@ -4384,7 +4398,7 @@ DEALERS = {
     "zip": "10567",
     "link": "https://www.toyota.com/dealers/dealer/31172",
   },
-  "31173": {
+  31173: {
     "name": "Advantage Toyota",
     "address": "400 Sunrise Highway",
     "city": "Valley Stream",
@@ -4392,7 +4406,7 @@ DEALERS = {
     "zip": "11581",
     "link": "https://www.toyota.com/dealers/dealer/31173",
   },
-  "31174": {
+  31174: {
     "name": "Steet Toyota of Johnstown-Gloversville",
     "address": "310 North Comrie Avenue",
     "city": "Johnstown",
@@ -4400,7 +4414,7 @@ DEALERS = {
     "zip": "12095",
     "link": "https://www.toyota.com/dealers/dealer/31174",
   },
-  "31175": {
+  31175: {
     "name": "West Herr Toyota of Williamsville",
     "address": "8129 Main Street",
     "city": "Williamsville",
@@ -4408,7 +4422,7 @@ DEALERS = {
     "zip": "14221",
     "link": "https://www.toyota.com/dealers/dealer/31175",
   },
-  "31176": {
+  31176: {
     "name": "Interstate Toyota",
     "address": "411 Route 59",
     "city": "Airmont",
@@ -4416,7 +4430,7 @@ DEALERS = {
     "zip": "10952",
     "link": "https://www.toyota.com/dealers/dealer/31176",
   },
-  "31177": {
+  31177: {
     "name": "Maguire Toyota",
     "address": "370 Elmira Road",
     "city": "Ithaca",
@@ -4424,7 +4438,7 @@ DEALERS = {
     "zip": "14850",
     "link": "https://www.toyota.com/dealers/dealer/31177",
   },
-  "31178": {
+  31178: {
     "name": "Sunrise Toyota",
     "address": "3984 Sunrise Highway",
     "city": "Oakdale",
@@ -4432,7 +4446,7 @@ DEALERS = {
     "zip": "11769",
     "link": "https://www.toyota.com/dealers/dealer/31178",
   },
-  "31179": {
+  31179: {
     "name": "Empire Toyota of Huntington",
     "address": "1030 East Jericho Turnpke",
     "city": "Huntington Station",
@@ -4440,7 +4454,7 @@ DEALERS = {
     "zip": "11746",
     "link": "https://www.toyota.com/dealers/dealer/31179",
   },
-  "31180": {
+  31180: {
     "name": "Della Toyota",
     "address": "32 Della Drive",
     "city": "Plattsburgh",
@@ -4448,7 +4462,7 @@ DEALERS = {
     "zip": "12901",
     "link": "https://www.toyota.com/dealers/dealer/31180",
   },
-  "31181": {
+  31181: {
     "name": "Westbury Toyota",
     "address": "1121 Old Country Road",
     "city": "Westbury",
@@ -4456,7 +4470,7 @@ DEALERS = {
     "zip": "11590",
     "link": "https://www.toyota.com/dealers/dealer/31181",
   },
-  "31182": {
+  31182: {
     "name": "Williams Toyota of Elmira",
     "address": "951 County Route 64",
     "city": "Elmira",
@@ -4464,7 +4478,7 @@ DEALERS = {
     "zip": "14903",
     "link": "https://www.toyota.com/dealers/dealer/31182",
   },
-  "31183": {
+  31183: {
     "name": "DCH Wappingers Falls Toyota",
     "address": "1349 Route 9",
     "city": "Wappingers Falls",
@@ -4472,7 +4486,7 @@ DEALERS = {
     "zip": "12590",
     "link": "https://www.toyota.com/dealers/dealer/31183",
   },
-  "31185": {
+  31185: {
     "name": "Rivera Toyota of Mt. Kisco",
     "address": "325 N. Bedford Road",
     "city": "Mt. Kisco",
@@ -4480,7 +4494,7 @@ DEALERS = {
     "zip": "10549",
     "link": "https://www.toyota.com/dealers/dealer/31185",
   },
-  "31186": {
+  31186: {
     "name": "Island Toyota",
     "address": "1591 Hylan Boulevard",
     "city": "Staten Island",
@@ -4488,7 +4502,7 @@ DEALERS = {
     "zip": "10305",
     "link": "https://www.toyota.com/dealers/dealer/31186",
   },
-  "31188": {
+  31188: {
     "name": "Northway Toyota",
     "address": "737 New Loudon Road",
     "city": "Latham",
@@ -4496,7 +4510,7 @@ DEALERS = {
     "zip": "12110",
     "link": "https://www.toyota.com/dealers/dealer/31188",
   },
-  "31189": {
+  31189: {
     "name": "Lia Toyota of Rockland",
     "address": "618 Route 303",
     "city": "Blauvelt",
@@ -4504,7 +4518,7 @@ DEALERS = {
     "zip": "10913",
     "link": "https://www.toyota.com/dealers/dealer/31189",
   },
-  "31190": {
+  31190: {
     "name": "Sunrise Toyota North",
     "address": "910 Middle Country Road",
     "city": "Middle Island",
@@ -4512,7 +4526,7 @@ DEALERS = {
     "zip": "11953",
     "link": "https://www.toyota.com/dealers/dealer/31190",
   },
-  "31191": {
+  31191: {
     "name": "Toyota of Massapequa",
     "address": "3660 Sunrise Highway",
     "city": "Seaford",
@@ -4520,7 +4534,7 @@ DEALERS = {
     "zip": "11783",
     "link": "https://www.toyota.com/dealers/dealer/31191",
   },
-  "31192": {
+  31192: {
     "name": "Hillside Toyota",
     "address": "139-65 Queens Blvd.",
     "city": "Jamaica",
@@ -4528,7 +4542,7 @@ DEALERS = {
     "zip": "11435",
     "link": "https://www.toyota.com/dealers/dealer/31192",
   },
-  "31194": {
+  31194: {
     "name": "Fox Toyota",
     "address": "188 Grant Avenue",
     "city": "Auburn",
@@ -4536,7 +4550,7 @@ DEALERS = {
     "zip": "13021",
     "link": "https://www.toyota.com/dealers/dealer/31194",
   },
-  "31195": {
+  31195: {
     "name": "Toyota City",
     "address": "1305 East Boston Post Rd.",
     "city": "Mamaroneck",
@@ -4544,7 +4558,7 @@ DEALERS = {
     "zip": "10543",
     "link": "https://www.toyota.com/dealers/dealer/31195",
   },
-  "31196": {
+  31196: {
     "name": "Romeo Toyota of Glens Falls",
     "address": "163-169 Broad Street",
     "city": "Glens Falls",
@@ -4552,7 +4566,7 @@ DEALERS = {
     "zip": "12801",
     "link": "https://www.toyota.com/dealers/dealer/31196",
   },
-  "31197": {
+  31197: {
     "name": "West Herr/Lebrun Toyota",
     "address": "2435 State Route 332",
     "city": "Canandaigua",
@@ -4560,7 +4574,7 @@ DEALERS = {
     "zip": "14424",
     "link": "https://www.toyota.com/dealers/dealer/31197",
   },
-  "31198": {
+  31198: {
     "name": "West Herr Toyota of Rochester",
     "address": "4374 Ridge Road West",
     "city": "Rochester",
@@ -4568,7 +4582,7 @@ DEALERS = {
     "zip": "14626",
     "link": "https://www.toyota.com/dealers/dealer/31198",
   },
-  "31200": {
+  31200: {
     "name": "Bob Johnson Toyota",
     "address": "3399 West Henrietta Road",
     "city": "Rochester",
@@ -4576,7 +4590,7 @@ DEALERS = {
     "zip": "14623",
     "link": "https://www.toyota.com/dealers/dealer/31200",
   },
-  "33010": {
+  33010: {
     "name": "Lloyds Toyota",
     "address": "500 17th St SW",
     "city": "Jamestown",
@@ -4584,7 +4598,7 @@ DEALERS = {
     "zip": "58401",
     "link": "https://www.toyota.com/dealers/dealer/33010",
   },
-  "33017": {
+  33017: {
     "name": "Lake Toyota",
     "address": "424 Highway 2 East",
     "city": "Devils Lake",
@@ -4592,7 +4606,7 @@ DEALERS = {
     "zip": "58301",
     "link": "https://www.toyota.com/dealers/dealer/33017",
   },
-  "33021": {
+  33021: {
     "name": "Corwin Toyota",
     "address": "222 South 40TH Street",
     "city": "Fargo",
@@ -4600,7 +4614,7 @@ DEALERS = {
     "zip": "58103",
     "link": "https://www.toyota.com/dealers/dealer/33021",
   },
-  "33024": {
+  33024: {
     "name": "Dan Porter Honda-Toyota",
     "address": "2391 E. I-94 Business LP",
     "city": "Dickinson",
@@ -4608,7 +4622,7 @@ DEALERS = {
     "zip": "58601",
     "link": "https://www.toyota.com/dealers/dealer/33024",
   },
-  "33025": {
+  33025: {
     "name": "Cedric Theel Toyota",
     "address": "3955 Trenton Drive",
     "city": "Bismarck",
@@ -4616,7 +4630,7 @@ DEALERS = {
     "zip": "58503",
     "link": "https://www.toyota.com/dealers/dealer/33025",
   },
-  "33027": {
+  33027: {
     "name": "Minot Toyota Center",
     "address": "3615 South Broadway",
     "city": "Minot",
@@ -4624,7 +4638,7 @@ DEALERS = {
     "zip": "58702",
     "link": "https://www.toyota.com/dealers/dealer/33027",
   },
-  "33030": {
+  33030: {
     "name": "Lithia Toyota of Grand Forks",
     "address": "2473 South 32nd Avenue",
     "city": "Grand Forks",
@@ -4632,7 +4646,7 @@ DEALERS = {
     "zip": "58201",
     "link": "https://www.toyota.com/dealers/dealer/33030",
   },
-  "34006": {
+  34006: {
     "name": "Cain Toyota",
     "address": "6527 Whipple Avenue NW",
     "city": "North Canton",
@@ -4640,7 +4654,7 @@ DEALERS = {
     "zip": "44720",
     "link": "https://www.toyota.com/dealers/dealer/34006",
   },
-  "34024": {
+  34024: {
     "name": "Toyota of Logan",
     "address": "297 E Main St",
     "city": "Logan",
@@ -4648,7 +4662,7 @@ DEALERS = {
     "zip": "43138",
     "link": "https://www.toyota.com/dealers/dealer/34024",
   },
-  "34025": {
+  34025: {
     "name": "Tansky Sawmill Toyota",
     "address": "6300 Sawmill Road",
     "city": "Dublin",
@@ -4656,7 +4670,7 @@ DEALERS = {
     "zip": "43017",
     "link": "https://www.toyota.com/dealers/dealer/34025",
   },
-  "34026": {
+  34026: {
     "name": "Jim White Toyota",
     "address": "6123 West Central Avenue",
     "city": "Toledo",
@@ -4664,7 +4678,7 @@ DEALERS = {
     "zip": "43615",
     "link": "https://www.toyota.com/dealers/dealer/34026",
   },
-  "34036": {
+  34036: {
     "name": "Metro Toyota",
     "address": "13775 Brookpark Road",
     "city": "Cleveland",
@@ -4672,7 +4686,7 @@ DEALERS = {
     "zip": "44142",
     "link": "https://www.toyota.com/dealers/dealer/34036",
   },
-  "34037": {
+  34037: {
     "name": "Don Joseph Toyota",
     "address": "1111 West Main Street",
     "city": "Kent",
@@ -4680,7 +4694,7 @@ DEALERS = {
     "zip": "44240",
     "link": "https://www.toyota.com/dealers/dealer/34037",
   },
-  "34041": {
+  34041: {
     "name": "Germain Toyota of Columbus",
     "address": "5711 Scarborough Blvd.",
     "city": "Columbus",
@@ -4688,7 +4702,7 @@ DEALERS = {
     "zip": "43232",
     "link": "https://www.toyota.com/dealers/dealer/34041",
   },
-  "34044": {
+  34044: {
     "name": "Performance Toyota",
     "address": "5676 Dixie Highway",
     "city": "Fairfield",
@@ -4696,7 +4710,7 @@ DEALERS = {
     "zip": "45014",
     "link": "https://www.toyota.com/dealers/dealer/34044",
   },
-  "34050": {
+  34050: {
     "name": "Graham Toyota",
     "address": "1515 West Fourth Street",
     "city": "Mansfield",
@@ -4704,7 +4718,7 @@ DEALERS = {
     "zip": "44906",
     "link": "https://www.toyota.com/dealers/dealer/34050",
   },
-  "34064": {
+  34064: {
     "name": "Glockner Toyota",
     "address": "2867 U.S. Route 23",
     "city": "Portsmouth",
@@ -4712,7 +4726,7 @@ DEALERS = {
     "zip": "45662",
     "link": "https://www.toyota.com/dealers/dealer/34064",
   },
-  "34067": {
+  34067: {
     "name": "Nassief  Toyota",
     "address": "1059 State Route 46, N",
     "city": "Jefferson",
@@ -4720,7 +4734,7 @@ DEALERS = {
     "zip": "44047",
     "link": "https://www.toyota.com/dealers/dealer/34067",
   },
-  "34069": {
+  34069: {
     "name": "C & C Toyota",
     "address": "1305 Pike Street",
     "city": "Marietta",
@@ -4728,7 +4742,7 @@ DEALERS = {
     "zip": "45750",
     "link": "https://www.toyota.com/dealers/dealer/34069",
   },
-  "34070": {
+  34070: {
     "name": "Toyota Direct",
     "address": "4248 Morse Road",
     "city": "Columbus",
@@ -4736,7 +4750,7 @@ DEALERS = {
     "zip": "43230",
     "link": "https://www.toyota.com/dealers/dealer/34070",
   },
-  "34073": {
+  34073: {
     "name": "Walker Toyota",
     "address": "8457 Springboro Pike",
     "city": "Miamisburg",
@@ -4744,7 +4758,7 @@ DEALERS = {
     "zip": "45342",
     "link": "https://www.toyota.com/dealers/dealer/34073",
   },
-  "34077": {
+  34077: {
     "name": "Joseph Airport Toyota",
     "address": "1180 W National Road",
     "city": "Vandalia",
@@ -4752,7 +4766,7 @@ DEALERS = {
     "zip": "45377",
     "link": "https://www.toyota.com/dealers/dealer/34077",
   },
-  "34078": {
+  34078: {
     "name": "Beechmont Toyota",
     "address": "8667 Beechmont Avenue",
     "city": "Cincinnati",
@@ -4760,7 +4774,7 @@ DEALERS = {
     "zip": "45255",
     "link": "https://www.toyota.com/dealers/dealer/34078",
   },
-  "34080": {
+  34080: {
     "name": "McDaniel Toyota",
     "address": "1111 Mt. Vernon Avenue",
     "city": "Marion",
@@ -4768,7 +4782,7 @@ DEALERS = {
     "zip": "43302",
     "link": "https://www.toyota.com/dealers/dealer/34080",
   },
-  "34085": {
+  34085: {
     "name": "Kings Toyota",
     "address": "4700 Fields Ertel Road",
     "city": "Cincinnati",
@@ -4776,7 +4790,7 @@ DEALERS = {
     "zip": "45249",
     "link": "https://www.toyota.com/dealers/dealer/34085",
   },
-  "34089": {
+  34089: {
     "name": "Joseph Toyota of Cincinnati",
     "address": "9101 Colerain Avenue",
     "city": "Cincinnati",
@@ -4784,7 +4798,7 @@ DEALERS = {
     "zip": "45251",
     "link": "https://www.toyota.com/dealers/dealer/34089",
   },
-  "34090": {
+  34090: {
     "name": "Brunswick Toyota",
     "address": "3041 Center Road",
     "city": "Brunswick",
@@ -4792,7 +4806,7 @@ DEALERS = {
     "zip": "44212",
     "link": "https://www.toyota.com/dealers/dealer/34090",
   },
-  "34092": {
+  34092: {
     "name": "Thayer Toyota",
     "address": "1225 North Main Street",
     "city": "Bowling Green",
@@ -4800,7 +4814,7 @@ DEALERS = {
     "zip": "43402",
     "link": "https://www.toyota.com/dealers/dealer/34092",
   },
-  "34093": {
+  34093: {
     "name": "Classic Toyota",
     "address": "8510 Tyler Blvd.",
     "city": "Mentor",
@@ -4808,7 +4822,7 @@ DEALERS = {
     "zip": "44060",
     "link": "https://www.toyota.com/dealers/dealer/34093",
   },
-  "34094": {
+  34094: {
     "name": "Sunnyside Toyota",
     "address": "27000 Lorain Road",
     "city": "North Olmsted",
@@ -4816,7 +4830,7 @@ DEALERS = {
     "zip": "44070",
     "link": "https://www.toyota.com/dealers/dealer/34094",
   },
-  "34096": {
+  34096: {
     "name": "Voss Toyota",
     "address": "2110 Heller Drive",
     "city": "Beavercreek",
@@ -4824,7 +4838,7 @@ DEALERS = {
     "zip": "45434",
     "link": "https://www.toyota.com/dealers/dealer/34096",
   },
-  "34098": {
+  34098: {
     "name": "Team Toyota",
     "address": "905 Brady Avenue",
     "city": "Steubenville",
@@ -4832,7 +4846,7 @@ DEALERS = {
     "zip": "43952",
     "link": "https://www.toyota.com/dealers/dealer/34098",
   },
-  "34099": {
+  34099: {
     "name": "Nourse Toyota",
     "address": "423 N. Bridge Street",
     "city": "Chillicothe",
@@ -4840,7 +4854,7 @@ DEALERS = {
     "zip": "45601",
     "link": "https://www.toyota.com/dealers/dealer/34099",
   },
-  "34101": {
+  34101: {
     "name": "Don Wood Toyota",
     "address": "900 East State Street",
     "city": "Athens",
@@ -4848,7 +4862,7 @@ DEALERS = {
     "zip": "45701",
     "link": "https://www.toyota.com/dealers/dealer/34101",
   },
-  "34102": {
+  34102: {
     "name": "Coughlin Toyota",
     "address": "2360 Hebron Road",
     "city": "Heath",
@@ -4856,7 +4870,7 @@ DEALERS = {
     "zip": "43056",
     "link": "https://www.toyota.com/dealers/dealer/34102",
   },
-  "34104": {
+  34104: {
     "name": "Ferris Toyota",
     "address": "634 Wabash Avenue, N.W.",
     "city": "New Philadelphia",
@@ -4864,7 +4878,7 @@ DEALERS = {
     "zip": "44663",
     "link": "https://www.toyota.com/dealers/dealer/34104",
   },
-  "34107": {
+  34107: {
     "name": "Motorcars Toyota",
     "address": "2950 Mayfield Road",
     "city": "Cleveland Hts",
@@ -4872,7 +4886,7 @@ DEALERS = {
     "zip": "44118",
     "link": "https://www.toyota.com/dealers/dealer/34107",
   },
-  "34109": {
+  34109: {
     "name": "Ganley Toyota",
     "address": "1395 East Market Street",
     "city": "Akron",
@@ -4880,7 +4894,7 @@ DEALERS = {
     "zip": "44305",
     "link": "https://www.toyota.com/dealers/dealer/34109",
   },
-  "34111": {
+  34111: {
     "name": "Toyota of Warren",
     "address": "2657 Niles-Cortland Road",
     "city": "Warren",
@@ -4888,7 +4902,7 @@ DEALERS = {
     "zip": "44484",
     "link": "https://www.toyota.com/dealers/dealer/34111",
   },
-  "34116": {
+  34116: {
     "name": "Jeff Wyler Toyota of Springfield",
     "address": "2237 West First Street",
     "city": "Springfield",
@@ -4896,7 +4910,7 @@ DEALERS = {
     "zip": "45504",
     "link": "https://www.toyota.com/dealers/dealer/34116",
   },
-  "34118": {
+  34118: {
     "name": "Toyota of Bedford",
     "address": "18151 Rockside Road",
     "city": "Bedford",
@@ -4904,7 +4918,7 @@ DEALERS = {
     "zip": "44146",
     "link": "https://www.toyota.com/dealers/dealer/34118",
   },
-  "34120": {
+  34120: {
     "name": "Byers Toyota",
     "address": "1599 Columbus Pike",
     "city": "Delaware",
@@ -4912,7 +4926,7 @@ DEALERS = {
     "zip": "43015",
     "link": "https://www.toyota.com/dealers/dealer/34120",
   },
-  "34121": {
+  34121: {
     "name": "Premier Toyota of Amherst",
     "address": "47190 Cooper Foster Pk Rd",
     "city": "Amherst",
@@ -4920,7 +4934,7 @@ DEALERS = {
     "zip": "44001",
     "link": "https://www.toyota.com/dealers/dealer/34121",
   },
-  "34122": {
+  34122: {
     "name": "Toyota of Boardman",
     "address": "8250 Market Street",
     "city": "Boardman",
@@ -4928,7 +4942,7 @@ DEALERS = {
     "zip": "44512",
     "link": "https://www.toyota.com/dealers/dealer/34122",
   },
-  "34123": {
+  34123: {
     "name": "Toyota of Wooster",
     "address": "1363 W. Old Lincoln Way",
     "city": "Wooster",
@@ -4936,7 +4950,7 @@ DEALERS = {
     "zip": "44691",
     "link": "https://www.toyota.com/dealers/dealer/34123",
   },
-  "34124": {
+  34124: {
     "name": "Summit Toyota of Akron",
     "address": "1535 Vernon Odom Blvd.",
     "city": "Akron",
@@ -4944,7 +4958,7 @@ DEALERS = {
     "zip": "44320",
     "link": "https://www.toyota.com/dealers/dealer/34124",
   },
-  "34125": {
+  34125: {
     "name": "Buckeye Toyota",
     "address": "1903 Riverway Drive",
     "city": "Lancaster",
@@ -4952,7 +4966,7 @@ DEALERS = {
     "zip": "43130",
     "link": "https://www.toyota.com/dealers/dealer/34125",
   },
-  "34126": {
+  34126: {
     "name": "Yark Toyota",
     "address": "1377 Conant Street",
     "city": "Maumee",
@@ -4960,7 +4974,7 @@ DEALERS = {
     "zip": "43537",
     "link": "https://www.toyota.com/dealers/dealer/34126",
   },
-  "34127": {
+  34127: {
     "name": "SVG Toyota",
     "address": "1132 State Route 41 South",
     "city": "Washington Court House",
@@ -4968,7 +4982,7 @@ DEALERS = {
     "zip": "43160",
     "link": "https://www.toyota.com/dealers/dealer/34127",
   },
-  "34128": {
+  34128: {
     "name": "Firelands Toyota",
     "address": "904 E. Strub Road",
     "city": "Sandusky",
@@ -4976,7 +4990,7 @@ DEALERS = {
     "zip": "44870",
     "link": "https://www.toyota.com/dealers/dealer/34128",
   },
-  "34129": {
+  34129: {
     "name": "Toyota West",
     "address": "1500 Auto Mall Drive",
     "city": "Columbus",
@@ -4984,7 +4998,7 @@ DEALERS = {
     "zip": "43228",
     "link": "https://www.toyota.com/dealers/dealer/34129",
   },
-  "34130": {
+  34130: {
     "name": "White's Toyota of Lima",
     "address": "3500 Elida Road",
     "city": "Lima",
@@ -4992,7 +5006,7 @@ DEALERS = {
     "zip": "45807",
     "link": "https://www.toyota.com/dealers/dealer/34130",
   },
-  "34131": {
+  34131: {
     "name": "Zanesville Toyota",
     "address": "3260 North Maple Avenue",
     "city": "Zanesville",
@@ -5000,7 +5014,7 @@ DEALERS = {
     "zip": "43701",
     "link": "https://www.toyota.com/dealers/dealer/34131",
   },
-  "34132": {
+  34132: {
     "name": "Great Lakes Toyota",
     "address": "920 Plaza Street",
     "city": "Findlay",
@@ -5008,7 +5022,7 @@ DEALERS = {
     "zip": "45840",
     "link": "https://www.toyota.com/dealers/dealer/34132",
   },
-  "35025": {
+  35025: {
     "name": "Fowler Toyota",
     "address": "4050 N. Interstate Drive",
     "city": "Norman",
@@ -5016,7 +5030,7 @@ DEALERS = {
     "zip": "73072",
     "link": "https://www.toyota.com/dealers/dealer/35025",
   },
-  "35052": {
+  35052: {
     "name": "Janzen Toyota",
     "address": "4900 West 6th Street",
     "city": "Stillwater",
@@ -5024,7 +5038,7 @@ DEALERS = {
     "zip": "74074",
     "link": "https://www.toyota.com/dealers/dealer/35052",
   },
-  "35072": {
+  35072: {
     "name": "Jim Norton Toyota of Oklahoma City",
     "address": "8401 Northwest Expressway",
     "city": "Oklahoma City",
@@ -5032,7 +5046,7 @@ DEALERS = {
     "zip": "73162",
     "link": "https://www.toyota.com/dealers/dealer/35072",
   },
-  "35075": {
+  35075: {
     "name": "Post Oak Toyota",
     "address": "5800 Tinker Diagonal",
     "city": "Midwest City",
@@ -5040,7 +5054,7 @@ DEALERS = {
     "zip": "73110",
     "link": "https://www.toyota.com/dealers/dealer/35075",
   },
-  "36040": {
+  36040: {
     "name": "Lum's Toyota",
     "address": "1605 SE Ensign Lane",
     "city": "Warrenton",
@@ -5048,7 +5062,7 @@ DEALERS = {
     "zip": "97146",
     "link": "https://www.toyota.com/dealers/dealer/36040",
   },
-  "36047": {
+  36047: {
     "name": "Beaverton Toyota",
     "address": "4300 SW Murray Blvd.",
     "city": "Beaverton",
@@ -5056,7 +5070,7 @@ DEALERS = {
     "zip": "97005",
     "link": "https://www.toyota.com/dealers/dealer/36047",
   },
-  "36049": {
+  36049: {
     "name": "Capitol Toyota of Salem",
     "address": "783 Auto Group Ave. N.E.",
     "city": "Salem",
@@ -5064,7 +5078,7 @@ DEALERS = {
     "zip": "97301",
     "link": "https://www.toyota.com/dealers/dealer/36049",
   },
-  "36052": {
+  36052: {
     "name": "Lithia Toyota",
     "address": "1420 N. Riverside Avenue",
     "city": "Medford",
@@ -5072,7 +5086,7 @@ DEALERS = {
     "zip": "97501",
     "link": "https://www.toyota.com/dealers/dealer/36052",
   },
-  "36057": {
+  36057: {
     "name": "Coos Bay Toyota",
     "address": "2001 North Bayshore Drive",
     "city": "Coos Bay",
@@ -5080,7 +5094,7 @@ DEALERS = {
     "zip": "97420",
     "link": "https://www.toyota.com/dealers/dealer/36057",
   },
-  "36072": {
+  36072: {
     "name": "Larry Lassen Chevrolet-Toyota",
     "address": "1205 Price Road SE",
     "city": "Albany",
@@ -5088,7 +5102,7 @@ DEALERS = {
     "zip": "97321",
     "link": "https://www.toyota.com/dealers/dealer/36072",
   },
-  "36078": {
+  36078: {
     "name": "Royal Moore Toyota",
     "address": "1415 S.E. River Road",
     "city": "Hillsboro",
@@ -5096,7 +5110,7 @@ DEALERS = {
     "zip": "97123",
     "link": "https://www.toyota.com/dealers/dealer/36078",
   },
-  "36079": {
+  36079: {
     "name": "Lithia Toyota of Springfield",
     "address": "163 S. 9th Street",
     "city": "Springfield",
@@ -5104,7 +5118,7 @@ DEALERS = {
     "zip": "97477",
     "link": "https://www.toyota.com/dealers/dealer/36079",
   },
-  "36080": {
+  36080: {
     "name": "Lithia Toyota of Klamath Falls",
     "address": "2121 Washburn Way",
     "city": "Klamath Falls",
@@ -5112,7 +5126,7 @@ DEALERS = {
     "zip": "97603",
     "link": "https://www.toyota.com/dealers/dealer/36080",
   },
-  "36082": {
+  36082: {
     "name": "Clint Newell Toyota",
     "address": "1481 N.E. Stephens Street",
     "city": "Roseburg",
@@ -5120,7 +5134,7 @@ DEALERS = {
     "zip": "97470",
     "link": "https://www.toyota.com/dealers/dealer/36082",
   },
-  "36084": {
+  36084: {
     "name": "Hometown Toyota - Scion",
     "address": "313 SE 13th Street",
     "city": "Ontario",
@@ -5128,7 +5142,7 @@ DEALERS = {
     "zip": "97914",
     "link": "https://www.toyota.com/dealers/dealer/36084",
   },
-  "36085": {
+  36085: {
     "name": "Kendall Toyota",
     "address": "373 Goodpasture Island Road",
     "city": "Eugene",
@@ -5136,7 +5150,7 @@ DEALERS = {
     "zip": "97401",
     "link": "https://www.toyota.com/dealers/dealer/36085",
   },
-  "36090": {
+  36090: {
     "name": "Toyota of Gladstone",
     "address": "19375 SE McLoughlin Blvd.",
     "city": "Gladstone",
@@ -5144,7 +5158,7 @@ DEALERS = {
     "zip": "97027",
     "link": "https://www.toyota.com/dealers/dealer/36090",
   },
-  "36094": {
+  36094: {
     "name": "Toyota of Corvallis",
     "address": "800 N.W. Fifth Street",
     "city": "Corvallis",
@@ -5152,7 +5166,7 @@ DEALERS = {
     "zip": "97330",
     "link": "https://www.toyota.com/dealers/dealer/36094",
   },
-  "36095": {
+  36095: {
     "name": "Rogers Toyota of Hermiston",
     "address": "1550 N. 1st Street",
     "city": "Hermiston",
@@ -5160,7 +5174,7 @@ DEALERS = {
     "zip": "97838",
     "link": "https://www.toyota.com/dealers/dealer/36095",
   },
-  "36096": {
+  36096: {
     "name": "Kendall Toyota of Bend",
     "address": "61430 S. Hwy 97",
     "city": "Bend",
@@ -5168,7 +5182,7 @@ DEALERS = {
     "zip": "97702",
     "link": "https://www.toyota.com/dealers/dealer/36096",
   },
-  "36097": {
+  36097: {
     "name": "Toyota of Portland on Broadway",
     "address": "55 NE Broadway Street",
     "city": "Portland",
@@ -5176,7 +5190,7 @@ DEALERS = {
     "zip": "97232",
     "link": "https://www.toyota.com/dealers/dealer/36097",
   },
-  "36098": {
+  36098: {
     "name": "Toyota of Newport",
     "address": "3234 SW Coast Hwy. 101",
     "city": "Newport",
@@ -5184,7 +5198,7 @@ DEALERS = {
     "zip": "97365",
     "link": "https://www.toyota.com/dealers/dealer/36098",
   },
-  "36099": {
+  36099: {
     "name": "Grants Pass Toyota",
     "address": "375 Redwood Highway",
     "city": "Grants Pass",
@@ -5192,7 +5206,7 @@ DEALERS = {
     "zip": "97527",
     "link": "https://www.toyota.com/dealers/dealer/36099",
   },
-  "36100": {
+  36100: {
     "name": "Ron Tonkin Toyota",
     "address": "750 SE 122nd Avenue",
     "city": "Portland",
@@ -5200,7 +5214,7 @@ DEALERS = {
     "zip": "97233",
     "link": "https://www.toyota.com/dealers/dealer/36100",
   },
-  "36102": {
+  36102: {
     "name": "Gresham Toyota",
     "address": "950 N.E. Hogan Drive",
     "city": "Gresham",
@@ -5208,7 +5222,7 @@ DEALERS = {
     "zip": "97030",
     "link": "https://www.toyota.com/dealers/dealer/36102",
   },
-  "36103": {
+  36103: {
     "name": "Wilsonville Toyota",
     "address": "9155 Boeckman Road",
     "city": "Wilsonville",
@@ -5216,7 +5230,7 @@ DEALERS = {
     "zip": "97070",
     "link": "https://www.toyota.com/dealers/dealer/36103",
   },
-  "36104": {
+  36104: {
     "name": "Columbia Gorge Toyota",
     "address": "1900 West 6th Street",
     "city": "The Dalles",
@@ -5224,7 +5238,7 @@ DEALERS = {
     "zip": "97058",
     "link": "https://www.toyota.com/dealers/dealer/36104",
   },
-  "36105": {
+  36105: {
     "name": "Damian Lillard Toyota",
     "address": "3142 NE Doran Drive",
     "city": "McMinnville",
@@ -5232,7 +5246,7 @@ DEALERS = {
     "zip": "97128",
     "link": "https://www.toyota.com/dealers/dealer/36105",
   },
-  "36106": {
+  36106: {
     "name": "Toyota of Gladstone",
     "address": "19375 SE McLoughlin Blvd.",
     "city": "Gladstone",
@@ -5240,7 +5254,7 @@ DEALERS = {
     "zip": "97027",
     "link": "https://www.toyota.com/dealers/dealer/36106",
   },
-  "37036": {
+  37036: {
     "name": "Krause Toyota",
     "address": "7702 Penn Drive",
     "city": "Breinigsville",
@@ -5248,7 +5262,7 @@ DEALERS = {
     "zip": "18031",
     "link": "https://www.toyota.com/dealers/dealer/37036",
   },
-  "37056": {
+  37056: {
     "name": "Halterman's Toyota",
     "address": "1741 Paradise Trail",
     "city": "East Stroudsburg",
@@ -5256,7 +5270,7 @@ DEALERS = {
     "zip": "18301",
     "link": "https://www.toyota.com/dealers/dealer/37056",
   },
-  "37065": {
+  37065: {
     "name": "Thompson Toyota",
     "address": "122 W. Swamp Road",
     "city": "Doylestown",
@@ -5264,7 +5278,7 @@ DEALERS = {
     "zip": "18901",
     "link": "https://www.toyota.com/dealers/dealer/37065",
   },
-  "37066": {
+  37066: {
     "name": "Ardmore Toyota",
     "address": "219 E. Lancaster Avenue",
     "city": "Ardmore",
@@ -5272,7 +5286,7 @@ DEALERS = {
     "zip": "19003",
     "link": "https://www.toyota.com/dealers/dealer/37066",
   },
-  "37067": {
+  37067: {
     "name": "Bennett Toyota",
     "address": "1951 Lehigh Street",
     "city": "Allentown",
@@ -5280,7 +5294,7 @@ DEALERS = {
     "zip": "18103",
     "link": "https://www.toyota.com/dealers/dealer/37067",
   },
-  "37077": {
+  37077: {
     "name": "Performance Motors Toyota",
     "address": "4681 Penn Avenue",
     "city": "Sinking Spring",
@@ -5288,7 +5302,7 @@ DEALERS = {
     "zip": "19608",
     "link": "https://www.toyota.com/dealers/dealer/37077",
   },
-  "37083": {
+  37083: {
     "name": "Lancaster Toyota",
     "address": "5270 Manheim Pike",
     "city": "East Petersburg",
@@ -5296,7 +5310,7 @@ DEALERS = {
     "zip": "17520",
     "link": "https://www.toyota.com/dealers/dealer/37083",
   },
-  "37094": {
+  37094: {
     "name": "Joel Confer Toyota",
     "address": "120 East Clinton Avenue",
     "city": "State College",
@@ -5304,7 +5318,7 @@ DEALERS = {
     "zip": "16803",
     "link": "https://www.toyota.com/dealers/dealer/37094",
   },
-  "37101": {
+  37101: {
     "name": "Sloane Toyota of Glenside",
     "address": "503 North Easton Road",
     "city": "Glenside",
@@ -5312,7 +5326,7 @@ DEALERS = {
     "zip": "19038",
     "link": "https://www.toyota.com/dealers/dealer/37101",
   },
-  "37106": {
+  37106: {
     "name": "Rohrich Toyota",
     "address": "2020 West Liberty Avenue",
     "city": "Pittsburgh",
@@ -5320,7 +5334,7 @@ DEALERS = {
     "zip": "15226",
     "link": "https://www.toyota.com/dealers/dealer/37106",
   },
-  "37109": {
+  37109: {
     "name": "Palmiero Toyota",
     "address": "16165 Conneaut Lake Road",
     "city": "Meadville",
@@ -5328,7 +5342,7 @@ DEALERS = {
     "zip": "16335",
     "link": "https://www.toyota.com/dealers/dealer/37109",
   },
-  "37112": {
+  37112: {
     "name": "Del Toyota",
     "address": "2945 East Lincoln Highway",
     "city": "Thorndale",
@@ -5336,7 +5350,7 @@ DEALERS = {
     "zip": "19372",
     "link": "https://www.toyota.com/dealers/dealer/37112",
   },
-  "37114": {
+  37114: {
     "name": "Conicelli Toyota",
     "address": "550 Ridge Pike",
     "city": "Conshohocken",
@@ -5344,7 +5358,7 @@ DEALERS = {
     "zip": "19428",
     "link": "https://www.toyota.com/dealers/dealer/37114",
   },
-  "37118": {
+  37118: {
     "name": "South Hills Toyota",
     "address": "2403 Washington Road",
     "city": "Canonsburg",
@@ -5352,7 +5366,7 @@ DEALERS = {
     "zip": "15317",
     "link": "https://www.toyota.com/dealers/dealer/37118",
   },
-  "37125": {
+  37125: {
     "name": "Faulkner Toyota",
     "address": "2425 Lincoln Highway",
     "city": "Trevose",
@@ -5360,7 +5374,7 @@ DEALERS = {
     "zip": "19053",
     "link": "https://www.toyota.com/dealers/dealer/37125",
   },
-  "37126": {
+  37126: {
     "name": "Toyota of York",
     "address": "1885 Whiteford Road",
     "city": "York",
@@ -5368,7 +5382,7 @@ DEALERS = {
     "zip": "17402",
     "link": "https://www.toyota.com/dealers/dealer/37126",
   },
-  "37127": {
+  37127: {
     "name": "Colonial Toyota",
     "address": "2600 West Pike Road",
     "city": "Indiana",
@@ -5376,7 +5390,7 @@ DEALERS = {
     "zip": "15701",
     "link": "https://www.toyota.com/dealers/dealer/37127",
   },
-  "37132": {
+  37132: {
     "name": "Peruzzi Toyota",
     "address": "2601 N. Bethlehem Pike",
     "city": "Hatfield",
@@ -5384,7 +5398,7 @@ DEALERS = {
     "zip": "19440",
     "link": "https://www.toyota.com/dealers/dealer/37132",
   },
-  "37134": {
+  37134: {
     "name": "Williams Toyota of Sayre",
     "address": "2468 Elmira Street",
     "city": "Sayre",
@@ -5392,7 +5406,7 @@ DEALERS = {
     "zip": "18840",
     "link": "https://www.toyota.com/dealers/dealer/37134",
   },
-  "37138": {
+  37138: {
     "name": "Hanover Toyota",
     "address": "1830 Carlisle Pike",
     "city": "Hanover",
@@ -5400,7 +5414,7 @@ DEALERS = {
     "zip": "17331",
     "link": "https://www.toyota.com/dealers/dealer/37138",
   },
-  "37142": {
+  37142: {
     "name": "Fiore Toyota",
     "address": "1000 S. Logan Boulevard",
     "city": "Hollidaysburg",
@@ -5408,7 +5422,7 @@ DEALERS = {
     "zip": "16648",
     "link": "https://www.toyota.com/dealers/dealer/37142",
   },
-  "37148": {
+  37148: {
     "name": "Team Toyota of Glen Mills",
     "address": "1050 Baltimore Pike",
     "city": "Glen Mills",
@@ -5416,7 +5430,7 @@ DEALERS = {
     "zip": "19342",
     "link": "https://www.toyota.com/dealers/dealer/37148",
   },
-  "37149": {
+  37149: {
     "name": "Bobby Rahal Toyota",
     "address": "6711 Carlisle Pike",
     "city": "Mechanicsburg",
@@ -5424,7 +5438,7 @@ DEALERS = {
     "zip": "17050",
     "link": "https://www.toyota.com/dealers/dealer/37149",
   },
-  "37150": {
+  37150: {
     "name": "Team Toyota",
     "address": "746 E. Lincoln Highway",
     "city": "Langhorne",
@@ -5432,7 +5446,7 @@ DEALERS = {
     "zip": "19047",
     "link": "https://www.toyota.com/dealers/dealer/37150",
   },
-  "37151": {
+  37151: {
     "name": "Laurel Toyota",
     "address": "933 Eisenhower Blvd.",
     "city": "Johnstown",
@@ -5440,7 +5454,7 @@ DEALERS = {
     "zip": "15904",
     "link": "https://www.toyota.com/dealers/dealer/37151",
   },
-  "37152": {
+  37152: {
     "name": "Sloane Toyota of Philadelphia",
     "address": "1546 Cottman Avenue",
     "city": "Philadelphia",
@@ -5448,7 +5462,7 @@ DEALERS = {
     "zip": "19111",
     "link": "https://www.toyota.com/dealers/dealer/37152",
   },
-  "37153": {
+  37153: {
     "name": "Koch 33 Toyota",
     "address": "3816 Hecktown Road",
     "city": "Easton",
@@ -5456,7 +5470,7 @@ DEALERS = {
     "zip": "18045",
     "link": "https://www.toyota.com/dealers/dealer/37153",
   },
-  "37154": {
+  37154: {
     "name": "Tri County Toyota",
     "address": "15 D & L Drive",
     "city": "Limerick",
@@ -5464,7 +5478,7 @@ DEALERS = {
     "zip": "19468",
     "link": "https://www.toyota.com/dealers/dealer/37154",
   },
-  "37155": {
+  37155: {
     "name": "Aubrey Alexander Toyota",
     "address": "1324 N. Susquehanna Trail",
     "city": "Selinsgrove",
@@ -5472,7 +5486,7 @@ DEALERS = {
     "zip": "17870",
     "link": "https://www.toyota.com/dealers/dealer/37155",
   },
-  "37157": {
+  37157: {
     "name": "Diehl Toyota of Butler",
     "address": "266 Pittsburgh Road",
     "city": "Butler",
@@ -5480,7 +5494,7 @@ DEALERS = {
     "zip": "16002",
     "link": "https://www.toyota.com/dealers/dealer/37157",
   },
-  "37158": {
+  37158: {
     "name": "Independence Toyota",
     "address": "730 Airport Road",
     "city": "Hazleton",
@@ -5488,7 +5502,7 @@ DEALERS = {
     "zip": "18202",
     "link": "https://www.toyota.com/dealers/dealer/37158",
   },
-  "37161": {
+  37161: {
     "name": "Faulkner Toyota",
     "address": "3400 Paxton Street",
     "city": "Harrisburg",
@@ -5496,7 +5510,7 @@ DEALERS = {
     "zip": "17111",
     "link": "https://www.toyota.com/dealers/dealer/37161",
   },
-  "37162": {
+  37162: {
     "name": "Spitzer Toyota",
     "address": "4710 William Penn Highway",
     "city": "Monroeville",
@@ -5504,7 +5518,7 @@ DEALERS = {
     "zip": "15146",
     "link": "https://www.toyota.com/dealers/dealer/37162",
   },
-  "37164": {
+  37164: {
     "name": "Sloane Toyota of Malvern",
     "address": "593 Lancaster Avenue",
     "city": "Malvern",
@@ -5512,7 +5526,7 @@ DEALERS = {
     "zip": "19335",
     "link": "https://www.toyota.com/dealers/dealer/37164",
   },
-  "37171": {
+  37171: {
     "name": "Motorworld Toyota",
     "address": "150 Motorworld Drive",
     "city": "Wilkes Barre",
@@ -5520,7 +5534,7 @@ DEALERS = {
     "zip": "18702",
     "link": "https://www.toyota.com/dealers/dealer/37171",
   },
-  "37172": {
+  37172: {
     "name": "Conicelli Toyota of Springfield",
     "address": "860 Baltimore Pike",
     "city": "Springfield",
@@ -5528,7 +5542,7 @@ DEALERS = {
     "zip": "19064",
     "link": "https://www.toyota.com/dealers/dealer/37172",
   },
-  "37174": {
+  37174: {
     "name": "North Hills Toyota",
     "address": "7401 McKnight Road",
     "city": "Pittsburgh",
@@ -5536,7 +5550,7 @@ DEALERS = {
     "zip": "15237",
     "link": "https://www.toyota.com/dealers/dealer/37174",
   },
-  "37176": {
+  37176: {
     "name": "Toyota of Scranton",
     "address": "3400 North Main Avenue",
     "city": "Scranton",
@@ -5544,7 +5558,7 @@ DEALERS = {
     "zip": "18508",
     "link": "https://www.toyota.com/dealers/dealer/37176",
   },
-  "37181": {
+  37181: {
     "name": "Toyota of Greensburg",
     "address": "4964 Route 30",
     "city": "Greensburg",
@@ -5552,7 +5566,7 @@ DEALERS = {
     "zip": "15601",
     "link": "https://www.toyota.com/dealers/dealer/37181",
   },
-  "37184": {
+  37184: {
     "name": "New Holland Toyota",
     "address": "524 West Main Street",
     "city": "New Holland",
@@ -5560,7 +5574,7 @@ DEALERS = {
     "zip": "17557",
     "link": "https://www.toyota.com/dealers/dealer/37184",
   },
-  "37185": {
+  37185: {
     "name": "Baierl Toyota",
     "address": "19045 Perry Highway, Route 19",
     "city": "Mars",
@@ -5568,7 +5582,7 @@ DEALERS = {
     "zip": "16046",
     "link": "https://www.toyota.com/dealers/dealer/37185",
   },
-  "37187": {
+  37187: {
     "name": "Ken Ganley Toyota",
     "address": "1110 Clairton Blvd.",
     "city": "Pleasant Hills",
@@ -5576,7 +5590,7 @@ DEALERS = {
     "zip": "15236",
     "link": "https://www.toyota.com/dealers/dealer/37187",
   },
-  "37188": {
+  37188: {
     "name": "Bennett Toyota of Lebanon",
     "address": "2635 West Cumberland Street",
     "city": "Lebanon",
@@ -5584,7 +5598,7 @@ DEALERS = {
     "zip": "17042",
     "link": "https://www.toyota.com/dealers/dealer/37188",
   },
-  "37189": {
+  37189: {
     "name": "Cochran Toyota",
     "address": "12204 Route 30",
     "city": "North Huntingdon",
@@ -5592,7 +5606,7 @@ DEALERS = {
     "zip": "15642",
     "link": "https://www.toyota.com/dealers/dealer/37189",
   },
-  "37190": {
+  37190: {
     "name": "Mike Kelly Toyota of Uniontown",
     "address": "1 Mary Jane Wood Drive",
     "city": "Uniontown",
@@ -5600,7 +5614,7 @@ DEALERS = {
     "zip": "15401",
     "link": "https://www.toyota.com/dealers/dealer/37190",
   },
-  "37191": {
+  37191: {
     "name": "Ciocca Toyota of Williamsport",
     "address": "203 Lycoming Mall Drive",
     "city": "Muncy",
@@ -5608,7 +5622,7 @@ DEALERS = {
     "zip": "17756",
     "link": "https://www.toyota.com/dealers/dealer/37191",
   },
-  "37193": {
+  37193: {
     "name": "Heritage Toyota Harrisburg",
     "address": "6060 Allentown Blvd",
     "city": "Harrisburg",
@@ -5616,7 +5630,7 @@ DEALERS = {
     "zip": "17112",
     "link": "https://www.toyota.com/dealers/dealer/37193",
   },
-  "37194": {
+  37194: {
     "name": "Brewer Airport Toyota",
     "address": "8900 University Blvd.",
     "city": "Moon Township",
@@ -5624,7 +5638,7 @@ DEALERS = {
     "zip": "15108",
     "link": "https://www.toyota.com/dealers/dealer/37194",
   },
-  "37195": {
+  37195: {
     "name": "Toyota of Erie",
     "address": "5615 Peach Street",
     "city": "Erie",
@@ -5632,7 +5646,7 @@ DEALERS = {
     "zip": "16509",
     "link": "https://www.toyota.com/dealers/dealer/37195",
   },
-  "37196": {
+  37196: {
     "name": "Kelly Toyota of Hamburg",
     "address": "41 Industrial Drive",
     "city": "Hamburg",
@@ -5640,7 +5654,7 @@ DEALERS = {
     "zip": "19526",
     "link": "https://www.toyota.com/dealers/dealer/37196",
   },
-  "38024": {
+  38024: {
     "name": "Tarbox Toyota",
     "address": "3671 Quaker Lane",
     "city": "North Kingstown",
@@ -5648,7 +5662,7 @@ DEALERS = {
     "zip": "2852",
     "link": "https://www.toyota.com/dealers/dealer/38024",
   },
-  "38025": {
+  38025: {
     "name": "Valenti Toyota",
     "address": "6 Langworthy Road",
     "city": "Westerly",
@@ -5656,7 +5670,7 @@ DEALERS = {
     "zip": "2891",
     "link": "https://www.toyota.com/dealers/dealer/38025",
   },
-  "38026": {
+  38026: {
     "name": "Balise Toyota of Warwick",
     "address": "1400 Post Road",
     "city": "Warwick",
@@ -5664,7 +5678,7 @@ DEALERS = {
     "zip": "2888",
     "link": "https://www.toyota.com/dealers/dealer/38026",
   },
-  "38029": {
+  38029: {
     "name": "Toyota of Smithfield",
     "address": "550 George Washington Hwy",
     "city": "Smithfield",
@@ -5672,7 +5686,7 @@ DEALERS = {
     "zip": "2917",
     "link": "https://www.toyota.com/dealers/dealer/38029",
   },
-  "38030": {
+  38030: {
     "name": "Grieco Toyota",
     "address": "415 Taunton Avenue",
     "city": "East Providence",
@@ -5680,7 +5694,7 @@ DEALERS = {
     "zip": "2914",
     "link": "https://www.toyota.com/dealers/dealer/38030",
   },
-  "38031": {
+  38031: {
     "name": "Langway Toyota of Newport",
     "address": "285 East Main Road",
     "city": "Middletown",
@@ -5688,7 +5702,7 @@ DEALERS = {
     "zip": "2842",
     "link": "https://www.toyota.com/dealers/dealer/38031",
   },
-  "38032": {
+  38032: {
     "name": "Nucar Tarbox Toyota",
     "address": "3671 Quaker Lane",
     "city": "North Kingstown",
@@ -5696,7 +5710,7 @@ DEALERS = {
     "zip": "2852",
     "link": "https://www.toyota.com/dealers/dealer/38032",
   },
-  "40009": {
+  40009: {
     "name": "Harr Toyota",
     "address": "4255 6th Avenue SE",
     "city": "Aberdeen",
@@ -5704,7 +5718,7 @@ DEALERS = {
     "zip": "57401",
     "link": "https://www.toyota.com/dealers/dealer/40009",
   },
-  "40011": {
+  40011: {
     "name": "Billion Toyota",
     "address": "4101 W. 12th Street",
     "city": "Sioux Falls",
@@ -5712,7 +5726,7 @@ DEALERS = {
     "zip": "57106",
     "link": "https://www.toyota.com/dealers/dealer/40011",
   },
-  "40017": {
+  40017: {
     "name": "Sharp Chevrolet-Toyota",
     "address": "1112 9th Ave SW",
     "city": "Watertown",
@@ -5720,7 +5734,7 @@ DEALERS = {
     "zip": "57201",
     "link": "https://www.toyota.com/dealers/dealer/40017",
   },
-  "40020": {
+  40020: {
     "name": "Gateway Toyota",
     "address": "518 East Sioux Avenue",
     "city": "Pierre",
@@ -5728,7 +5742,7 @@ DEALERS = {
     "zip": "57501",
     "link": "https://www.toyota.com/dealers/dealer/40020",
   },
-  "40021": {
+  40021: {
     "name": "Denny Menholt Toyota",
     "address": "1920 East Mall Drive",
     "city": "Rapid City",
@@ -5736,7 +5750,7 @@ DEALERS = {
     "zip": "57701",
     "link": "https://www.toyota.com/dealers/dealer/40021",
   },
-  "41001": {
+  41001: {
     "name": "Capital Toyota",
     "address": "5808 Lee Hwy",
     "city": "Chattanooga",
@@ -5744,7 +5758,7 @@ DEALERS = {
     "zip": "37421",
     "link": "https://www.toyota.com/dealers/dealer/41001",
   },
-  "41021": {
+  41021: {
     "name": "Roberts Toyota",
     "address": "1027 Nashville Highway",
     "city": "Columbia",
@@ -5752,7 +5766,7 @@ DEALERS = {
     "zip": "38401",
     "link": "https://www.toyota.com/dealers/dealer/41021",
   },
-  "41030": {
+  41030: {
     "name": "Toyota of Kingsport",
     "address": "2525 East Stone Drive",
     "city": "Kingsport",
@@ -5760,7 +5774,7 @@ DEALERS = {
     "zip": "37660",
     "link": "https://www.toyota.com/dealers/dealer/41030",
   },
-  "41041": {
+  41041: {
     "name": "Nashville Toyota North",
     "address": "2400 Gallatin Pike North",
     "city": "Madison",
@@ -5768,7 +5782,7 @@ DEALERS = {
     "zip": "37115",
     "link": "https://www.toyota.com/dealers/dealer/41041",
   },
-  "41043": {
+  41043: {
     "name": "Principle Toyota",
     "address": "7370 Winchester Road",
     "city": "Memphis",
@@ -5776,7 +5790,7 @@ DEALERS = {
     "zip": "38125",
     "link": "https://www.toyota.com/dealers/dealer/41043",
   },
-  "41050": {
+  41050: {
     "name": "Cumberland Toyota",
     "address": "1540 Interstate Drive",
     "city": "Cookeville",
@@ -5784,7 +5798,7 @@ DEALERS = {
     "zip": "38501",
     "link": "https://www.toyota.com/dealers/dealer/41050",
   },
-  "41052": {
+  41052: {
     "name": "Rusty Wallace Toyota",
     "address": "5944 W Andrew Johnson Hwy",
     "city": "Morristown",
@@ -5792,7 +5806,7 @@ DEALERS = {
     "zip": "37814",
     "link": "https://www.toyota.com/dealers/dealer/41052",
   },
-  "41056": {
+  41056: {
     "name": "Toyota of Cleveland",
     "address": "3560 Village North Bl SW",
     "city": "McDonald",
@@ -5800,7 +5814,7 @@ DEALERS = {
     "zip": "37353",
     "link": "https://www.toyota.com/dealers/dealer/41056",
   },
-  "41057": {
+  41057: {
     "name": "John Roberts Toyota",
     "address": "2610 Hillsboro Highway",
     "city": "Manchester",
@@ -5808,7 +5822,7 @@ DEALERS = {
     "zip": "37355",
     "link": "https://www.toyota.com/dealers/dealer/41057",
   },
-  "41060": {
+  41060: {
     "name": "Toyota Knoxville",
     "address": "10415 Parkside Drive",
     "city": "Knoxville",
@@ -5816,7 +5830,7 @@ DEALERS = {
     "zip": "37922",
     "link": "https://www.toyota.com/dealers/dealer/41060",
   },
-  "41061": {
+  41061: {
     "name": "Rick McGill's Airport Toyota",
     "address": "3145 Alcoa Highway",
     "city": "Alcoa",
@@ -5824,7 +5838,7 @@ DEALERS = {
     "zip": "37701",
     "link": "https://www.toyota.com/dealers/dealer/41061",
   },
-  "41062": {
+  41062: {
     "name": "Peppers Toyota",
     "address": "2400 East Wood Street",
     "city": "Paris",
@@ -5832,7 +5846,7 @@ DEALERS = {
     "zip": "38242",
     "link": "https://www.toyota.com/dealers/dealer/41062",
   },
-  "41063": {
+  41063: {
     "name": "Robinson Toyota",
     "address": "1453 Vann Drive",
     "city": "Jackson",
@@ -5840,7 +5854,7 @@ DEALERS = {
     "zip": "38305",
     "link": "https://www.toyota.com/dealers/dealer/41063",
   },
-  "41066": {
+  41066: {
     "name": "Wolfchase Toyota",
     "address": "2201 North Germantown Parkway",
     "city": "Cordova",
@@ -5848,7 +5862,7 @@ DEALERS = {
     "zip": "38016",
     "link": "https://www.toyota.com/dealers/dealer/41066",
   },
-  "41070": {
+  41070: {
     "name": "Chuck Hutton Toyota",
     "address": "4601 Hutton Way",
     "city": "Memphis",
@@ -5856,7 +5870,7 @@ DEALERS = {
     "zip": "38116",
     "link": "https://www.toyota.com/dealers/dealer/41070",
   },
-  "41073": {
+  41073: {
     "name": "Landers McLarty Toyota",
     "address": "2970 Huntsville Highway",
     "city": "Fayetteville",
@@ -5864,7 +5878,7 @@ DEALERS = {
     "zip": "37334",
     "link": "https://www.toyota.com/dealers/dealer/41073",
   },
-  "41076": {
+  41076: {
     "name": "Tim Castellaw Toyota of Dyersburg",
     "address": "920 Highway 51 Bypass",
     "city": "Dyersburg",
@@ -5872,7 +5886,7 @@ DEALERS = {
     "zip": "38024",
     "link": "https://www.toyota.com/dealers/dealer/41076",
   },
-  "41078": {
+  41078: {
     "name": "Toyota of Cool Springs",
     "address": "1875 West McEwen Drive",
     "city": "Franklin",
@@ -5880,7 +5894,7 @@ DEALERS = {
     "zip": "37067",
     "link": "https://www.toyota.com/dealers/dealer/41078",
   },
-  "41079": {
+  41079: {
     "name": "Toyota of Murfreesboro",
     "address": "3434 Bill Smith Drive",
     "city": "Murfreesboro",
@@ -5888,7 +5902,7 @@ DEALERS = {
     "zip": "37129",
     "link": "https://www.toyota.com/dealers/dealer/41079",
   },
-  "41081": {
+  41081: {
     "name": "Toyota of Bristol",
     "address": "3045 W. State Street",
     "city": "Bristol",
@@ -5896,7 +5910,7 @@ DEALERS = {
     "zip": "37620",
     "link": "https://www.toyota.com/dealers/dealer/41081",
   },
-  "41082": {
+  41082: {
     "name": "Johnson City Toyota",
     "address": "3124 Bristol Highway",
     "city": "Johnson City",
@@ -5904,7 +5918,7 @@ DEALERS = {
     "zip": "37601",
     "link": "https://www.toyota.com/dealers/dealer/41082",
   },
-  "41083": {
+  41083: {
     "name": "Toyota of Gallatin",
     "address": "1435 Nashville Pike",
     "city": "Gallatin",
@@ -5912,7 +5926,7 @@ DEALERS = {
     "zip": "37066",
     "link": "https://www.toyota.com/dealers/dealer/41083",
   },
-  "41084": {
+  41084: {
     "name": "Wyatt Johnson Toyota",
     "address": "2595 Wilma Rudolph Blvd",
     "city": "Clarksville",
@@ -5920,7 +5934,7 @@ DEALERS = {
     "zip": "37040",
     "link": "https://www.toyota.com/dealers/dealer/41084",
   },
-  "41085": {
+  41085: {
     "name": "Beaman Toyota",
     "address": "1525 Broadway",
     "city": "Nashville",
@@ -5928,7 +5942,7 @@ DEALERS = {
     "zip": "37203",
     "link": "https://www.toyota.com/dealers/dealer/41085",
   },
-  "41086": {
+  41086: {
     "name": "Fox Toyota",
     "address": "228 Fox Family Lane",
     "city": "Clinton",
@@ -5936,7 +5950,7 @@ DEALERS = {
     "zip": "37716",
     "link": "https://www.toyota.com/dealers/dealer/41086",
   },
-  "42057": {
+  42057: {
     "name": "Toyota of Irving",
     "address": "1999 West Airport Frwy.",
     "city": "Irving",
@@ -5944,7 +5958,7 @@ DEALERS = {
     "zip": "75062",
     "link": "https://www.toyota.com/dealers/dealer/42057",
   },
-  "42073": {
+  42073: {
     "name": "Sterling McCall Toyota",
     "address": "9400 Southwest Freeway",
     "city": "Houston",
@@ -5952,7 +5966,7 @@ DEALERS = {
     "zip": "77074",
     "link": "https://www.toyota.com/dealers/dealer/42073",
   },
-  "42087": {
+  42087: {
     "name": "Don McGill Toyota",
     "address": "11800 Katy Freeway",
     "city": "Houston",
@@ -5960,7 +5974,7 @@ DEALERS = {
     "zip": "77079",
     "link": "https://www.toyota.com/dealers/dealer/42087",
   },
-  "42095": {
+  42095: {
     "name": "Fred Haas Toyota World",
     "address": "20400 Interstate 45 North",
     "city": "Spring",
@@ -5968,7 +5982,7 @@ DEALERS = {
     "zip": "77373",
     "link": "https://www.toyota.com/dealers/dealer/42095",
   },
-  "42138": {
+  42138: {
     "name": "Mike Calvert Toyota",
     "address": "2333 South Loop West",
     "city": "Houston",
@@ -5976,7 +5990,7 @@ DEALERS = {
     "zip": "77054",
     "link": "https://www.toyota.com/dealers/dealer/42138",
   },
-  "42161": {
+  42161: {
     "name": "Street Toyota",
     "address": "4500 South Soncy Road",
     "city": "Amarillo",
@@ -5984,7 +5998,7 @@ DEALERS = {
     "zip": "79119",
     "link": "https://www.toyota.com/dealers/dealer/42161",
   },
-  "42186": {
+  42186: {
     "name": "Cavender Toyota",
     "address": "5730 N.W. Loop 410",
     "city": "San Antonio",
@@ -5992,7 +6006,7 @@ DEALERS = {
     "zip": "78238",
     "link": "https://www.toyota.com/dealers/dealer/42186",
   },
-  "42196": {
+  42196: {
     "name": "Don Ringler Toyota",
     "address": "7777 S. General Bruce Dr.",
     "city": "Temple",
@@ -6000,7 +6014,7 @@ DEALERS = {
     "zip": "76502",
     "link": "https://www.toyota.com/dealers/dealer/42196",
   },
-  "42201": {
+  42201: {
     "name": "Red McCombs Toyota",
     "address": "13526 IH-10 West",
     "city": "San Antonio",
@@ -6008,7 +6022,7 @@ DEALERS = {
     "zip": "78249",
     "link": "https://www.toyota.com/dealers/dealer/42201",
   },
-  "42202": {
+  42202: {
     "name": "Toyota of Richardson",
     "address": "1221 N Central Expressway",
     "city": "Richardson",
@@ -6016,7 +6030,7 @@ DEALERS = {
     "zip": "75080",
     "link": "https://www.toyota.com/dealers/dealer/42202",
   },
-  "42216": {
+  42216: {
     "name": "Jeff Hunter Toyota",
     "address": "1440 West Loop 340",
     "city": "Waco",
@@ -6024,7 +6038,7 @@ DEALERS = {
     "zip": "76712",
     "link": "https://www.toyota.com/dealers/dealer/42216",
   },
-  "42221": {
+  42221: {
     "name": "Toyota of Plano",
     "address": "6888 State Hwy 121",
     "city": "Plano",
@@ -6032,7 +6046,7 @@ DEALERS = {
     "zip": "75024",
     "link": "https://www.toyota.com/dealers/dealer/42221",
   },
-  "42228": {
+  42228: {
     "name": "Toyota of Killeen",
     "address": "4001 E Central Texas Exp.",
     "city": "Killeen",
@@ -6040,7 +6054,7 @@ DEALERS = {
     "zip": "76543",
     "link": "https://www.toyota.com/dealers/dealer/42228",
   },
-  "42234": {
+  42234: {
     "name": "Gullo Toyota of Conroe",
     "address": "500 I-45 South",
     "city": "Conroe",
@@ -6048,7 +6062,7 @@ DEALERS = {
     "zip": "77304",
     "link": "https://www.toyota.com/dealers/dealer/42234",
   },
-  "42236": {
+  42236: {
     "name": "Charles Maund Toyota",
     "address": "8400 Research Boulevard",
     "city": "Austin",
@@ -6056,7 +6070,7 @@ DEALERS = {
     "zip": "78758",
     "link": "https://www.toyota.com/dealers/dealer/42236",
   },
-  "42242": {
+  42242: {
     "name": "Classic Toyota",
     "address": "1717 West SW Loop 323",
     "city": "Tyler",
@@ -6064,7 +6078,7 @@ DEALERS = {
     "zip": "75701",
     "link": "https://www.toyota.com/dealers/dealer/42242",
   },
-  "42250": {
+  42250: {
     "name": "Gulf Coast Toyota",
     "address": "3000 N. 288 Freeway",
     "city": "Angleton",
@@ -6072,7 +6086,7 @@ DEALERS = {
     "zip": "77515",
     "link": "https://www.toyota.com/dealers/dealer/42250",
   },
-  "42262": {
+  42262: {
     "name": "AutoNation Toyota South Austin",
     "address": "4800 IH-35 South",
     "city": "Austin",
@@ -6080,7 +6094,7 @@ DEALERS = {
     "zip": "78745",
     "link": "https://www.toyota.com/dealers/dealer/42262",
   },
-  "42264": {
+  42264: {
     "name": "Gene Messer Toyota",
     "address": "6102 19th Street",
     "city": "Lubbock",
@@ -6088,7 +6102,7 @@ DEALERS = {
     "zip": "79407",
     "link": "https://www.toyota.com/dealers/dealer/42264",
   },
-  "42268": {
+  42268: {
     "name": "Texas Toyota of Grapevine",
     "address": "701 State Hwy. 114 East",
     "city": "Grapevine",
@@ -6096,7 +6110,7 @@ DEALERS = {
     "zip": "76051",
     "link": "https://www.toyota.com/dealers/dealer/42268",
   },
-  "42270": {
+  42270: {
     "name": "Joe Myers Toyota",
     "address": "19010 Northwest Freeway",
     "city": "Houston",
@@ -6104,7 +6118,7 @@ DEALERS = {
     "zip": "77065",
     "link": "https://www.toyota.com/dealers/dealer/42270",
   },
-  "42271": {
+  42271: {
     "name": "AutoNation Toyota Gulf Freeway",
     "address": "12111 Gulf Freeway, Bldg. B",
     "city": "Houston",
@@ -6112,7 +6126,7 @@ DEALERS = {
     "zip": "77034",
     "link": "https://www.toyota.com/dealers/dealer/42271",
   },
-  "42273": {
+  42273: {
     "name": "Sterling McCall Toyota Fort Bend",
     "address": "20465 Southwest Freeway",
     "city": "Richmond",
@@ -6120,7 +6134,7 @@ DEALERS = {
     "zip": "77469",
     "link": "https://www.toyota.com/dealers/dealer/42273",
   },
-  "42278": {
+  42278: {
     "name": "Toyota of Dallas",
     "address": "2610 Forest Lane",
     "city": "Dallas",
@@ -6128,7 +6142,7 @@ DEALERS = {
     "zip": "75234",
     "link": "https://www.toyota.com/dealers/dealer/42278",
   },
-  "42284": {
+  42284: {
     "name": "Don McGill Toyota of Katy",
     "address": "21555 Katy Freeway",
     "city": "Katy",
@@ -6136,7 +6150,7 @@ DEALERS = {
     "zip": "77450",
     "link": "https://www.toyota.com/dealers/dealer/42284",
   },
-  "42286": {
+  42286: {
     "name": "Vandergriff Toyota",
     "address": "1000 West I-20",
     "city": "Arlington",
@@ -6144,7 +6158,7 @@ DEALERS = {
     "zip": "76017",
     "link": "https://www.toyota.com/dealers/dealer/42286",
   },
-  "42292": {
+  42292: {
     "name": "Lithia Toyota of Abilene",
     "address": "4449 Southwest Drive",
     "city": "Abilene",
@@ -6152,7 +6166,7 @@ DEALERS = {
     "zip": "79606",
     "link": "https://www.toyota.com/dealers/dealer/42292",
   },
-  "42295": {
+  42295: {
     "name": "Pat Lobb Toyota of McKinney",
     "address": "3350 S. Central Expresswy",
     "city": "McKinney",
@@ -6160,7 +6174,7 @@ DEALERS = {
     "zip": "75070",
     "link": "https://www.toyota.com/dealers/dealer/42295",
   },
-  "42296": {
+  42296: {
     "name": "Cowboy Toyota",
     "address": "9525 E. RL Thornton Frwy",
     "city": "Dallas",
@@ -6168,7 +6182,7 @@ DEALERS = {
     "zip": "75228",
     "link": "https://www.toyota.com/dealers/dealer/42296",
   },
-  "42298": {
+  42298: {
     "name": "Round Rock Toyota",
     "address": "2307 North I-35",
     "city": "Round Rock",
@@ -6176,7 +6190,7 @@ DEALERS = {
     "zip": "78664",
     "link": "https://www.toyota.com/dealers/dealer/42298",
   },
-  "42305": {
+  42305: {
     "name": "Vic Vaughan Toyota of Boerne",
     "address": "31205 IH-10 West",
     "city": "Boerne",
@@ -6184,7 +6198,7 @@ DEALERS = {
     "zip": "78006",
     "link": "https://www.toyota.com/dealers/dealer/42305",
   },
-  "42309": {
+  42309: {
     "name": "Toyota of Midland",
     "address": "800 North Loop 250 West",
     "city": "Midland",
@@ -6192,7 +6206,7 @@ DEALERS = {
     "zip": "79703",
     "link": "https://www.toyota.com/dealers/dealer/42309",
   },
-  "42315": {
+  42315: {
     "name": "Bryan College Station Toyota",
     "address": "728 N. Earl Rudder Frwy.",
     "city": "Bryan",
@@ -6200,7 +6214,7 @@ DEALERS = {
     "zip": "77802",
     "link": "https://www.toyota.com/dealers/dealer/42315",
   },
-  "42316": {
+  42316: {
     "name": "Huntsville Toyota",
     "address": "849 I-45 South",
     "city": "Huntsville",
@@ -6208,7 +6222,7 @@ DEALERS = {
     "zip": "77340",
     "link": "https://www.toyota.com/dealers/dealer/42316",
   },
-  "42320": {
+  42320: {
     "name": "Lone Star Toyota of Lewisville",
     "address": "1547 S. Stemmons Frwy.",
     "city": "Lewisville",
@@ -6216,7 +6230,7 @@ DEALERS = {
     "zip": "75067",
     "link": "https://www.toyota.com/dealers/dealer/42320",
   },
-  "42322": {
+  42322: {
     "name": "Toyota of Pharr",
     "address": "1625 W. Expressway 83",
     "city": "Pharr",
@@ -6224,7 +6238,7 @@ DEALERS = {
     "zip": "78577",
     "link": "https://www.toyota.com/dealers/dealer/42322",
   },
-  "42323": {
+  42323: {
     "name": "Toyota of Denton",
     "address": "4100 South IH 35 East",
     "city": "Denton",
@@ -6232,7 +6246,7 @@ DEALERS = {
     "zip": "76210",
     "link": "https://www.toyota.com/dealers/dealer/42323",
   },
-  "42327": {
+  42327: {
     "name": "Family Toyota of Burleson",
     "address": "801 S. Burleson Blvd.",
     "city": "Burleson",
@@ -6240,7 +6254,7 @@ DEALERS = {
     "zip": "76028",
     "link": "https://www.toyota.com/dealers/dealer/42327",
   },
-  "42329": {
+  42329: {
     "name": "South Toyota",
     "address": "39660 LBJ Freeway (I-20)",
     "city": "Dallas",
@@ -6248,7 +6262,7 @@ DEALERS = {
     "zip": "75237",
     "link": "https://www.toyota.com/dealers/dealer/42329",
   },
-  "42336": {
+  42336: {
     "name": "Mac Haik Toyota",
     "address": "2112 Gulf Freeway",
     "city": "League City",
@@ -6256,7 +6270,7 @@ DEALERS = {
     "zip": "77573",
     "link": "https://www.toyota.com/dealers/dealer/42336",
   },
-  "42342": {
+  42342: {
     "name": "North Park Toyota of San Antonio",
     "address": "10703 Southwest Loop 410",
     "city": "San Antonio",
@@ -6264,7 +6278,7 @@ DEALERS = {
     "zip": "78211",
     "link": "https://www.toyota.com/dealers/dealer/42342",
   },
-  "42343": {
+  42343: {
     "name": "Family Toyota of Arlington",
     "address": "1661 Wet 'N Wild Way",
     "city": "Arlington",
@@ -6272,7 +6286,7 @@ DEALERS = {
     "zip": "76011",
     "link": "https://www.toyota.com/dealers/dealer/42343",
   },
-  "42344": {
+  42344: {
     "name": "Toyota of Cedar Park",
     "address": "5600 183A Toll Road",
     "city": "Cedar Park",
@@ -6280,7 +6294,7 @@ DEALERS = {
     "zip": "78641",
     "link": "https://www.toyota.com/dealers/dealer/42344",
   },
-  "42345": {
+  42345: {
     "name": "Poe Toyota",
     "address": "6330 Montana Avenue",
     "city": "El Paso",
@@ -6288,7 +6302,7 @@ DEALERS = {
     "zip": "79925",
     "link": "https://www.toyota.com/dealers/dealer/42345",
   },
-  "42346": {
+  42346: {
     "name": "Longo Toyota of Prosper",
     "address": "2100 West University Drive",
     "city": "Prosper",
@@ -6296,7 +6310,7 @@ DEALERS = {
     "zip": "75078",
     "link": "https://www.toyota.com/dealers/dealer/42346",
   },
-  "43016": {
+  43016: {
     "name": "Larry H. Miller Toyota Murray",
     "address": "5650 South State Street",
     "city": "Murray",
@@ -6304,7 +6318,7 @@ DEALERS = {
     "zip": "84107",
     "link": "https://www.toyota.com/dealers/dealer/43016",
   },
-  "43019": {
+  43019: {
     "name": "Tony Divino Toyota",
     "address": "777 West Riverdale Road",
     "city": "Riverdale",
@@ -6312,7 +6326,7 @@ DEALERS = {
     "zip": "84405",
     "link": "https://www.toyota.com/dealers/dealer/43019",
   },
-  "43020": {
+  43020: {
     "name": "Mark Miller Toyota",
     "address": "730 South West Temple",
     "city": "Salt Lake City",
@@ -6320,7 +6334,7 @@ DEALERS = {
     "zip": "84101",
     "link": "https://www.toyota.com/dealers/dealer/43020",
   },
-  "43022": {
+  43022: {
     "name": "Karl Malone Toyota",
     "address": "11453 So. Lone Peak Pkwy",
     "city": "Draper",
@@ -6328,7 +6342,7 @@ DEALERS = {
     "zip": "84020",
     "link": "https://www.toyota.com/dealers/dealer/43022",
   },
-  "43025": {
+  43025: {
     "name": "Stephen Wade Toyota",
     "address": "150 W. Hilton Drive",
     "city": "St. George",
@@ -6336,7 +6350,7 @@ DEALERS = {
     "zip": "84770",
     "link": "https://www.toyota.com/dealers/dealer/43025",
   },
-  "43026": {
+  43026: {
     "name": "Performance Toyota Bountiful",
     "address": "2380 South Highway 89",
     "city": "Bountiful",
@@ -6344,7 +6358,7 @@ DEALERS = {
     "zip": "84010",
     "link": "https://www.toyota.com/dealers/dealer/43026",
   },
-  "43028": {
+  43028: {
     "name": "Brent Brown Toyota",
     "address": "1400 South Sandhill Road",
     "city": "Orem",
@@ -6352,7 +6366,7 @@ DEALERS = {
     "zip": "84058",
     "link": "https://www.toyota.com/dealers/dealer/43028",
   },
-  "44013": {
+  44013: {
     "name": "Handy Toyota",
     "address": "701 Highgate Road",
     "city": "St. Albans",
@@ -6360,7 +6374,7 @@ DEALERS = {
     "zip": "5478",
     "link": "https://www.toyota.com/dealers/dealer/44013",
   },
-  "44014": {
+  44014: {
     "name": "Heritage Toyota",
     "address": "1620 Shelburne Road",
     "city": "South Burlington",
@@ -6368,7 +6382,7 @@ DEALERS = {
     "zip": "5403",
     "link": "https://www.toyota.com/dealers/dealer/44014",
   },
-  "44016": {
+  44016: {
     "name": "White River Toyota",
     "address": "303 Sykes Mountain Avenue",
     "city": "White River Junction",
@@ -6376,7 +6390,7 @@ DEALERS = {
     "zip": "5001",
     "link": "https://www.toyota.com/dealers/dealer/44016",
   },
-  "44020": {
+  44020: {
     "name": "Alderman's Toyota",
     "address": "33 Seward Road",
     "city": "Rutland",
@@ -6384,7 +6398,7 @@ DEALERS = {
     "zip": "5701",
     "link": "https://www.toyota.com/dealers/dealer/44020",
   },
-  "44022": {
+  44022: {
     "name": "802 Toyota",
     "address": "30 Berlin Mall Road",
     "city": "Berlin",
@@ -6392,7 +6406,7 @@ DEALERS = {
     "zip": "5602",
     "link": "https://www.toyota.com/dealers/dealer/44022",
   },
-  "44023": {
+  44023: {
     "name": "Bennington Toyota",
     "address": "751 North Bennington Road",
     "city": "Bennington",
@@ -6400,7 +6414,7 @@ DEALERS = {
     "zip": "5201",
     "link": "https://www.toyota.com/dealers/dealer/44023",
   },
-  "44024": {
+  44024: {
     "name": "Faith's Toyota Ford",
     "address": "6896 Route 5 South",
     "city": "Westminster",
@@ -6408,7 +6422,7 @@ DEALERS = {
     "zip": "5158",
     "link": "https://www.toyota.com/dealers/dealer/44024",
   },
-  "44025": {
+  44025: {
     "name": "Coggins Toyota of Bennington",
     "address": "751 North Bennington Road",
     "city": "Bennington",
@@ -6416,7 +6430,7 @@ DEALERS = {
     "zip": "5201",
     "link": "https://www.toyota.com/dealers/dealer/44025",
   },
-  "45009": {
+  45009: {
     "name": "Checkered Flag Toyota",
     "address": "5301 Virginia Beach Blvd.",
     "city": "Virginia Beach",
@@ -6424,7 +6438,7 @@ DEALERS = {
     "zip": "23462",
     "link": "https://www.toyota.com/dealers/dealer/45009",
   },
-  "45013": {
+  45013: {
     "name": "McGeorge Toyota",
     "address": "9319 West Broad Street",
     "city": "Richmond",
@@ -6432,7 +6446,7 @@ DEALERS = {
     "zip": "23294",
     "link": "https://www.toyota.com/dealers/dealer/45013",
   },
-  "45016": {
+  45016: {
     "name": "Bill Page Toyota",
     "address": "2923 Annandale Road",
     "city": "Falls Church",
@@ -6440,7 +6454,7 @@ DEALERS = {
     "zip": "22042",
     "link": "https://www.toyota.com/dealers/dealer/45016",
   },
-  "45023": {
+  45023: {
     "name": "Priority Toyota Springfield",
     "address": "7601 Loisdale Road",
     "city": "Springfield",
@@ -6448,7 +6462,7 @@ DEALERS = {
     "zip": "22150",
     "link": "https://www.toyota.com/dealers/dealer/45023",
   },
-  "45027": {
+  45027: {
     "name": "Jack Taylor's Alexandria Toyota",
     "address": "3750 Richmond Highway",
     "city": "Alexandria",
@@ -6456,7 +6470,7 @@ DEALERS = {
     "zip": "22305",
     "link": "https://www.toyota.com/dealers/dealer/45027",
   },
-  "45030": {
+  45030: {
     "name": "McDonough Toyota",
     "address": "918 Richmond Road",
     "city": "Staunton",
@@ -6464,7 +6478,7 @@ DEALERS = {
     "zip": "24401",
     "link": "https://www.toyota.com/dealers/dealer/45030",
   },
-  "45035": {
+  45035: {
     "name": "Lustine Toyota",
     "address": "14227 Jefferson Davis Hwy",
     "city": "Woodbridge",
@@ -6472,7 +6486,7 @@ DEALERS = {
     "zip": "22191",
     "link": "https://www.toyota.com/dealers/dealer/45035",
   },
-  "45036": {
+  45036: {
     "name": "Shelor Toyota",
     "address": "2230 Roanoke Street",
     "city": "Christiansburg",
@@ -6480,7 +6494,7 @@ DEALERS = {
     "zip": "24073",
     "link": "https://www.toyota.com/dealers/dealer/45036",
   },
-  "45039": {
+  45039: {
     "name": "Pearson Toyota",
     "address": "12978 Jefferson Avenue",
     "city": "Newport News",
@@ -6488,7 +6502,7 @@ DEALERS = {
     "zip": "23608",
     "link": "https://www.toyota.com/dealers/dealer/45039",
   },
-  "45040": {
+  45040: {
     "name": "Miller Toyota",
     "address": "8566 Sudley Road",
     "city": "Manassas",
@@ -6496,7 +6510,7 @@ DEALERS = {
     "zip": "20110",
     "link": "https://www.toyota.com/dealers/dealer/45040",
   },
-  "45045": {
+  45045: {
     "name": "Danville Toyota",
     "address": "125 Piedmont Place",
     "city": "Danville",
@@ -6504,7 +6518,7 @@ DEALERS = {
     "zip": "24541",
     "link": "https://www.toyota.com/dealers/dealer/45045",
   },
-  "45050": {
+  45050: {
     "name": "Koons Tysons Toyota",
     "address": "8610 Leesburg Pike",
     "city": "Vienna",
@@ -6512,7 +6526,7 @@ DEALERS = {
     "zip": "22182",
     "link": "https://www.toyota.com/dealers/dealer/45050",
   },
-  "45053": {
+  45053: {
     "name": "Haley Toyota",
     "address": "1530 Courtland Road, N.E.",
     "city": "Roanoke",
@@ -6520,7 +6534,7 @@ DEALERS = {
     "zip": "24012",
     "link": "https://www.toyota.com/dealers/dealer/45053",
   },
-  "45055": {
+  45055: {
     "name": "Ourisman Fairfax Toyota",
     "address": "10287 Fairfax Boulevard",
     "city": "Fairfax",
@@ -6528,7 +6542,7 @@ DEALERS = {
     "zip": "22030",
     "link": "https://www.toyota.com/dealers/dealer/45055",
   },
-  "45057": {
+  45057: {
     "name": "Haley Toyota of Richmond",
     "address": "3600 Lonas Parkway",
     "city": "Midlothian",
@@ -6536,7 +6550,7 @@ DEALERS = {
     "zip": "23112",
     "link": "https://www.toyota.com/dealers/dealer/45057",
   },
-  "45062": {
+  45062: {
     "name": "Priority Toyota",
     "address": "1800 Greenbrier Parkway",
     "city": "Chesapeake",
@@ -6544,7 +6558,7 @@ DEALERS = {
     "zip": "23320",
     "link": "https://www.toyota.com/dealers/dealer/45062",
   },
-  "45069": {
+  45069: {
     "name": "Koons Arlington Toyota",
     "address": "4045 Lee Highway",
     "city": "Arlington",
@@ -6552,7 +6566,7 @@ DEALERS = {
     "zip": "22207",
     "link": "https://www.toyota.com/dealers/dealer/45069",
   },
-  "45070": {
+  45070: {
     "name": "Steven Toyota",
     "address": "2970 South Main St.",
     "city": "Harrisonburg",
@@ -6560,7 +6574,7 @@ DEALERS = {
     "zip": "22801",
     "link": "https://www.toyota.com/dealers/dealer/45070",
   },
-  "45074": {
+  45074: {
     "name": "Mechanicsville Toyota",
     "address": "6546 Mechanicsville Pike",
     "city": "Mechanicsville",
@@ -6568,7 +6582,7 @@ DEALERS = {
     "zip": "23111",
     "link": "https://www.toyota.com/dealers/dealer/45074",
   },
-  "45076": {
+  45076: {
     "name": "Casey Toyota",
     "address": "601 East Rochambeau Drive",
     "city": "Williamsburg",
@@ -6576,7 +6590,7 @@ DEALERS = {
     "zip": "23188",
     "link": "https://www.toyota.com/dealers/dealer/45076",
   },
-  "45079": {
+  45079: {
     "name": "Ourisman Chantilly Toyota",
     "address": "4135 Auto Park Circle",
     "city": "Chantilly",
@@ -6584,7 +6598,7 @@ DEALERS = {
     "zip": "20151",
     "link": "https://www.toyota.com/dealers/dealer/45079",
   },
-  "45080": {
+  45080: {
     "name": "First Team Toyota",
     "address": "3400 Western Branch Boulevard",
     "city": "Chesapeake",
@@ -6592,7 +6606,7 @@ DEALERS = {
     "zip": "23321",
     "link": "https://www.toyota.com/dealers/dealer/45080",
   },
-  "45082": {
+  45082: {
     "name": "Loyalty Toyota",
     "address": "2000 Walthall Center Dr.",
     "city": "Chester",
@@ -6600,7 +6614,7 @@ DEALERS = {
     "zip": "23831",
     "link": "https://www.toyota.com/dealers/dealer/45082",
   },
-  "45083": {
+  45083: {
     "name": "AutoNation Toyota Leesburg",
     "address": "1 Cardinal Park Drive, S.E.",
     "city": "Leesburg",
@@ -6608,7 +6622,7 @@ DEALERS = {
     "zip": "20175",
     "link": "https://www.toyota.com/dealers/dealer/45083",
   },
-  "45085": {
+  45085: {
     "name": "Berglund Toyota",
     "address": "3000 Wards Road (Rt. 29)",
     "city": "Lynchburg",
@@ -6616,7 +6630,7 @@ DEALERS = {
     "zip": "24502",
     "link": "https://www.toyota.com/dealers/dealer/45085",
   },
-  "45086": {
+  45086: {
     "name": "Battlefield Toyota",
     "address": "11013 James Monroe Hwy.",
     "city": "Culpeper",
@@ -6624,7 +6638,7 @@ DEALERS = {
     "zip": "22701",
     "link": "https://www.toyota.com/dealers/dealer/45086",
   },
-  "45088": {
+  45088: {
     "name": "Warrenton Toyota",
     "address": "6449 Lee Highway",
     "city": "Warrenton",
@@ -6632,7 +6646,7 @@ DEALERS = {
     "zip": "20187",
     "link": "https://www.toyota.com/dealers/dealer/45088",
   },
-  "45089": {
+  45089: {
     "name": "Malloy Toyota",
     "address": "400 Weems Lane",
     "city": "Winchester",
@@ -6640,7 +6654,7 @@ DEALERS = {
     "zip": "22601",
     "link": "https://www.toyota.com/dealers/dealer/45089",
   },
-  "45090": {
+  45090: {
     "name": "Priority Toyota Hampton",
     "address": "2301 West Mercury Boulevard",
     "city": "Hampton",
@@ -6648,7 +6662,7 @@ DEALERS = {
     "zip": "23666",
     "link": "https://www.toyota.com/dealers/dealer/45090",
   },
-  "45091": {
+  45091: {
     "name": "Sheehy Toyota of Stafford",
     "address": "95 Garrisonville Road",
     "city": "Stafford",
@@ -6656,7 +6670,7 @@ DEALERS = {
     "zip": "22554",
     "link": "https://www.toyota.com/dealers/dealer/45091",
   },
-  "45092": {
+  45092: {
     "name": "Sheehy Toyota of Fredericksburg",
     "address": "3507 Jefferson Davis Hwy",
     "city": "Fredericksburg",
@@ -6664,7 +6678,7 @@ DEALERS = {
     "zip": "22408",
     "link": "https://www.toyota.com/dealers/dealer/45092",
   },
-  "45093": {
+  45093: {
     "name": "Umansky Toyota of Charlottesville",
     "address": "1357 Richmond Road",
     "city": "Charlottesville",
@@ -6672,7 +6686,7 @@ DEALERS = {
     "zip": "22911",
     "link": "https://www.toyota.com/dealers/dealer/45093",
   },
-  "45094": {
+  45094: {
     "name": "Gloucester Toyota",
     "address": "6357 George Washington Hy",
     "city": "Gloucester",
@@ -6680,7 +6694,7 @@ DEALERS = {
     "zip": "23061",
     "link": "https://www.toyota.com/dealers/dealer/45094",
   },
-  "45095": {
+  45095: {
     "name": "Hall Toyota Virginia Beach",
     "address": "1877 Laskin Road",
     "city": "Virginia Beach",
@@ -6688,7 +6702,7 @@ DEALERS = {
     "zip": "23454",
     "link": "https://www.toyota.com/dealers/dealer/45095",
   },
-  "47012": {
+  47012: {
     "name": "Superior Toyota",
     "address": "3101 E 7th Street",
     "city": "Parkersburg",
@@ -6696,7 +6710,7 @@ DEALERS = {
     "zip": "26101",
     "link": "https://www.toyota.com/dealers/dealer/47012",
   },
-  "47013": {
+  47013: {
     "name": "Jim Robinson Toyota",
     "address": "55 Robinson Drive",
     "city": "Triadelphia",
@@ -6704,7 +6718,7 @@ DEALERS = {
     "zip": "26059",
     "link": "https://www.toyota.com/dealers/dealer/47013",
   },
-  "47021": {
+  47021: {
     "name": "Apple Valley Toyota",
     "address": "650 Foxcroft Avenue",
     "city": "Martinsburg",
@@ -6712,7 +6726,7 @@ DEALERS = {
     "zip": "25401",
     "link": "https://www.toyota.com/dealers/dealer/47021",
   },
-  "47023": {
+  47023: {
     "name": "University Toyota",
     "address": "60 Don Knotts Blvd.",
     "city": "Morgantown",
@@ -6720,7 +6734,7 @@ DEALERS = {
     "zip": "26506",
     "link": "https://www.toyota.com/dealers/dealer/47023",
   },
-  "47025": {
+  47025: {
     "name": "L & S Toyota of Beckley",
     "address": "248 Auto Plaza",
     "city": "Beckley",
@@ -6728,7 +6742,7 @@ DEALERS = {
     "zip": "25801",
     "link": "https://www.toyota.com/dealers/dealer/47025",
   },
-  "47027": {
+  47027: {
     "name": "Buckhannon Toyota",
     "address": "63 Brushy Fork Road",
     "city": "Buckhannon",
@@ -6736,7 +6750,7 @@ DEALERS = {
     "zip": "26201",
     "link": "https://www.toyota.com/dealers/dealer/47027",
   },
-  "47028": {
+  47028: {
     "name": "Advantage Toyota",
     "address": "1 Superior Way",
     "city": "Barboursville",
@@ -6744,7 +6758,7 @@ DEALERS = {
     "zip": "25504",
     "link": "https://www.toyota.com/dealers/dealer/47028",
   },
-  "47029": {
+  47029: {
     "name": "Dan Cava's Toyota World",
     "address": "2510 White Hall Boulevard",
     "city": "White Hall",
@@ -6752,7 +6766,7 @@ DEALERS = {
     "zip": "26554",
     "link": "https://www.toyota.com/dealers/dealer/47029",
   },
-  "47030": {
+  47030: {
     "name": "Moses Toyota",
     "address": "1433 MacCorkle Avenue",
     "city": "Saint Albans",
@@ -6760,7 +6774,7 @@ DEALERS = {
     "zip": "25177",
     "link": "https://www.toyota.com/dealers/dealer/47030",
   },
-  "47032": {
+  47032: {
     "name": "Ball Toyota of Charleston",
     "address": "1905 Patrick Street Plaza",
     "city": "Charleston",
@@ -6768,7 +6782,7 @@ DEALERS = {
     "zip": "25387",
     "link": "https://www.toyota.com/dealers/dealer/47032",
   },
-  "48005": {
+  48005: {
     "name": "Le Mieux & Son Toyota",
     "address": "2550 South Oneida Street",
     "city": "Green Bay",
@@ -6776,7 +6790,7 @@ DEALERS = {
     "zip": "54304",
     "link": "https://www.toyota.com/dealers/dealer/48005",
   },
-  "48007": {
+  48007: {
     "name": "Smart Toyota",
     "address": "5901 Odana Road",
     "city": "Madison",
@@ -6784,7 +6798,7 @@ DEALERS = {
     "zip": "53719",
     "link": "https://www.toyota.com/dealers/dealer/48007",
   },
-  "48021": {
+  48021: {
     "name": "Kari Toyota",
     "address": "1002 Tower Avenue",
     "city": "Superior",
@@ -6792,7 +6806,7 @@ DEALERS = {
     "zip": "54880",
     "link": "https://www.toyota.com/dealers/dealer/48021",
   },
-  "48027": {
+  48027: {
     "name": "Markquart Toyota",
     "address": "1844 Commercial Blvd.",
     "city": "Chippewa Falls",
@@ -6800,7 +6814,7 @@ DEALERS = {
     "zip": "54729",
     "link": "https://www.toyota.com/dealers/dealer/48027",
   },
-  "48028": {
+  48028: {
     "name": "Kolosso Toyota",
     "address": "3000 W. Wisconsin Avenue",
     "city": "Appleton",
@@ -6808,7 +6822,7 @@ DEALERS = {
     "zip": "54914",
     "link": "https://www.toyota.com/dealers/dealer/48028",
   },
-  "48030": {
+  48030: {
     "name": "Wilde Toyota",
     "address": "3225 South 108th Street",
     "city": "West Allis",
@@ -6816,7 +6830,7 @@ DEALERS = {
     "zip": "53227",
     "link": "https://www.toyota.com/dealers/dealer/48030",
   },
-  "48032": {
+  48032: {
     "name": "Don Jacobs Toyota",
     "address": "5727 S. 27th Street",
     "city": "Milwaukee",
@@ -6824,7 +6838,7 @@ DEALERS = {
     "zip": "53221",
     "link": "https://www.toyota.com/dealers/dealer/48032",
   },
-  "48036": {
+  48036: {
     "name": "Heiser Toyota",
     "address": "11301 West Metro Auto Mall",
     "city": "Milwaukee",
@@ -6832,7 +6846,7 @@ DEALERS = {
     "zip": "53224",
     "link": "https://www.toyota.com/dealers/dealer/48036",
   },
-  "48039": {
+  48039: {
     "name": "Andrew Toyota",
     "address": "1620 W. Silver Spring Dr.",
     "city": "Glendale",
@@ -6840,7 +6854,7 @@ DEALERS = {
     "zip": "53209",
     "link": "https://www.toyota.com/dealers/dealer/48039",
   },
-  "48045": {
+  48045: {
     "name": "Hesser Toyota",
     "address": "1811 Humes Road",
     "city": "Janesville",
@@ -6848,7 +6862,7 @@ DEALERS = {
     "zip": "53545",
     "link": "https://www.toyota.com/dealers/dealer/48045",
   },
-  "48046": {
+  48046: {
     "name": "Mark Toyota of Plover",
     "address": "1765 Park Avenue",
     "city": "Plover",
@@ -6856,7 +6870,7 @@ DEALERS = {
     "zip": "54467",
     "link": "https://www.toyota.com/dealers/dealer/48046",
   },
-  "48049": {
+  48049: {
     "name": "Russ Darrow Toyota",
     "address": "2700 W. Washington St.",
     "city": "West Bend",
@@ -6864,7 +6878,7 @@ DEALERS = {
     "zip": "53095",
     "link": "https://www.toyota.com/dealers/dealer/48049",
   },
-  "48051": {
+  48051: {
     "name": "Bergstrom Toyota",
     "address": "3245 S. Washburn Street",
     "city": "Oshkosh",
@@ -6872,7 +6886,7 @@ DEALERS = {
     "zip": "54904",
     "link": "https://www.toyota.com/dealers/dealer/48051",
   },
-  "48053": {
+  48053: {
     "name": "Ruda Chevrolet/Toyota",
     "address": "104 Eighth Street",
     "city": "Monroe",
@@ -6880,7 +6894,7 @@ DEALERS = {
     "zip": "53566",
     "link": "https://www.toyota.com/dealers/dealer/48053",
   },
-  "48059": {
+  48059: {
     "name": "Toyota of Wausau",
     "address": "2900 N. 20th Avenue",
     "city": "Wausau",
@@ -6888,7 +6902,7 @@ DEALERS = {
     "zip": "54401",
     "link": "https://www.toyota.com/dealers/dealer/48059",
   },
-  "48060": {
+  48060: {
     "name": "Toyota of La Crosse",
     "address": "800 Third Street South",
     "city": "La Crosse",
@@ -6896,7 +6910,7 @@ DEALERS = {
     "zip": "54601",
     "link": "https://www.toyota.com/dealers/dealer/48060",
   },
-  "48061": {
+  48061: {
     "name": "East Madison Toyota",
     "address": "3501 Lancaster Drive",
     "city": "Madison",
@@ -6904,7 +6918,7 @@ DEALERS = {
     "zip": "53718",
     "link": "https://www.toyota.com/dealers/dealer/48061",
   },
-  "48064": {
+  48064: {
     "name": "International Toyota",
     "address": "4120 N. Frontage Road",
     "city": "Sheboygan",
@@ -6912,7 +6926,7 @@ DEALERS = {
     "zip": "53081",
     "link": "https://www.toyota.com/dealers/dealer/48064",
   },
-  "48065": {
+  48065: {
     "name": "Toyota of Brookfield",
     "address": "20655 West Capitol Drive",
     "city": "Brookfield",
@@ -6920,7 +6934,7 @@ DEALERS = {
     "zip": "53045",
     "link": "https://www.toyota.com/dealers/dealer/48065",
   },
-  "48068": {
+  48068: {
     "name": "Zeigler Toyota of Racine",
     "address": "13350 Kilbourn Drive",
     "city": "Mount Pleasant",
@@ -6928,7 +6942,7 @@ DEALERS = {
     "zip": "53177",
     "link": "https://www.toyota.com/dealers/dealer/48068",
   },
-  "48069": {
+  48069: {
     "name": "Marthaler Toyota of Ashland",
     "address": "2301 Lakeshore Drive East",
     "city": "Ashland",

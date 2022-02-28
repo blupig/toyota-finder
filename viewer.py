@@ -90,9 +90,9 @@ def generate_table(cars):
             car_html += f"<td>{car.get('extColor', {}).get('marketingName')}</td>"
 
             # Dealer
-            dealer = dealers.DEALERS.get(car.get("dealerCd", ""), {})
-            car_html += f"<td>{dealer.get('name', '')}</td>"
-            car_html += f"<td>{dealer.get('city', '')}, {dealer.get('state', '')}</td>"
+            dealer_id = int(car.get('dealerCd', '0'))
+            car_html += f"<td>{dealers.get_name(dealer_id)}</td>"
+            car_html += f"<td>{dealers.get_city_state(dealer_id)}</td>"
 
             # eta
             car_html += f"<td>{car.get('eta', {}).get('currToDate')}</td>"

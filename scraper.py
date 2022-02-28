@@ -26,14 +26,15 @@ def scrape_vins(vins):
                     scrape_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     # New car found
                     color = car.get('extColor', {}).get('marketingName')
-                    dealer = dealers.DEALERS.get(car.get("dealerCd", ""), {}).get('name', '')
+                    dealer_id = int(car.get('dealerCd', '0'))
+                    dealer_name = dealers.get_name(dealer_id)
+                    dealer_city_state = dealers.get_city_state(dealer_id)
                     notifier.send_email(
                         f'toyota-finder: {vin}',
-                        f'New VIN found: {color}, {dealer}, https://guest.dealer.toyota.com/v-spec/{vin}/detail',
+                        f'New VIN found: {color}, {dealer_name}, {dealer_city_state}, https://guest.dealer.toyota.com/v-spec/{vin}/detail',
                     )
 
                 car['scrapeTime'] = scrape_time
-
                 save_data(vin, car)
 
         except HTTPError:
