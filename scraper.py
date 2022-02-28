@@ -4,6 +4,7 @@ import urllib.request
 import time
 from datetime import datetime
 from urllib.error import HTTPError
+import dealers
 import global_vars
 import notifier
 
@@ -17,22 +18,23 @@ def scrape_vins(vins):
                 print(f'VIN {vin} exists')
 
                 # Inject scrape_time
-                parsed = json.loads(body)
+                car = json.loads(body)
 
                 # Read or generate scrape_time
                 scrape_time = read_scrape_time(vin)
                 if scrape_time is None:
                     scrape_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     # New car found
-                    color = parsed.get('extColor', {}).get('marketingName')
+                    color = car.get('extColor', {}).get('marketingName')
+                    dealer = dealers.DEALERS.get(car.get("dealerCd", ""), {}).get('name', '')
                     notifier.send_email(
                         f'toyota-finder: {vin}',
-                        f'New VIN found: {color}, https://guest.dealer.toyota.com/v-spec/{vin}/detail',
+                        f'New VIN found: {color}, {dealer}, https://guest.dealer.toyota.com/v-spec/{vin}/detail',
                     )
 
-                parsed['scrapeTime'] = scrape_time
+                car['scrapeTime'] = scrape_time
 
-                save_data(vin, parsed)
+                save_data(vin, car)
 
         except HTTPError:
             pass
@@ -58,8 +60,8 @@ def read_scrape_time(vin):
     """Read scrapeTime from existing file"""
     try:
         with open(f'data/{vin}.json', 'r', encoding='utf8') as f:
-            parsed = json.load(f)
-            return parsed.get('scrapeTime', None)
+            car = json.load(f)
+            return car.get('scrapeTime', None)
     except:
         return None
 
