@@ -6,10 +6,10 @@ def get_name(dealer_id):
     dealer = get_dealer(dealer_id)
     return dealer.get('name', '')
 
-def get_city_state(dealer_id):
+def get_location(dealer_id):
     dealer = get_dealer(dealer_id)
     if 'city' in dealer:
-        return f"{dealer.get('city', '')}, {dealer.get('state', '')}"
+        return f"{dealer.get('city', '')}, {dealer.get('state', '')} {dealer.get('zip', '')}"
     return ''
 
 # Dealers map
@@ -1298,7 +1298,7 @@ DEALERS = {
     "address": "50 Amity Road",
     "city": "New Haven",
     "state": "CT",
-    "zip": "6515",
+    "zip": "06515",
     "link": "https://www.toyota.com/dealers/dealer/06002",
   },
   6015: {
@@ -1306,7 +1306,7 @@ DEALERS = {
     "address": "543 Colman Street",
     "city": "New London",
     "state": "CT",
-    "zip": "6320",
+    "zip": "06320",
     "link": "https://www.toyota.com/dealers/dealer/06015",
   },
   6022: {
@@ -1314,7 +1314,7 @@ DEALERS = {
     "address": "1069 Farmington Ave",
     "city": "Bristol",
     "state": "CT",
-    "zip": "6010",
+    "zip": "06010",
     "link": "https://www.toyota.com/dealers/dealer/06022",
   },
   6025: {
@@ -1322,7 +1322,7 @@ DEALERS = {
     "address": "179 Tolland Turnpike",
     "city": "Manchester",
     "state": "CT",
-    "zip": "6040",
+    "zip": "06040",
     "link": "https://www.toyota.com/dealers/dealer/06025",
   },
   6026: {
@@ -1330,7 +1330,7 @@ DEALERS = {
     "address": "50 Palomba Drive",
     "city": "Enfield",
     "state": "CT",
-    "zip": "6082",
+    "zip": "06082",
     "link": "https://www.toyota.com/dealers/dealer/06026",
   },
   6029: {
@@ -1338,7 +1338,7 @@ DEALERS = {
     "address": "75 E. Putnam Ave Box 402",
     "city": "Cos Cob",
     "state": "CT",
-    "zip": "6807",
+    "zip": "06807",
     "link": "https://www.toyota.com/dealers/dealer/06029",
   },
   6032: {
@@ -1346,7 +1346,7 @@ DEALERS = {
     "address": "87 Federal Road",
     "city": "Danbury",
     "state": "CT",
-    "zip": "6810",
+    "zip": "06810",
     "link": "https://www.toyota.com/dealers/dealer/06032",
   },
   6036: {
@@ -1354,7 +1354,7 @@ DEALERS = {
     "address": "634 Newfield Street",
     "city": "Middletown",
     "state": "CT",
-    "zip": "6457",
+    "zip": "06457",
     "link": "https://www.toyota.com/dealers/dealer/06036",
   },
   6037: {
@@ -1362,7 +1362,7 @@ DEALERS = {
     "address": "500 West Thames Street",
     "city": "Norwich",
     "state": "CT",
-    "zip": "6360",
+    "zip": "06360",
     "link": "https://www.toyota.com/dealers/dealer/06037",
   },
   6040: {
@@ -1370,7 +1370,7 @@ DEALERS = {
     "address": "470 Boston Post Road",
     "city": "Milford",
     "state": "CT",
-    "zip": "6460",
+    "zip": "06460",
     "link": "https://www.toyota.com/dealers/dealer/06040",
   },
   6042: {
@@ -1378,7 +1378,7 @@ DEALERS = {
     "address": "36 Albany Turnpike Rt 44",
     "city": "West Simsbury",
     "state": "CT",
-    "zip": "6092",
+    "zip": "06092",
     "link": "https://www.toyota.com/dealers/dealer/06042",
   },
   6043: {
@@ -1386,7 +1386,7 @@ DEALERS = {
     "address": "80 Flat Rock Place",
     "city": "Westbrook",
     "state": "CT",
-    "zip": "6498",
+    "zip": "06498",
     "link": "https://www.toyota.com/dealers/dealer/06043",
   },
   6045: {
@@ -1394,7 +1394,7 @@ DEALERS = {
     "address": "1472 East Main Street",
     "city": "Torrington",
     "state": "CT",
-    "zip": "6790",
+    "zip": "06790",
     "link": "https://www.toyota.com/dealers/dealer/06045",
   },
   6046: {
@@ -1402,7 +1402,7 @@ DEALERS = {
     "address": "451 Bantam Road",
     "city": "Litchfield",
     "state": "CT",
-    "zip": "6759",
+    "zip": "06759",
     "link": "https://www.toyota.com/dealers/dealer/06046",
   },
   6047: {
@@ -1410,7 +1410,7 @@ DEALERS = {
     "address": "859-861 No. Colony Road",
     "city": "Wallingford",
     "state": "CT",
-    "zip": "6492",
+    "zip": "06492",
     "link": "https://www.toyota.com/dealers/dealer/06047",
   },
   6049: {
@@ -1418,7 +1418,7 @@ DEALERS = {
     "address": "100 Old Hartford Road",
     "city": "Colchester",
     "state": "CT",
-    "zip": "6415",
+    "zip": "06415",
     "link": "https://www.toyota.com/dealers/dealer/06049",
   },
   6050: {
@@ -1426,7 +1426,7 @@ DEALERS = {
     "address": "135 West Service Road",
     "city": "Hartford",
     "state": "CT",
-    "zip": "6120",
+    "zip": "06120",
     "link": "https://www.toyota.com/dealers/dealer/06050",
   },
   6051: {
@@ -1434,7 +1434,7 @@ DEALERS = {
     "address": "777 Post Road East",
     "city": "Westport",
     "state": "CT",
-    "zip": "6880",
+    "zip": "06880",
     "link": "https://www.toyota.com/dealers/dealer/06051",
   },
   6052: {
@@ -1442,7 +1442,7 @@ DEALERS = {
     "address": "909 East Main Street",
     "city": "Stamford",
     "state": "CT",
-    "zip": "6902",
+    "zip": "06902",
     "link": "https://www.toyota.com/dealers/dealer/06052",
   },
   6053: {
@@ -1450,7 +1450,7 @@ DEALERS = {
     "address": "832 Straits Turnpike",
     "city": "Watertown",
     "state": "CT",
-    "zip": "6795",
+    "zip": "06795",
     "link": "https://www.toyota.com/dealers/dealer/06053",
   },
   7008: {
@@ -2418,7 +2418,7 @@ DEALERS = {
     "address": "652 Wilson Street",
     "city": "Brewer",
     "state": "ME",
-    "zip": "4412",
+    "zip": "04412",
     "link": "https://www.toyota.com/dealers/dealer/18010",
   },
   18023: {
@@ -2426,7 +2426,7 @@ DEALERS = {
     "address": "181 New County Road Route 1",
     "city": "Rockland",
     "state": "ME",
-    "zip": "4841",
+    "zip": "04841",
     "link": "https://www.toyota.com/dealers/dealer/18023",
   },
   18031: {
@@ -2434,7 +2434,7 @@ DEALERS = {
     "address": "315 North Street",
     "city": "Houlton",
     "state": "ME",
-    "zip": "4730",
+    "zip": "04730",
     "link": "https://www.toyota.com/dealers/dealer/18031",
   },
   18032: {
@@ -2442,7 +2442,7 @@ DEALERS = {
     "address": "15 Airport Road",
     "city": "Waterville",
     "state": "ME",
-    "zip": "4901",
+    "zip": "04901",
     "link": "https://www.toyota.com/dealers/dealer/18032",
   },
   18033: {
@@ -2450,7 +2450,7 @@ DEALERS = {
     "address": "451 Western Avenue",
     "city": "Augusta",
     "state": "ME",
-    "zip": "4330",
+    "zip": "04330",
     "link": "https://www.toyota.com/dealers/dealer/18033",
   },
   18034: {
@@ -2458,7 +2458,7 @@ DEALERS = {
     "address": "990 Center Street",
     "city": "Auburn",
     "state": "ME",
-    "zip": "4210",
+    "zip": "04210",
     "link": "https://www.toyota.com/dealers/dealer/18034",
   },
   18035: {
@@ -2466,7 +2466,7 @@ DEALERS = {
     "address": "115 Main Street",
     "city": "Topsham",
     "state": "ME",
-    "zip": "4086",
+    "zip": "04086",
     "link": "https://www.toyota.com/dealers/dealer/18035",
   },
   18036: {
@@ -2474,7 +2474,7 @@ DEALERS = {
     "address": "783 Portland Road",
     "city": "Saco",
     "state": "ME",
-    "zip": "4072",
+    "zip": "04072",
     "link": "https://www.toyota.com/dealers/dealer/18036",
   },
   18037: {
@@ -2482,7 +2482,7 @@ DEALERS = {
     "address": "191 Riverside Street",
     "city": "Portland",
     "state": "ME",
-    "zip": "4103",
+    "zip": "04103",
     "link": "https://www.toyota.com/dealers/dealer/18037",
   },
   19005: {
@@ -2698,7 +2698,7 @@ DEALERS = {
     "address": "600 River St",
     "city": "Haverhill",
     "state": "MA",
-    "zip": "1832",
+    "zip": "01832",
     "link": "https://www.toyota.com/dealers/dealer/20006",
   },
   20009: {
@@ -2706,7 +2706,7 @@ DEALERS = {
     "address": "51 West Main Street",
     "city": "North Adams",
     "state": "MA",
-    "zip": "1247",
+    "zip": "01247",
     "link": "https://www.toyota.com/dealers/dealer/20009",
   },
   20016: {
@@ -2714,7 +2714,7 @@ DEALERS = {
     "address": "1399 Riverdale Street",
     "city": "West Springfield",
     "state": "MA",
-    "zip": "1089",
+    "zip": "01089",
     "link": "https://www.toyota.com/dealers/dealer/20016",
   },
   20019: {
@@ -2722,7 +2722,7 @@ DEALERS = {
     "address": "149 Arsenal St",
     "city": "Watertown",
     "state": "MA",
-    "zip": "2472",
+    "zip": "02472",
     "link": "https://www.toyota.com/dealers/dealer/20019",
   },
   20049: {
@@ -2730,7 +2730,7 @@ DEALERS = {
     "address": "130 Pittsfield - Lenox Rd.",
     "city": "Pittsfield",
     "state": "MA",
-    "zip": "1201",
+    "zip": "01201",
     "link": "https://www.toyota.com/dealers/dealer/20049",
   },
   20051: {
@@ -2738,7 +2738,7 @@ DEALERS = {
     "address": "970 West Chestnut Street",
     "city": "Brockton",
     "state": "MA",
-    "zip": "2301",
+    "zip": "02301",
     "link": "https://www.toyota.com/dealers/dealer/20051",
   },
   20058: {
@@ -2746,7 +2746,7 @@ DEALERS = {
     "address": "271 Turnpike Road",
     "city": "Westborough",
     "state": "MA",
-    "zip": "1581",
+    "zip": "01581",
     "link": "https://www.toyota.com/dealers/dealer/20058",
   },
   20063: {
@@ -2754,7 +2754,7 @@ DEALERS = {
     "address": "860-880 Washington St",
     "city": "Hanover",
     "state": "MA",
-    "zip": "2339",
+    "zip": "02339",
     "link": "https://www.toyota.com/dealers/dealer/20063",
   },
   20087: {
@@ -2762,7 +2762,7 @@ DEALERS = {
     "address": "394 Washington Street",
     "city": "Woburn",
     "state": "MA",
-    "zip": "1801",
+    "zip": "01801",
     "link": "https://www.toyota.com/dealers/dealer/20087",
   },
   20093: {
@@ -2770,7 +2770,7 @@ DEALERS = {
     "address": "671 Lynnway",
     "city": "Lynn",
     "state": "MA",
-    "zip": "1905",
+    "zip": "01905",
     "link": "https://www.toyota.com/dealers/dealer/20093",
   },
   20096: {
@@ -2778,7 +2778,7 @@ DEALERS = {
     "address": "290 Mac Arthur Blvd.",
     "city": "Bourne",
     "state": "MA",
-    "zip": "2532",
+    "zip": "02532",
     "link": "https://www.toyota.com/dealers/dealer/20096",
   },
   20101: {
@@ -2786,7 +2786,7 @@ DEALERS = {
     "address": "100 Gold Star Boulevard",
     "city": "Worcester",
     "state": "MA",
-    "zip": "1606",
+    "zip": "01606",
     "link": "https://www.toyota.com/dealers/dealer/20101",
   },
   20102: {
@@ -2794,7 +2794,7 @@ DEALERS = {
     "address": "409 Massachusetts Avenue",
     "city": "Lexington",
     "state": "MA",
-    "zip": "2420",
+    "zip": "02420",
     "link": "https://www.toyota.com/dealers/dealer/20102",
   },
   20109: {
@@ -2802,7 +2802,7 @@ DEALERS = {
     "address": "1626 Worcester Road",
     "city": "Framingham",
     "state": "MA",
-    "zip": "1702",
+    "zip": "01702",
     "link": "https://www.toyota.com/dealers/dealer/20109",
   },
   20111: {
@@ -2810,7 +2810,7 @@ DEALERS = {
     "address": "5 Gallen Road",
     "city": "Kingston",
     "state": "MA",
-    "zip": "2364",
+    "zip": "02364",
     "link": "https://www.toyota.com/dealers/dealer/20111",
   },
   20113: {
@@ -2818,7 +2818,7 @@ DEALERS = {
     "address": "234 Worcester Street",
     "city": "Wellesley",
     "state": "MA",
-    "zip": "2481",
+    "zip": "02481",
     "link": "https://www.toyota.com/dealers/dealer/20113",
   },
   20116: {
@@ -2826,7 +2826,7 @@ DEALERS = {
     "address": "700 Morrissey Blvd.",
     "city": "Dorchester",
     "state": "MA",
-    "zip": "2122",
+    "zip": "02122",
     "link": "https://www.toyota.com/dealers/dealer/20116",
   },
   20117: {
@@ -2834,7 +2834,7 @@ DEALERS = {
     "address": "809 Washington Street",
     "city": "Auburn",
     "state": "MA",
-    "zip": "1501",
+    "zip": "01501",
     "link": "https://www.toyota.com/dealers/dealer/20117",
   },
   20122: {
@@ -2842,7 +2842,7 @@ DEALERS = {
     "address": "210 Union Street",
     "city": "Braintree",
     "state": "MA",
-    "zip": "2184",
+    "zip": "02184",
     "link": "https://www.toyota.com/dealers/dealer/20122",
   },
   20123: {
@@ -2850,7 +2850,7 @@ DEALERS = {
     "address": "2145 Boston Road",
     "city": "Wilbraham",
     "state": "MA",
-    "zip": "1095",
+    "zip": "01095",
     "link": "https://www.toyota.com/dealers/dealer/20123",
   },
   20125: {
@@ -2858,7 +2858,7 @@ DEALERS = {
     "address": "1154 New State Highway",
     "city": "Raynham",
     "state": "MA",
-    "zip": "2767",
+    "zip": "02767",
     "link": "https://www.toyota.com/dealers/dealer/20125",
   },
   20126: {
@@ -2866,7 +2866,7 @@ DEALERS = {
     "address": "32 Brighton Avenue",
     "city": "Boston",
     "state": "MA",
-    "zip": "2134",
+    "zip": "02134",
     "link": "https://www.toyota.com/dealers/dealer/20126",
   },
   20127: {
@@ -2874,7 +2874,7 @@ DEALERS = {
     "address": "99B Andover Street",
     "city": "Danvers",
     "state": "MA",
-    "zip": "1923",
+    "zip": "01923",
     "link": "https://www.toyota.com/dealers/dealer/20127",
   },
   20128: {
@@ -2882,7 +2882,7 @@ DEALERS = {
     "address": "100 Old Faunce Corner Road",
     "city": "North Dartmouth",
     "state": "MA",
-    "zip": "2747",
+    "zip": "02747",
     "link": "https://www.toyota.com/dealers/dealer/20128",
   },
   20129: {
@@ -2890,7 +2890,7 @@ DEALERS = {
     "address": "468 Main Street",
     "city": "Tewksbury",
     "state": "MA",
-    "zip": "1876",
+    "zip": "01876",
     "link": "https://www.toyota.com/dealers/dealer/20129",
   },
   20133: {
@@ -2898,7 +2898,7 @@ DEALERS = {
     "address": "280 King Street",
     "city": "Northampton",
     "state": "MA",
-    "zip": "1060",
+    "zip": "01060",
     "link": "https://www.toyota.com/dealers/dealer/20133",
   },
   20134: {
@@ -2906,7 +2906,7 @@ DEALERS = {
     "address": "One Main Street",
     "city": "Greenfield",
     "state": "MA",
-    "zip": "1301",
+    "zip": "01301",
     "link": "https://www.toyota.com/dealers/dealer/20134",
   },
   20135: {
@@ -2914,7 +2914,7 @@ DEALERS = {
     "address": "1605 VFW Parkway",
     "city": "Boston",
     "state": "MA",
-    "zip": "2132",
+    "zip": "02132",
     "link": "https://www.toyota.com/dealers/dealer/20135",
   },
   20137: {
@@ -2922,7 +2922,7 @@ DEALERS = {
     "address": "1020 Iyannough Road",
     "city": "Hyannis",
     "state": "MA",
-    "zip": "2601",
+    "zip": "02601",
     "link": "https://www.toyota.com/dealers/dealer/20137",
   },
   20138: {
@@ -2930,7 +2930,7 @@ DEALERS = {
     "address": "16 O'Connor Road",
     "city": "Orleans",
     "state": "MA",
-    "zip": "2653",
+    "zip": "02653",
     "link": "https://www.toyota.com/dealers/dealer/20138",
   },
   20139: {
@@ -2938,7 +2938,7 @@ DEALERS = {
     "address": "700 Old Union Turnpike",
     "city": "Lancaster",
     "state": "MA",
-    "zip": "1523",
+    "zip": "01523",
     "link": "https://www.toyota.com/dealers/dealer/20139",
   },
   20140: {
@@ -2946,7 +2946,7 @@ DEALERS = {
     "address": "2283 Grand Army Highway",
     "city": "Swansea",
     "state": "MA",
-    "zip": "2777",
+    "zip": "02777",
     "link": "https://www.toyota.com/dealers/dealer/20140",
   },
   20141: {
@@ -2954,7 +2954,7 @@ DEALERS = {
     "address": "277 Providence Highway",
     "city": "Norwood",
     "state": "MA",
-    "zip": "2062",
+    "zip": "02062",
     "link": "https://www.toyota.com/dealers/dealer/20141",
   },
   20142: {
@@ -2962,7 +2962,7 @@ DEALERS = {
     "address": "191 West Main Street",
     "city": "Dudley",
     "state": "MA",
-    "zip": "1571",
+    "zip": "01571",
     "link": "https://www.toyota.com/dealers/dealer/20142",
   },
   20144: {
@@ -2970,7 +2970,7 @@ DEALERS = {
     "address": "620 South Washington St.",
     "city": "North Attleboro",
     "state": "MA",
-    "zip": "2760",
+    "zip": "02760",
     "link": "https://www.toyota.com/dealers/dealer/20144",
   },
   20145: {
@@ -2978,7 +2978,7 @@ DEALERS = {
     "address": "300 Fortune Blvd.",
     "city": "Milford",
     "state": "MA",
-    "zip": "1757",
+    "zip": "01757",
     "link": "https://www.toyota.com/dealers/dealer/20145",
   },
   20146: {
@@ -2986,7 +2986,7 @@ DEALERS = {
     "address": "221 Great Road",
     "city": "Littleton",
     "state": "MA",
-    "zip": "1460",
+    "zip": "01460",
     "link": "https://www.toyota.com/dealers/dealer/20146",
   },
   20147: {
@@ -2994,7 +2994,7 @@ DEALERS = {
     "address": "1020 Iyannough Road",
     "city": "Hyannis",
     "state": "MA",
-    "zip": "2601",
+    "zip": "02601",
     "link": "https://www.toyota.com/dealers/dealer/20147",
   },
   20148: {
@@ -3002,7 +3002,7 @@ DEALERS = {
     "address": "16 O'Connor Road",
     "city": "Orleans",
     "state": "MA",
-    "zip": "2653",
+    "zip": "02653",
     "link": "https://www.toyota.com/dealers/dealer/20148",
   },
   20149: {
@@ -3010,7 +3010,7 @@ DEALERS = {
     "address": "1605 VFW Parkway",
     "city": "Boston",
     "state": "MA",
-    "zip": "2132",
+    "zip": "02132",
     "link": "https://www.toyota.com/dealers/dealer/20149",
   },
   21032: {
@@ -3722,7 +3722,7 @@ DEALERS = {
     "address": "594 Route 3-A",
     "city": "Bow",
     "state": "NH",
-    "zip": "3304",
+    "zip": "03304",
     "link": "https://www.toyota.com/dealers/dealer/28012",
   },
   28020: {
@@ -3730,7 +3730,7 @@ DEALERS = {
     "address": "48 Farmington Rd-Route 11 West",
     "city": "Rochester",
     "state": "NH",
-    "zip": "3867",
+    "zip": "03867",
     "link": "https://www.toyota.com/dealers/dealer/28020",
   },
   28021: {
@@ -3738,7 +3738,7 @@ DEALERS = {
     "address": "40 Dover Point Road",
     "city": "Dover",
     "state": "NH",
-    "zip": "3820",
+    "zip": "03820",
     "link": "https://www.toyota.com/dealers/dealer/28021",
   },
   28024: {
@@ -3746,7 +3746,7 @@ DEALERS = {
     "address": "59 Bisson Avenue",
     "city": "Laconia",
     "state": "NH",
-    "zip": "3246",
+    "zip": "03246",
     "link": "https://www.toyota.com/dealers/dealer/28024",
   },
   28028: {
@@ -3754,7 +3754,7 @@ DEALERS = {
     "address": "412 S. Broadway",
     "city": "Salem",
     "state": "NH",
-    "zip": "3079",
+    "zip": "03079",
     "link": "https://www.toyota.com/dealers/dealer/28028",
   },
   28029: {
@@ -3762,7 +3762,7 @@ DEALERS = {
     "address": "591 Monadnock Hwy. Rt 12",
     "city": "East Swanzey",
     "state": "NH",
-    "zip": "3446",
+    "zip": "03446",
     "link": "https://www.toyota.com/dealers/dealer/28029",
   },
   28035: {
@@ -3770,7 +3770,7 @@ DEALERS = {
     "address": "150 Greenleaf Avenue",
     "city": "Portsmouth",
     "state": "NH",
-    "zip": "3801",
+    "zip": "03801",
     "link": "https://www.toyota.com/dealers/dealer/28035",
   },
   28036: {
@@ -3778,7 +3778,7 @@ DEALERS = {
     "address": "33 Autocenter Road",
     "city": "Manchester",
     "state": "NH",
-    "zip": "3103",
+    "zip": "03103",
     "link": "https://www.toyota.com/dealers/dealer/28036",
   },
   28037: {
@@ -3786,7 +3786,7 @@ DEALERS = {
     "address": "485 Main Street",
     "city": "Gorham",
     "state": "NH",
-    "zip": "3581",
+    "zip": "03581",
     "link": "https://www.toyota.com/dealers/dealer/28037",
   },
   28038: {
@@ -3794,7 +3794,7 @@ DEALERS = {
     "address": "10 Marmon Drive",
     "city": "Nashua",
     "state": "NH",
-    "zip": "3060",
+    "zip": "03060",
     "link": "https://www.toyota.com/dealers/dealer/28038",
   },
   28039: {
@@ -3802,7 +3802,7 @@ DEALERS = {
     "address": "168 Charlestown Road",
     "city": "Claremont",
     "state": "NH",
-    "zip": "3743",
+    "zip": "03743",
     "link": "https://www.toyota.com/dealers/dealer/28039",
   },
   28040: {
@@ -3810,7 +3810,7 @@ DEALERS = {
     "address": "58 Calef Highway",
     "city": "Epping",
     "state": "NH",
-    "zip": "3042",
+    "zip": "03042",
     "link": "https://www.toyota.com/dealers/dealer/28040",
   },
   29008: {
@@ -3818,7 +3818,7 @@ DEALERS = {
     "address": "50 Sylvan Avenue",
     "city": "Englewood Cliffs",
     "state": "NJ",
-    "zip": "7632",
+    "zip": "07632",
     "link": "https://www.toyota.com/dealers/dealer/29008",
   },
   29025: {
@@ -3826,7 +3826,7 @@ DEALERS = {
     "address": "278 River Street",
     "city": "Hackensack",
     "state": "NJ",
-    "zip": "7601",
+    "zip": "07601",
     "link": "https://www.toyota.com/dealers/dealer/29025",
   },
   29031: {
@@ -3834,7 +3834,7 @@ DEALERS = {
     "address": "750 Route 36",
     "city": "Eatontown",
     "state": "NJ",
-    "zip": "7724",
+    "zip": "07724",
     "link": "https://www.toyota.com/dealers/dealer/29031",
   },
   29037: {
@@ -3842,7 +3842,7 @@ DEALERS = {
     "address": "23-07 Maple Avenue",
     "city": "Fair Lawn",
     "state": "NJ",
-    "zip": "7410",
+    "zip": "07410",
     "link": "https://www.toyota.com/dealers/dealer/29037",
   },
   29058: {
@@ -3850,7 +3850,7 @@ DEALERS = {
     "address": "1499 Route 46",
     "city": "Ledgewood",
     "state": "NJ",
-    "zip": "7852",
+    "zip": "07852",
     "link": "https://www.toyota.com/dealers/dealer/29058",
   },
   29059: {
@@ -3858,7 +3858,7 @@ DEALERS = {
     "address": "169 Ridgedale Ave",
     "city": "Morristown",
     "state": "NJ",
-    "zip": "7960",
+    "zip": "07960",
     "link": "https://www.toyota.com/dealers/dealer/29059",
   },
   29062: {
@@ -3866,7 +3866,7 @@ DEALERS = {
     "address": "99 South Black Horse Pike",
     "city": "Runnemede",
     "state": "NJ",
-    "zip": "8078",
+    "zip": "08078",
     "link": "https://www.toyota.com/dealers/dealer/29062",
   },
   29069: {
@@ -3874,7 +3874,7 @@ DEALERS = {
     "address": "4236 Black Horse Pike",
     "city": "Mays Landing",
     "state": "NJ",
-    "zip": "8330",
+    "zip": "08330",
     "link": "https://www.toyota.com/dealers/dealer/29069",
   },
   29071: {
@@ -3882,7 +3882,7 @@ DEALERS = {
     "address": "4397 South Route 130",
     "city": "Burlington",
     "state": "NJ",
-    "zip": "8016",
+    "zip": "08016",
     "link": "https://www.toyota.com/dealers/dealer/29071",
   },
   29073: {
@@ -3890,7 +3890,7 @@ DEALERS = {
     "address": "2871 Route 1",
     "city": "Lawrenceville",
     "state": "NJ",
-    "zip": "8648",
+    "zip": "08648",
     "link": "https://www.toyota.com/dealers/dealer/29073",
   },
   29075: {
@@ -3898,7 +3898,7 @@ DEALERS = {
     "address": "100 Route 1 North",
     "city": "Avenel",
     "state": "NJ",
-    "zip": "7001",
+    "zip": "07001",
     "link": "https://www.toyota.com/dealers/dealer/29075",
   },
   29078: {
@@ -3906,7 +3906,7 @@ DEALERS = {
     "address": "1485 Route 46 East",
     "city": "Little Falls",
     "state": "NJ",
-    "zip": "7424",
+    "zip": "07424",
     "link": "https://www.toyota.com/dealers/dealer/29078",
   },
   29081: {
@@ -3914,7 +3914,7 @@ DEALERS = {
     "address": "730 State Route 23",
     "city": "Pompton Plains",
     "state": "NJ",
-    "zip": "7444",
+    "zip": "07444",
     "link": "https://www.toyota.com/dealers/dealer/29081",
   },
   29083: {
@@ -3922,7 +3922,7 @@ DEALERS = {
     "address": "109 Route 22 West",
     "city": "Hillside",
     "state": "NJ",
-    "zip": "7205",
+    "zip": "07205",
     "link": "https://www.toyota.com/dealers/dealer/29083",
   },
   29086: {
@@ -3930,7 +3930,7 @@ DEALERS = {
     "address": "650 North Delsea Drive",
     "city": "Vineland",
     "state": "NJ",
-    "zip": "8360",
+    "zip": "08360",
     "link": "https://www.toyota.com/dealers/dealer/29086",
   },
   29087: {
@@ -3938,7 +3938,7 @@ DEALERS = {
     "address": "220 Route 22 West",
     "city": "Green Brook",
     "state": "NJ",
-    "zip": "8812",
+    "zip": "08812",
     "link": "https://www.toyota.com/dealers/dealer/29087",
   },
   29090: {
@@ -3946,7 +3946,7 @@ DEALERS = {
     "address": "599 Route 440",
     "city": "Jersey City",
     "state": "NJ",
-    "zip": "7304",
+    "zip": "07304",
     "link": "https://www.toyota.com/dealers/dealer/29090",
   },
   29092: {
@@ -3954,7 +3954,7 @@ DEALERS = {
     "address": "395 Rt 37E & Batchelor St",
     "city": "Toms River",
     "state": "NJ",
-    "zip": "8753",
+    "zip": "08753",
     "link": "https://www.toyota.com/dealers/dealer/29092",
   },
   29095: {
@@ -3962,7 +3962,7 @@ DEALERS = {
     "address": "1118 Route 88",
     "city": "Lakewood",
     "state": "NJ",
-    "zip": "8701",
+    "zip": "08701",
     "link": "https://www.toyota.com/dealers/dealer/29095",
   },
   29099: {
@@ -3970,7 +3970,7 @@ DEALERS = {
     "address": "3400 Route 42",
     "city": "Turnersville",
     "state": "NJ",
-    "zip": "8012",
+    "zip": "08012",
     "link": "https://www.toyota.com/dealers/dealer/29099",
   },
   29100: {
@@ -3978,7 +3978,7 @@ DEALERS = {
     "address": "66 Route 206 North",
     "city": "Newton",
     "state": "NJ",
-    "zip": "7860",
+    "zip": "07860",
     "link": "https://www.toyota.com/dealers/dealer/29100",
   },
   29101: {
@@ -3986,7 +3986,7 @@ DEALERS = {
     "address": "2291 Route 130",
     "city": "Dayton",
     "state": "NJ",
-    "zip": "8810",
+    "zip": "08810",
     "link": "https://www.toyota.com/dealers/dealer/29101",
   },
   29102: {
@@ -3994,7 +3994,7 @@ DEALERS = {
     "address": "1301 Route 73",
     "city": "Mount Laurel",
     "state": "NJ",
-    "zip": "8054",
+    "zip": "08054",
     "link": "https://www.toyota.com/dealers/dealer/29102",
   },
   29103: {
@@ -4002,7 +4002,7 @@ DEALERS = {
     "address": "85 State Highway 17",
     "city": "Wood Ridge",
     "state": "NJ",
-    "zip": "7075",
+    "zip": "07075",
     "link": "https://www.toyota.com/dealers/dealer/29103",
   },
   29104: {
@@ -4010,7 +4010,7 @@ DEALERS = {
     "address": "174 Route 202 North",
     "city": "Flemington",
     "state": "NJ",
-    "zip": "8822",
+    "zip": "08822",
     "link": "https://www.toyota.com/dealers/dealer/29104",
   },
   29105: {
@@ -4018,7 +4018,7 @@ DEALERS = {
     "address": "4268 Route 9 South",
     "city": "Freehold",
     "state": "NJ",
-    "zip": "7728",
+    "zip": "07728",
     "link": "https://www.toyota.com/dealers/dealer/29105",
   },
   29106: {
@@ -4026,7 +4026,7 @@ DEALERS = {
     "address": "1504 US Route 1",
     "city": "North Brunswick",
     "state": "NJ",
-    "zip": "8902",
+    "zip": "08902",
     "link": "https://www.toyota.com/dealers/dealer/29106",
   },
   29107: {
@@ -4034,7 +4034,7 @@ DEALERS = {
     "address": "1137-1183 Bloomfield Avenue",
     "city": "West Caldwell",
     "state": "NJ",
-    "zip": "7006",
+    "zip": "07006",
     "link": "https://www.toyota.com/dealers/dealer/29107",
   },
   29108: {
@@ -4042,7 +4042,7 @@ DEALERS = {
     "address": "170 Route 22 East",
     "city": "Springfield",
     "state": "NJ",
-    "zip": "7081",
+    "zip": "07081",
     "link": "https://www.toyota.com/dealers/dealer/29108",
   },
   29113: {
@@ -4050,7 +4050,7 @@ DEALERS = {
     "address": "1096 Route 17 North",
     "city": "Ramsey",
     "state": "NJ",
-    "zip": "7446",
+    "zip": "07446",
     "link": "https://www.toyota.com/dealers/dealer/29113",
   },
   29114: {
@@ -4058,7 +4058,7 @@ DEALERS = {
     "address": "2017 Route 31",
     "city": "Clinton",
     "state": "NJ",
-    "zip": "8809",
+    "zip": "08809",
     "link": "https://www.toyota.com/dealers/dealer/29114",
   },
   30034: {
@@ -5690,7 +5690,7 @@ DEALERS = {
     "address": "3671 Quaker Lane",
     "city": "North Kingstown",
     "state": "RI",
-    "zip": "2852",
+    "zip": "02852",
     "link": "https://www.toyota.com/dealers/dealer/38024",
   },
   38025: {
@@ -5698,7 +5698,7 @@ DEALERS = {
     "address": "6 Langworthy Road",
     "city": "Westerly",
     "state": "RI",
-    "zip": "2891",
+    "zip": "02891",
     "link": "https://www.toyota.com/dealers/dealer/38025",
   },
   38026: {
@@ -5706,7 +5706,7 @@ DEALERS = {
     "address": "1400 Post Road",
     "city": "Warwick",
     "state": "RI",
-    "zip": "2888",
+    "zip": "02888",
     "link": "https://www.toyota.com/dealers/dealer/38026",
   },
   38029: {
@@ -5714,7 +5714,7 @@ DEALERS = {
     "address": "550 George Washington Hwy",
     "city": "Smithfield",
     "state": "RI",
-    "zip": "2917",
+    "zip": "02917",
     "link": "https://www.toyota.com/dealers/dealer/38029",
   },
   38030: {
@@ -5722,7 +5722,7 @@ DEALERS = {
     "address": "415 Taunton Avenue",
     "city": "East Providence",
     "state": "RI",
-    "zip": "2914",
+    "zip": "02914",
     "link": "https://www.toyota.com/dealers/dealer/38030",
   },
   38031: {
@@ -5730,7 +5730,7 @@ DEALERS = {
     "address": "285 East Main Road",
     "city": "Middletown",
     "state": "RI",
-    "zip": "2842",
+    "zip": "02842",
     "link": "https://www.toyota.com/dealers/dealer/38031",
   },
   38032: {
@@ -5738,7 +5738,7 @@ DEALERS = {
     "address": "3671 Quaker Lane",
     "city": "North Kingstown",
     "state": "RI",
-    "zip": "2852",
+    "zip": "02852",
     "link": "https://www.toyota.com/dealers/dealer/38032",
   },
   40009: {
@@ -6402,7 +6402,7 @@ DEALERS = {
     "address": "701 Highgate Road",
     "city": "St. Albans",
     "state": "VT",
-    "zip": "5478",
+    "zip": "05478",
     "link": "https://www.toyota.com/dealers/dealer/44013",
   },
   44014: {
@@ -6410,7 +6410,7 @@ DEALERS = {
     "address": "1620 Shelburne Road",
     "city": "South Burlington",
     "state": "VT",
-    "zip": "5403",
+    "zip": "05403",
     "link": "https://www.toyota.com/dealers/dealer/44014",
   },
   44016: {
@@ -6418,7 +6418,7 @@ DEALERS = {
     "address": "303 Sykes Mountain Avenue",
     "city": "White River Junction",
     "state": "VT",
-    "zip": "5001",
+    "zip": "05001",
     "link": "https://www.toyota.com/dealers/dealer/44016",
   },
   44020: {
@@ -6426,7 +6426,7 @@ DEALERS = {
     "address": "33 Seward Road",
     "city": "Rutland",
     "state": "VT",
-    "zip": "5701",
+    "zip": "05701",
     "link": "https://www.toyota.com/dealers/dealer/44020",
   },
   44022: {
@@ -6434,7 +6434,7 @@ DEALERS = {
     "address": "30 Berlin Mall Road",
     "city": "Berlin",
     "state": "VT",
-    "zip": "5602",
+    "zip": "05602",
     "link": "https://www.toyota.com/dealers/dealer/44022",
   },
   44023: {
@@ -6442,7 +6442,7 @@ DEALERS = {
     "address": "751 North Bennington Road",
     "city": "Bennington",
     "state": "VT",
-    "zip": "5201",
+    "zip": "05201",
     "link": "https://www.toyota.com/dealers/dealer/44023",
   },
   44024: {
@@ -6450,7 +6450,7 @@ DEALERS = {
     "address": "6896 Route 5 South",
     "city": "Westminster",
     "state": "VT",
-    "zip": "5158",
+    "zip": "05158",
     "link": "https://www.toyota.com/dealers/dealer/44024",
   },
   44025: {
@@ -6458,7 +6458,7 @@ DEALERS = {
     "address": "751 North Bennington Road",
     "city": "Bennington",
     "state": "VT",
-    "zip": "5201",
+    "zip": "05201",
     "link": "https://www.toyota.com/dealers/dealer/44025",
   },
   45009: {

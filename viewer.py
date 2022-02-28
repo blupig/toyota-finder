@@ -92,7 +92,7 @@ def generate_table(cars):
             # Dealer
             dealer_id = int(car.get('dealerCd', '0'))
             car_html += f"<td>{dealers.get_name(dealer_id)}</td>"
-            car_html += f"<td>{dealers.get_city_state(dealer_id)}</td>"
+            car_html += f"<td>{dealers.get_location(dealer_id)}</td>"
 
             # eta
             car_html += f"<td>{car.get('eta', {}).get('currToDate')}</td>"

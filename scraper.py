@@ -28,7 +28,7 @@ def scrape_vins(vins):
                     color = car.get('extColor', {}).get('marketingName')
                     dealer_id = int(car.get('dealerCd', '0'))
                     dealer_name = dealers.get_name(dealer_id)
-                    dealer_city_state = dealers.get_city_state(dealer_id)
+                    dealer_city_state = dealers.get_location(dealer_id)
                     notifier.send_email(
                         f'toyota-finder: {vin}',
                         f'New VIN found: {color}, {dealer_name}, {dealer_city_state}, https://guest.dealer.toyota.com/v-spec/{vin}/detail',
