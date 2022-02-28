@@ -16,18 +16,20 @@ def scrape_vins(vins):
             if len(body) > 1000:
                 print(f'VIN {vin} exists')
 
+                # Inject scrape_time
+                parsed = json.loads(body)
+
                 # Read or generate scrape_time
                 scrape_time = read_scrape_time(vin)
                 if scrape_time is None:
                     scrape_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     # New car found
+                    color = parsed.get('extColor', {}).get('marketingName')
                     notifier.send_email(
                         f'toyota-finder: {vin}',
-                        f'New VIN found: https://guest.dealer.toyota.com/v-spec/{vin}/detail',
+                        f'New VIN found: {color}, https://guest.dealer.toyota.com/v-spec/{vin}/detail',
                     )
 
-                # Inject scrape_time
-                parsed = json.loads(body)
                 parsed['scrapeTime'] = scrape_time
 
                 save_data(vin, parsed)
