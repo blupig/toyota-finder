@@ -14,6 +14,37 @@ def get_city_state(dealer_id):
 
 # Dealers map
 DEALERS = {
+  4197: {
+    "name": "Toyota of Whittier",
+    "city": "Whittier",
+    "state": "CA",
+    "zip": "90605",
+  },
+  5074: {
+    "name": "Stevinson Toyota West",
+    "city": "Lakewood",
+    "state": "CO",
+    "zip": "80401",
+  },
+  4057: {
+    "name": "Larry H. Miller Toyota Lemon Grove",
+    "city": "Lemon Grove",
+    "state": "CA",
+    "zip": "91945",
+  },
+  4142: {
+    "name": "Freeway Toyota of Gilroy",
+    "city": "Gilroy",
+    "state": "CA",
+    "zip": "95020",
+  },
+  2010: {
+    "name": "Precision Toyota of Tucson",
+    "address": "700 West Wetmore Road",
+    "city": "Tucson",
+    "state": "AZ",
+    "zip": "85705",
+  },
   4007: {
     "name": "Toyota of Berkeley",
     "address": "2400 Shattuck Avenue",
