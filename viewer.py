@@ -44,7 +44,7 @@ def start_serving():
 def get_all_cars(prefix):
     """Read all cars from data dir"""
     files = listdir('data')
-    files.sort(key=lambda x: -int(x[11:17]))
+    # files.sort(key=lambda x: -int(x[11:17]))
 
     result = []
     for fileName in files:
@@ -70,6 +70,9 @@ def generate_html():
 
     xse_premium = get_all_cars('JTMFB')
     se_weather = get_all_cars('JTMAB')
+
+    xse_premium.sort(key=lambda c: (c.get('scrapeTime',''), c.get('vin', '')), reverse=True)
+    se_weather.sort(key=lambda c: (c.get('scrapeTime',''), c.get('vin', '')), reverse=True)
 
     html += generate_table(xse_premium)
     html += generate_table(se_weather)
