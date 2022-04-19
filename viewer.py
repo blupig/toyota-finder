@@ -66,7 +66,8 @@ def generate_html():
 
     sps = global_vars.total_scraped / (int(time.time()) - global_vars.start_epoch)
     html += f'Total scraped: {global_vars.total_scraped} ({sps:0.1f}/s)<br>'
-    html += f'Last scraped: {global_vars.last_scraped}<br><br>'
+    html += f'Last scraped: {global_vars.last_scraped}<br>'
+    html += f'Last HTTP error: {global_vars.last_http_error}<br><br>'
 
     xse_premium = get_all_cars('JTMFB')
     se_weather = get_all_cars('JTMAB')

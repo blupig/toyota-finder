@@ -27,12 +27,10 @@ def start_scraper():
 
     # Scrape these ranges concurrently
     vin_ranges = [
-        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 80000, 82000),
-        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 82001, 84000),
-        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 84001, 86000),
-        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 86001, 88000),
-        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 88001, 90000),
-        (vin_generator.VIN_PREFIX_SE_WEATHER, 80000, 87000),
+        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 80001, 90000),
+        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 90001, 95000),
+        (vin_generator.VIN_PREFIX_XSE_PREMIUM, 95001, 99999),
+        (vin_generator.VIN_PREFIX_SE_WEATHER, 80000, 99999),
     ]
 
     threads = []

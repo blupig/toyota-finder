@@ -37,8 +37,8 @@ def scrape_vins(vins):
                 car['scrapeTime'] = scrape_time
                 save_data(vin, car)
 
-        except HTTPError:
-            pass
+        except HTTPError as exc:
+            global_vars.last_http_error = str(exc)
         except Exception:
             traceback.print_exc()
 
